@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProduitsController;
 use App\Http\Controllers\CampagnesController;
+use App\Http\Controllers\PaniersController;
+use App\Http\Controllers\UsagersController;
+use App\Http\Controllers\AccueilsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +18,7 @@ use App\Http\Controllers\CampagnesController;
 |
 */
 
-Route::get('/', function () {
+Route::get('accueil', function () {
     return view('index');
 });
 
@@ -26,3 +29,19 @@ Route::get('produits',
 // Route des campagnes
 Route::get('campagnes',
 [CampagnesController::class, 'index'])->name('campagnes.index');
+
+// Route des paniers
+Route::get('paniers',
+[PaniersController::class, 'index'])->name('paniers.index');
+
+// Route des usagers
+Route::get('usagers',
+[UsagersController::class, 'index'])->name('usagers.index');
+
+// Route des profils
+Route::get('profils',
+[UsagersController::class, 'index'])->name('profils.index');
+
+// Route page d'accueil (Possiblement la seule route pour la page d'accueil ?...À définir)
+Route::get('accueils',
+[AccueilsController::class, 'index'])->name('accueils.index');
