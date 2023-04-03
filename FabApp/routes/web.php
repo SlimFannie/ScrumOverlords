@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProduitsController;
+use App\Http\Controllers\CampagnesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+// Route des produits
+Route::get('produits',
+[ProduitsController::class, 'index'])->name('produits.index');
+
+// Route des campagnes
+Route::get('campagnes',
+[CampagnesController::class, 'index'])->name('campagnes.index');

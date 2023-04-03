@@ -24,10 +24,10 @@
                 <a class="nav-link" href="#">Gestion usager</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Gestion campagne</a>
+                <a class="nav-link" href="{{ route('campagnes.index') }}">Gestion campagne</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Gestion produits</a>
+                <a class="nav-link" href="{{ route('produits.index') }}">Gestion produits</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">Panier</a>
