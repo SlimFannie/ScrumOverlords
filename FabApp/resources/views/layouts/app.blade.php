@@ -21,21 +21,21 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
                 <li class="nav-item">
-                <a class="nav-link" href="{{ route('usagers.index') }}">Gestion usager</a>
+                <a class="nav-link d-flex" href="{{ route('usagers.index') }}"><span class="material-symbols-rounded">manage_accounts</span>Gestion usager</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="{{ route('campagnes.index') }}">Gestion campagne</a>
+                <a class="nav-link d-flex" href="{{ route('campagnes.index') }}"><span class="material-symbols-rounded">campaign</span>Gestion campagne</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="{{ route('produits.index') }}">Gestion produits</a>
+                <a class="nav-link d-flex" href="{{ route('produits.index') }}"><span class="material-symbols-rounded">laundry</span>Gestion produits</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="{{ route('paniers.index') }}"><span class="material-symbols-rounded">shopping_cart</span> Panier</a>
+                <a class="nav-link d-flex" href="{{ route('paniers.index') }}"><span class="material-symbols-rounded">shopping_cart</span>Panier</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="{{ route('profils.index') }}">Profil</a>
+                <a class="nav-link d-flex" href="{{ route('profils.index') }}"><span class="material-symbols-rounded">taunt</span>Profil</a>
                 </li>
             </ul>
             </div>
