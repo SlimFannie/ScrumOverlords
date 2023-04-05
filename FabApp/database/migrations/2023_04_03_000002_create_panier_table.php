@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('paniers', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->foreignId('usager_id')->constrained();
 
         });

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('detailps', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('titre');
             $table->string('detail');
         });
