@@ -65,4 +65,9 @@ class UsagersController extends Controller
     {
         //
     }
+
+    public function showLoginForm()
+    {
+        return View('usagers.showLoginForm');
+    }
 }
