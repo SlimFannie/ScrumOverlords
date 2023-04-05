@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('paniers', function (Blueprint $table) {
+        Schema::create('formulaire_produits', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('usager_id')->constrained();
-
+            $table->foreignId('formulaire_id')->constrained();
+            $table->foreignId('produit_id')->constrained();
         });
     }
 
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        #Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('formulaire_produits');
     }
 };

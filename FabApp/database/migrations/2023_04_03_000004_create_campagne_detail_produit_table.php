@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('campagne_produits', function (Blueprint $table) {
+        Schema::create('campagne_detail_produits', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('campagne_id')->constrained();
-            $table->foreignId('produit_id')->constrained();
+            $table->foreignId('campagne_produit_id')->constrained();
+            $table->foreignId('detail_id');
         });
     }
 
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        #Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('campagne_detail_produits');
     }
 };

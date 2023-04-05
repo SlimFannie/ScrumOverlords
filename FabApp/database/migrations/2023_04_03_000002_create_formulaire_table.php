@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('panier_detail_produits', function (Blueprint $table) {
+        Schema::create('formulaires', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('panierproduit_id')->constrained();
-            $table->foreignId('detail_id')->constrained();
+            $table->foreignId('usager_id')->constrained();
         });
     }
 
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        #Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('formulaires');
     }
 };
