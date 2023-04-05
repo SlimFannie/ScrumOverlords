@@ -43,5 +43,5 @@ Route::get('profils',
 [UsagersController::class, 'index'])->name('profils.index');
 
 // Route page d'accueil (Possiblement la seule route pour la page d'accueil ?...À définir)
-Route::get('accueils',
+Route::get('/',
 [AccueilsController::class, 'index'])->name('accueils.index');
