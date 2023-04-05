@@ -5,8 +5,8 @@
 @section('contenu')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xl-4 offset-xl-4 mt-3">
-            <h1>Page d'accueil globale</h1>
+        <div class="col-12">
+            <video id="videoBG" autoplay muted loop src="{{ asset('img/WithoutRobotSynthwave.mp4') }}"></video>
         </div>
     </div>
     
