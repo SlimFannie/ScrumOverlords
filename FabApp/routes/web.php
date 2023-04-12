@@ -35,8 +35,17 @@ Route::get('paniers',
 [PaniersController::class, 'index'])->name('paniers.index');
 
 // Route des usagers
+Route::get('usagers/login',
+[UsagersController::class, 'showLoginForm'])->name('usagers.showLoginForm');
+
 Route::get('usagers',
 [UsagersController::class, 'index'])->name('usagers.index');
+
+Route::get('/usagers/creation',
+[UsagersController::class, 'create'])->name('usagers.create');
+
+Route::post('usagers',
+[UsagersController::class, 'store'])->name('usagers.store');
 
 // Route des profils
 Route::get('profils',

@@ -14,6 +14,14 @@
             <br>
             <h5>En attendant la prochaine campagne, accompagnez les développeurs dans une quête de leur choix!</h5>
         </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-success" id="btnSubmit"><a href="{{ route('usagers.create') }}">Créer un compte</a></button>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-success" id="btnSubmit"><a href="{{ route('usagers.showLoginForm') }}">Se connecter</a></button>
+            </div>
+        </div>
     </div>
     <button>Francis</button>
 </div>
