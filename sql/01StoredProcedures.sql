@@ -22,6 +22,38 @@ begin
 end //
 delimiter ;
 
+delimiter //
+create procedure creationCampagneProduit(_idProduit integer)
+begin
+    insert into campagne_produits(produit_id)
+        Values(_idProduit);
+end //
+delimiter ;
+
+delimiter //
+create procedure creationCampagne(_nom varchar(25))
+begin
+    if not exists(select nom from campagnes where nom = _nom) then
+        insert into campagnes(nom, actif)
+            values(_nom, true);
+    elseif exists(select actif from campagnes where actif = true) then
+        select 'Il y as deja une campagne actif' as message;
+    else
+        select 'Une campagne avec ce nom existe déjà' as message;
+    end if;
+end //
+delimiter ;
+#drop procedure creationCampagne;
+
+delimiter //
+create procedure creationFormulaire(_email varchar(25), _password varchar(255))
+begin
+
+end //
+delimiter ;
+
+
+
 #delimiter //
 #create procedure creationUsager(_email varchar(25), _password varchar(255))
 #begin

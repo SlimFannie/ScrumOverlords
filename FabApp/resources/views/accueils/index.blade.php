@@ -3,26 +3,32 @@
 @section('titre', 'La Fab App')
 
 @section('contenu')
-<div class="container-fluid d-flex align-items-center justify-content-center h-100" id="videoFrame">
+<div class="container-fluid h-100 g-0" id="videoFrame">
     <video id="videoBG" autoplay muted loop src="{{ asset('img/WithoutRobotSynthwave.mp4') }}"></video>
-    <div class="card text-white bg-card text-center">
-        <div class="card-body">
-            <h3>Hé non! Il n'y a aucune campagne de financement en cours.</h3>
-            <br>
-            <p>Cette application a été réalisée en 2023 par l'équipe étudiante Scrum Overlords. Trois aventuriers de l'informatique, Francis Chalifour, Alexandre Grondin et Fannie Hamel
-            Thibault se sont donné pour mission de créer la meilleure application de vente du monde du Cégep de Trois-Rivières.</p>
-            <br>
-            <h5>En attendant la prochaine campagne, accompagnez les développeurs dans une quête de leur choix!</h5>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button type="submit" class="btn btn-success" id="btnSubmit"><a href="{{ route('usagers.create') }}">Créer un compte</a></button>
+    <div class="container-fluid d-flex align-items-center justify-content-center h-100 g-0 d-col">
+        <div class="row g-0 pb-2">
+            <div class="card text-white bg-card text-center">
+                <div class="card-body">
+                    <h3>Hé non! Il n'y a aucune campagne de financement en cours.</h3>
+                    <br>
+                    <p>Cette application a été réalisée en 2023 par l'équipe étudiante Scrum Overlords. Trois aventuriers de l'informatique, Francis Chalifour, Alexandre Grondin et Fannie Hamel
+                    Thibault se sont donné pour mission de créer la meilleure application de vente du monde du Cégep de Trois-Rivières.</p>
+                    <br>
+                    <h5>En attendant la prochaine campagne, accompagnez les développeurs dans une quête de leur choix!</h5>
+                </div>
             </div>
-            <div class="col">
-                <button type="submit" class="btn btn-success" id="btnSubmit"><a href="{{ route('usagers.showLoginForm') }}">Se connecter</a></button>
+        </div>
+        <div class="row gx-2 pt-2">
+            <div class="col text-center">
+                <button class="btn bg-btn">Francis</button>
+            </div>
+            <div class="col text-center">
+                <button class="btn bg-btn">Alexandre</button>
+            </div>
+            <div class="col text-center">
+                <button class="btn bg-btn">Fannie</button>
             </div>
         </div>
     </div>
-    <button>Francis</button>
 </div>
 @endsection

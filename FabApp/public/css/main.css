@@ -3,6 +3,16 @@ html, body {
     overflow: hidden;
 }
 
+.fontLogo {
+    font-family: 'Sedgwick Ave Display', cursive;
+}
+
+h1, h2, h3, h4, h5, p, a {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* Background */
+
 #videoBG {
     position: absolute;
     margin: auto 0px;
@@ -18,10 +28,38 @@ html, body {
 .bg-nav {
     background: rgba(64,38,92);
     background: radial-gradient(circle, rgba(158,34,129,0.5) 0%, rgba(64,38,92,0.5) 100%);
+    border-top: solid rgba(158,34,129) 0.5px;
+    border-bottom: solid rgba(158,34,129) 0.5px;
 }
 
 .bg-card {
     background: rgba(64,38,92);
-    background: radial-gradient(circle, rgba(158,34,129,0.5) 0%, rgba(64,38,92,0.5) 100%);
-    max-width: 50vw
+    background: radial-gradient(circle, rgba(158,34,129,0.6) 0%, rgba(64,38,92,0.6) 100%);
+    max-width: 50vw;
+
+    border-style: solid;
+    border-color: rgba(158,34,129);
+}
+
+.bg-btn {
+    background: rgba(64,38,92);
+    background: radial-gradient(circle, rgba(64,38,92,0.8) 0%, rgba(158,34,129,0.8) 100%);
+    max-width: 50vw;
+
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+
+    border-style: solid;
+    border-color: rgba(158,34,129);
+}
+
+/* Display */
+
+.d-col {
+    flex-direction: column;
+}
+
+.d-front {
+    position: fixed;
+    z-index: 1;
 }
