@@ -5,13 +5,11 @@ begin
         VALUES (_prenom, _nom, _adresseCourriel, _motDePasse, _role);
 end //
 delimiter ;
-
 ###drop procedure creationUsager;
 
 delimiter //
 create procedure connection(_email varchar(255), _password varchar(1000))
 begin
-
     if not exists(select adresseCourriel from usagers where adresseCourriel = _email) then
         select 0 as message;
     elseif exists(select adresseCourriel from usagers where adresseCourriel = _email and motDePasse = _password) then
@@ -19,14 +17,6 @@ begin
     else
         select 0 as message;
     end if;
-end //
-delimiter ;
-
-delimiter //
-create procedure creationCampagneProduit(_idProduit integer)
-begin
-    insert into campagne_produits(produit_id)
-        Values(_idProduit);
 end //
 delimiter ;
 
@@ -44,6 +34,19 @@ begin
 end //
 delimiter ;
 #drop procedure creationCampagne;
+
+delimiter //
+create procedure creationCampagneProduit(_idProduit integer, _idDetail integer)
+begin
+    if exists(select id from couleur_produits where produit_id = _idProduit and couleur_id = _idDetail) then
+        set campagne_produits.detail_id = (select id as _id from couleur_produits where produit_id = _idProduit and couleur_id = _idDetail)
+        #insert into campagne_produits(detail_id)
+        #Values(_id);
+    end if;
+
+end //
+delimiter ;
+#drop procedure creationCampagneProduit;
 
 delimiter //
 create procedure creationFormulaire(_email varchar(25), _password varchar(255))

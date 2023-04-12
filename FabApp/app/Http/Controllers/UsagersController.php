@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Log;
 use App\Models\Usager;
 use App\Http\Requests\UsagerRequest;
 use Illuminate\View\View;
+use DB;
 
 class UsagersController extends Controller
 {
@@ -35,7 +36,7 @@ class UsagersController extends Controller
      */
     public function store(UsagerRequest $request)
     {
-        try
+        /*try
         {
             $usager = new Usager($request->all());
             $usager->save();
@@ -44,7 +45,8 @@ class UsagersController extends Controller
         {
             Log::debug($e);
         }
-        return redirect()->route('usagers.index');
+        return redirect()->route('usagers.index');*/
+        DB::select('call creationUsager(_prenom, _nom, _adresseCourriel, _motDePasse, _role)');
     }
 
     /**

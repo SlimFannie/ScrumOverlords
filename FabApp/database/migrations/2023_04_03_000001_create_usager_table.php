@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nom');
             $table->string('adresseCourriel');
             $table->text('motDePasse');
-            $table->float('role');
+            $table->float('role')->default(2);
         });
     }
 
