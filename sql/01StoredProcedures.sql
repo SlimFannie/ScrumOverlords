@@ -6,7 +6,7 @@ begin
 end //
 delimiter ;
 
-#drop procedure creationUsager;
+###drop procedure creationUsager;
 
 delimiter //
 create procedure connection(_email varchar(255), _password varchar(1000))
