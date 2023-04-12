@@ -7,7 +7,7 @@
     <h1>Formulaire de création de compte</h1>
     <div class="row">
         <div class="col">
-           <form method="post" id="FormUsager" >
+           <form method="post" id="FormUsager" action="{{ route('usagers.store') }}">
                 @csrf
                 <label for="prenom"> Indiquez votre prénom </label>
                 <br>
@@ -23,7 +23,11 @@
                 <br>
                 <label for="mdp"> Indiquez votre mot de passe </label>
                 <br>
-                <input type="text" id="mdp" name="motDePasse">
+                <input type="password" id="mdp" name="motDePasse">
+                <br>
+                <label for="role"> Test role </label>
+                <br>
+                <input type="text" id="role" name="role">
                 <br>
                 <button type="submit" class="btn btn-success" id="btnSubmit"> Confirmer </button>
            </form>

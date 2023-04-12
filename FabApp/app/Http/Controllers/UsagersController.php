@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use App\Models\User;
+use App\Models\Usager;
+use App\Http\Requests\UsagerRequest;
 use Illuminate\View\View;
 
 class UsagersController extends Controller
@@ -28,10 +29,22 @@ class UsagersController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * 
+     * @param \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsagerRequest $request)
     {
-        //
+        try
+        {
+            $usager = new Usager($request->all());
+            $usager->save();
+        }
+        catch(\Throwable $e)
+        {
+            Log::debug($e);
+        }
+        return redirect()->route('usagers.index');
     }
 
     /**
