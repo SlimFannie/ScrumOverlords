@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personal_access_tokens', function (Blueprint $table) {
-            $table->id();
+        Schema::create('usagers', function (Blueprint $table) {
+            $table->id()->autoIncrement();
             $table->string('prenom');
             $table->string('nom');
             $table->string('adresseCourriel');
             $table->text('motDePasse');
-            $table->float('role');
+            $table->float('role')->default(2);
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        #Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('usagers');
     }
 };

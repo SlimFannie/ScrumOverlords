@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('couleurs', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('couleur');
         });
     }
@@ -22,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        #Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('couleurs');
     }
 };

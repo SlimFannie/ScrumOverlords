@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('campagnes', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('nom');
             $table->boolean('actif');
         });
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        #Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('campagnes');
     }
 };

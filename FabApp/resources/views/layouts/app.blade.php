@@ -8,37 +8,57 @@
 
     <!-- Style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" />
+
+    <!-- Fonts et icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&family=Titillium+Web&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <!-- Header -->    
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('accueils.index') }}">La Fabuleuse Application</a>
+    <div class="container-fluid g-0 d-front">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-nav px-3 w-100">
+        
+            <a class="navbar-brand fontLogo" href="{{ route('accueils.index') }}">La Fabuleuse Application</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link" href="{{ route('usagers.index') }}">Gestion usager</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="{{ route('campagnes.index') }}">Gestion campagne</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="{{ route('produits.index') }}">Gestion produits</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="{{ route('paniers.index') }}">Panier</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="{{ route('profils.index') }}">Profil</a>
-                </li>
-            </ul>
-            </div>
-        </div>
+                <div class="col-9">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
+                        <li class="nav-item">
+                        <a class="nav-link d-flex" href="{{ route('usagers.index') }}"><span class="material-symbols-rounded">manage_accounts</span>Gestion usager</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link d-flex" href="{{ route('campagnes.index') }}"><span class="material-symbols-rounded">campaign</span>Gestion campagne</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link d-flex" href="{{ route('produits.index') }}"><span class="material-symbols-rounded">laundry</span>Gestion produits</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link d-flex" href="{{ route('paniers.index') }}"><span class="material-symbols-rounded">shopping_cart</span>Panier</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
+                        <li class="nav-item">
+                        <a class="nav-link d-flex" href="{{ route('profils.index') }}">Profil<span class="material-symbols-rounded">cottage</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex" href="{{ route('usagers.create') }}">Créer un compte<span class="material-symbols-rounded">waving_hand</span></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link d-flex" href="{{ route('usagers.showLoginForm') }}">Se connecter<span class="material-symbols-rounded">taunt</span></a>
+                        </li>
+                    </ul>
+                </div>
+        
     </nav>
+    </div>
 
     <!-- Contenu -->  
     @yield('contenu')
