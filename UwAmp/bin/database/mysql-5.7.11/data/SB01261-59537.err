@@ -38,3 +38,5 @@
 2023-04-12T11:58:19.452428Z 0 [Note] Event Scheduler: Loaded 0 events
 2023-04-12T11:58:19.453418Z 0 [Note] C:\Users\2019790\ScrumOverlords\UwAmp\bin\database\mysql-5.7.11\bin\mysqld.exe: ready for connections.
 Version: '5.7.11'  socket: ''  port: 3306  MySQL Community Server (GPL)
+2023-04-12T12:29:07.539537Z 2 [Note] Access denied for user '2019790'@'localhost' (using password: NO)
+2023-04-12T12:29:07.605539Z 3 [Note] Access denied for user '2019790'@'localhost' (using password: NO)
