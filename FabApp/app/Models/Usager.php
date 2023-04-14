@@ -21,11 +21,14 @@ class Usager extends Authenticatable
     ];
 
     protected $hidden = [
-        'password',
+        'motDePasse',
         'remember_token',
     ];
 
-    
+    public function getAuthPassword()
+    {
+        return $this->motDePasse;
+    }
 
     public $timestamps = false;
 }

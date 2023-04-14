@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Log;
 use App\Models\Usager;
 use App\Http\Requests\UsagerRequest;
 use Illuminate\View\View;
+use Illuminate\Auth\Middleware;
 use Auth;
 use DB;
 
@@ -18,7 +19,8 @@ class UsagersController extends Controller
      */
     public function index() : View
     {
-        return View('usagers.index');
+        $usagers = Usager::all(); 
+        return View('usagers.index', compact('usagers'));
     }
 
     /**
@@ -37,7 +39,7 @@ class UsagersController extends Controller
      */
     public function store(UsagerRequest $request)
     {
-        /*try
+        try
         {
             $usager = new Usager($request->all());
             $usager->save();
@@ -46,8 +48,8 @@ class UsagersController extends Controller
         {
             Log::debug($e);
         }
-        return redirect()->route('usagers.index');*/
-        DB::select('call creationUsager(_prenom, _nom, _adresseCourriel, _motDePasse, _role)');
+        return redirect()->route('usagers.index');
+        // DB::select('call creationUsager(_prenom, _nom, _adresseCourriel, _motDePasse, _role)');
     }
 
     /**
@@ -84,29 +86,42 @@ class UsagersController extends Controller
 
     public function showLoginForm()
     {
-        return View('usagers.showLoginForm');
+        $usagers = Usager::all(); 
+        return View('usagers.showLoginForm', compact('usagers'));
     }
-
-    public function getAuthPassword()
-        {
-            return $this->motDePasse;
-        }
 
     public function login(Request $request)
     {   
+        try
+        {
+            Log::debug('auth');
+           
+            $reussi = Auth::attempt(['adresseCourriel' => $request->adresseCourriel, 'motDePasse' => $request->password]);
+            
+
+            if($reussi)
+            {
+                Log::debug('if');
+                $usagers = Usager::all();
+                return View('usager.index', compact('usagers'))->with('message', "Bien ouèj mon gars");
+                
+            }
+            else
+            {
+                $password = $request->input('motDePasse');
+                $username = $request->input('adresseCourriel');
+                Log::debug('else');
+                Log::debug($password);
+                Log::debug($username);
+                return redirect()->route('accueils.index')->withErrors(['message','RIIIP']);
+                
+            }
+        }
+        catch(\Throwable $e)
+        {
+            Log::debug($e);
+        }
         
-
-        $reussi = Auth::attempt(['adresseCourriel' => $request->email, 'motDePasse' => $request->password]);
-
-        if($reussi)
-        {
-            return View('usager.index')->with('message', "Bien ouèj mon gars");
-        }
-        else
-        {
-            return redirect()->route('accueils.index')->withErrors(['RIIIP']);
-            Log::debug('RIIIIIP');
-        }
     }
 
     public function logout(Request $request)
@@ -117,6 +132,6 @@ class UsagersController extends Controller
     
         $request->session()->regenerateToken();
     
-        return redirect()->route('accueils.index')->with('message', "Déconnexion réussie");;
-    }
+        return redirect()->route('accueils.index')->with('message', "Déconnexion réussie");
+   }
 }

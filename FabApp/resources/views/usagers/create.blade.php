@@ -11,7 +11,7 @@
             <div class="card text-white bg-card text-center p-2">
                 <div class="card-body">
                 <h3 class="fontLogo">Rejoins la Fabuleuse Application!</h3>
-                    <form method="post" id="FormUsager" class="text-center">
+                    <form method="post" id="FormUsager" class="text-center" action="{{route('usagers.store')}}">
                         @csrf
                         <label for="prenom"> Prénom </label>
                         <br>
@@ -28,6 +28,10 @@
                         <label for="mdp"> Mot de passe </label>
                         <br>
                         <input type="text" id="mdp" name="motDePasse">
+                        <br>
+                        <label for="role"> Mot de passe </label>
+                        <br>
+                        <input type="text" id="role" name="role">
                         <br><br>
                         <button type="submit" class="btn bg-btn d-inline-flex align-items-center" id="btnSubmit"> Confirmer <span class="material-symbols-rounded">electric_bolt</span></button>
                     </form>

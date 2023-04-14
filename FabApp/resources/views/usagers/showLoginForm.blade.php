@@ -23,8 +23,9 @@
                             <button type="submit" class="btn bg-btn" id="btnSubmit"> Confirmer </button>
                     </form>
                 </div>
-            </div>
+            </div> 
         </div>
+        <h1>{{$usagers[0]->motDePasse}}</h1>
     </div>
 </div>
 @endsection
