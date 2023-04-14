@@ -51,15 +51,26 @@
                         <li class="nav-item">
                             <a class="nav-link d-flex" href="{{ route('usagers.create') }}">Créer un compte<span class="material-symbols-rounded">waving_hand</span></a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link d-flex" href="{{ route('usagers.showLoginForm') }}">Se connecter<span class="material-symbols-rounded">taunt</span></a>
-                        </li>
+                        @auth    
+                            <from method="POST" action="{{ route('usagers.logout') }}">
+                            @csrf
+                                <li class="nav-item">
+                                <button type="submit" class="btn btn-danger"><a class="nav-link d-flex" href="#">Se déconnecter<span class="material-symbols-rounded">taunt</span></a>
+                                </li>
+                            </form>
+                        @else
+                            <li class="nav-item">
+                            <a class="nav-link d-flex" href="{{ route('usagers.showLoginForm') }}">Se connecter<span class="material-symbols-rounded">taunt</span></a>
+                            </li>
+                        @endauth
                     </ul>
                 </div>
         
     </nav>
     </div>
-
+    @if(Session::has('error'))
+        <div class="alert alert-danger mt-2">{{ Session::get('error')}}</div>
+    @endif
     <!-- Contenu -->  
     @yield('contenu')
 

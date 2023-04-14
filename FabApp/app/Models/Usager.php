@@ -21,9 +21,11 @@ class Usager extends Authenticatable
     ];
 
     protected $hidden = [
-        'passsword',
+        'password',
         'remember_token',
     ];
+
+    
 
     public $timestamps = false;
 }

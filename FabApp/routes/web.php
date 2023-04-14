@@ -47,6 +47,12 @@ Route::get('/usagers/creation',
 Route::post('usagers',
 [UsagersController::class, 'store'])->name('usagers.store');
 
+Route::post('usagers/verifCo',
+[UsagersController::class, 'login'])->name('usagers.login');
+
+Route::post('usagers/deco',
+[UsagersController::class, 'logout'])->name('usagers.logout');
+
 // Route des profils
 Route::get('profils',
 [UsagersController::class, 'index'])->name('profils.index');

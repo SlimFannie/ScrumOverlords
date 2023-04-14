@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Log;
 use App\Models\Usager;
 use App\Http\Requests\UsagerRequest;
 use Illuminate\View\View;
+use Auth;
 use DB;
 
 class UsagersController extends Controller
@@ -84,5 +85,38 @@ class UsagersController extends Controller
     public function showLoginForm()
     {
         return View('usagers.showLoginForm');
+    }
+
+    public function getAuthPassword()
+        {
+            return $this->motDePasse;
+        }
+
+    public function login(Request $request)
+    {   
+        
+
+        $reussi = Auth::attempt(['adresseCourriel' => $request->email, 'motDePasse' => $request->password]);
+
+        if($reussi)
+        {
+            return View('usager.index')->with('message', "Bien ouèj mon gars");
+        }
+        else
+        {
+            return redirect()->route('accueils.index')->withErrors(['RIIIP']);
+            Log::debug('RIIIIIP');
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+    
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+    
+        return redirect()->route('accueils.index')->with('message', "Déconnexion réussie");;
     }
 }

@@ -10,7 +10,7 @@
             <div class="card text-white bg-card text-center p-2">
                 <div class="card-body">
                     <h3 class="fontLogo">Fabuleuse connexion</h3>
-                    <form method="post" id="FormUsager" >
+                    <form method="post" id="FormUsager" action="{{ route('usagers.login') }}" >
                             @csrf
                             <label for="courriel"> Adresse courriel </label>
                             <br>
