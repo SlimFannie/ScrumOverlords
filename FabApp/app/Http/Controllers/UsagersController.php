@@ -10,6 +10,7 @@ use Illuminate\View\View;
 use Illuminate\Auth\Middleware;
 use Auth;
 use DB;
+use Hash;
 
 class UsagersController extends Controller
 {
@@ -41,7 +42,16 @@ class UsagersController extends Controller
     {
         try
         {
-            $usager = new Usager($request->all());
+
+            $password = $request->get('motDePasse');
+            $usager = new Usager();
+
+            $usager->prenom = $request->get('prenom');
+            $usager->nom = $request->get('nom');
+            $usager->adresseCourriel = $request->get('adresseCourriel');
+            $usager->motDePasse = Hash::make($password);
+            $usager->role = 2;
+            
             $usager->save();
         }
         catch(\Throwable $e)
@@ -95,20 +105,20 @@ class UsagersController extends Controller
         try
         {
             Log::debug('auth');
+
            
-            $reussi = Auth::attempt(['adresseCourriel' => $request->adresseCourriel, 'motDePasse' => $request->password]);
+            $reussi = Auth::attempt(['adresseCourriel' => $request->adresseCourriel, 'motDePasse' => $request->motDePasse]);
             
 
             if($reussi)
             {
                 Log::debug('if');
-                $usagers = Usager::all();
                 return View('usager.index', compact('usagers'))->with('message', "Bien ouèj mon gars");
                 
             }
             else
             {
-                $password = $request->input('motDePasse');
+                $password = $request->motDePasse;
                 $username = $request->input('adresseCourriel');
                 Log::debug('else');
                 Log::debug($password);

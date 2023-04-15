@@ -16,3 +16,77 @@ PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: G:/Scru
 PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: G:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (Le module sp\xef\xbf\xbdcifi\xef\xbf\xbd est introuvable.), G:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (La proc\xef\xbf\xbddure sp\xef\xbf\xbdcifi\xef\xbf\xbde est introuvable.)) in Unknown on line 0
 [Wed Apr 05 08:36:41.492244 2023] [mpm_winnt:notice] [pid 3004:tid 608] AH00354: Child: Starting 64 worker threads.
 [Wed Apr 05 10:56:11.628419 2023] [mpm_winnt:notice] [pid 252:tid 632] AH00428: Parent: child process 3004 exited with status 1073807364 -- Restarting.
+[Fri Apr 14 14:47:26.281847 2023] [ssl:warn] [pid 14496:tid 636] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:47:26.289870 2023] [ssl:warn] [pid 14496:tid 636] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Apr 14 14:47:26.322027 2023] [core:warn] [pid 14496:tid 636] AH00098: pid file F:/ScrumOverlords/UwAmp/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 14 14:47:26.417403 2023] [ssl:warn] [pid 14496:tid 636] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Apr 14 14:47:26.417403 2023] [ssl:warn] [pid 14496:tid 636] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:47:26.417403 2023] [ssl:warn] [pid 14496:tid 636] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: F:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (Le module sp\xef\xbf\xbdcifi\xef\xbf\xbd est introuvable.), F:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (La proc\xef\xbf\xbddure sp\xef\xbf\xbdcifi\xef\xbf\xbde est introuvable.)) in Unknown on line 0
+[Fri Apr 14 14:47:26.490673 2023] [mpm_winnt:notice] [pid 14496:tid 636] AH00455: Apache/2.4.18 (Win32) OpenSSL/1.0.2f PHP/7.2.7 configured -- resuming normal operations
+[Fri Apr 14 14:47:26.490673 2023] [mpm_winnt:notice] [pid 14496:tid 636] AH00456: Server built: Jan 28 2016 09:58:25
+[Fri Apr 14 14:47:26.490673 2023] [core:notice] [pid 14496:tid 636] AH00094: Command line: 'F:\\ScrumOverlords\\UwAmp\\bin\\apache\\bin\\httpd.exe -d F:/ScrumOverlords/UwAmp/bin/apache -f F:\\ScrumOverlords\\UwAmp\\bin\\apache\\conf\\httpd.conf'
+[Fri Apr 14 14:47:26.490673 2023] [mpm_winnt:notice] [pid 14496:tid 636] AH00418: Parent: Created child process 9784
+[Fri Apr 14 14:47:27.288868 2023] [ssl:warn] [pid 9784:tid 640] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:47:27.288868 2023] [ssl:warn] [pid 9784:tid 640] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Apr 14 14:47:27.400182 2023] [ssl:warn] [pid 9784:tid 640] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Apr 14 14:47:27.400182 2023] [ssl:warn] [pid 9784:tid 640] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:47:27.400182 2023] [ssl:warn] [pid 9784:tid 640] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: F:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (Le module sp\xef\xbf\xbdcifi\xef\xbf\xbd est introuvable.), F:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (La proc\xef\xbf\xbddure sp\xef\xbf\xbdcifi\xef\xbf\xbde est introuvable.)) in Unknown on line 0
+[Fri Apr 14 14:47:27.410270 2023] [mpm_winnt:notice] [pid 9784:tid 640] AH00354: Child: Starting 64 worker threads.
+[Fri Apr 14 14:47:52.816647 2023] [mpm_winnt:crit] [pid 9784:tid 640] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Fri Apr 14 14:47:55.464863 2023] [ssl:warn] [pid 8292:tid 632] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:47:55.465860 2023] [ssl:warn] [pid 8292:tid 632] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Apr 14 14:47:55.501994 2023] [core:warn] [pid 8292:tid 632] AH00098: pid file F:/ScrumOverlords/UwAmp/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 14 14:47:55.570183 2023] [ssl:warn] [pid 8292:tid 632] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Apr 14 14:47:55.570183 2023] [ssl:warn] [pid 8292:tid 632] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:47:55.570183 2023] [ssl:warn] [pid 8292:tid 632] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Apr 14 14:47:55.674581 2023] [mpm_winnt:notice] [pid 8292:tid 632] AH00455: Apache/2.4.18 (Win32) OpenSSL/1.0.2f PHP/7.0.3 configured -- resuming normal operations
+[Fri Apr 14 14:47:55.674581 2023] [mpm_winnt:notice] [pid 8292:tid 632] AH00456: Server built: Jan 28 2016 09:58:25
+[Fri Apr 14 14:47:55.674581 2023] [core:notice] [pid 8292:tid 632] AH00094: Command line: 'F:\\ScrumOverlords\\UwAmp\\bin\\apache\\bin\\httpd.exe -d F:/ScrumOverlords/UwAmp/bin/apache -f F:\\ScrumOverlords\\UwAmp\\bin\\apache\\conf\\httpd.conf'
+[Fri Apr 14 14:47:55.674581 2023] [mpm_winnt:notice] [pid 8292:tid 632] AH00418: Parent: Created child process 11276
+[Fri Apr 14 14:47:56.434075 2023] [ssl:warn] [pid 11276:tid 640] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:47:56.434075 2023] [ssl:warn] [pid 11276:tid 640] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Apr 14 14:47:56.523189 2023] [ssl:warn] [pid 11276:tid 640] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Apr 14 14:47:56.523189 2023] [ssl:warn] [pid 11276:tid 640] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:47:56.523189 2023] [ssl:warn] [pid 11276:tid 640] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Apr 14 14:47:56.560937 2023] [mpm_winnt:notice] [pid 11276:tid 640] AH00354: Child: Starting 64 worker threads.
+[Fri Apr 14 14:47:58.412575 2023] [mpm_winnt:crit] [pid 11276:tid 640] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Fri Apr 14 14:48:01.315965 2023] [ssl:warn] [pid 6784:tid 640] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:48:01.315965 2023] [ssl:warn] [pid 6784:tid 640] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Apr 14 14:48:01.347239 2023] [core:warn] [pid 6784:tid 640] AH00098: pid file F:/ScrumOverlords/UwAmp/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 14 14:48:01.417224 2023] [ssl:warn] [pid 6784:tid 640] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Apr 14 14:48:01.418221 2023] [ssl:warn] [pid 6784:tid 640] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:48:01.418221 2023] [ssl:warn] [pid 6784:tid 640] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: F:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (Le module sp\xef\xbf\xbdcifi\xef\xbf\xbd est introuvable.), F:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (La proc\xef\xbf\xbddure sp\xef\xbf\xbdcifi\xef\xbf\xbde est introuvable.)) in Unknown on line 0
+[Fri Apr 14 14:48:01.427234 2023] [mpm_winnt:notice] [pid 6784:tid 640] AH00455: Apache/2.4.18 (Win32) OpenSSL/1.0.2f PHP/7.2.7 configured -- resuming normal operations
+[Fri Apr 14 14:48:01.427234 2023] [mpm_winnt:notice] [pid 6784:tid 640] AH00456: Server built: Jan 28 2016 09:58:25
+[Fri Apr 14 14:48:01.427234 2023] [core:notice] [pid 6784:tid 640] AH00094: Command line: 'F:\\ScrumOverlords\\UwAmp\\bin\\apache\\bin\\httpd.exe -d F:/ScrumOverlords/UwAmp/bin/apache -f F:\\ScrumOverlords\\UwAmp\\bin\\apache\\conf\\httpd.conf'
+[Fri Apr 14 14:48:01.427234 2023] [mpm_winnt:notice] [pid 6784:tid 640] AH00418: Parent: Created child process 5128
+[Fri Apr 14 14:48:02.192228 2023] [ssl:warn] [pid 5128:tid 644] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:48:02.192228 2023] [ssl:warn] [pid 5128:tid 644] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Apr 14 14:48:02.276476 2023] [ssl:warn] [pid 5128:tid 644] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Apr 14 14:48:02.276476 2023] [ssl:warn] [pid 5128:tid 644] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:48:02.276476 2023] [ssl:warn] [pid 5128:tid 644] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: F:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (Le module sp\xef\xbf\xbdcifi\xef\xbf\xbd est introuvable.), F:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (La proc\xef\xbf\xbddure sp\xef\xbf\xbdcifi\xef\xbf\xbde est introuvable.)) in Unknown on line 0
+[Fri Apr 14 14:48:02.307719 2023] [mpm_winnt:notice] [pid 5128:tid 644] AH00354: Child: Starting 64 worker threads.
+[Fri Apr 14 14:48:24.962792 2023] [mpm_winnt:crit] [pid 5128:tid 644] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Fri Apr 14 14:48:31.017266 2023] [ssl:warn] [pid 16308:tid 632] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:48:31.017266 2023] [ssl:warn] [pid 16308:tid 632] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Apr 14 14:48:31.037375 2023] [core:warn] [pid 16308:tid 632] AH00098: pid file F:/ScrumOverlords/UwAmp/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 14 14:48:31.115762 2023] [ssl:warn] [pid 16308:tid 632] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Apr 14 14:48:31.115762 2023] [ssl:warn] [pid 16308:tid 632] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:48:31.115762 2023] [ssl:warn] [pid 16308:tid 632] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: F:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (Le module sp\xef\xbf\xbdcifi\xef\xbf\xbd est introuvable.), F:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (La proc\xef\xbf\xbddure sp\xef\xbf\xbdcifi\xef\xbf\xbde est introuvable.)) in Unknown on line 0
+[Fri Apr 14 14:48:31.125848 2023] [mpm_winnt:notice] [pid 16308:tid 632] AH00455: Apache/2.4.18 (Win32) OpenSSL/1.0.2f PHP/7.2.7 configured -- resuming normal operations
+[Fri Apr 14 14:48:31.125848 2023] [mpm_winnt:notice] [pid 16308:tid 632] AH00456: Server built: Jan 28 2016 09:58:25
+[Fri Apr 14 14:48:31.125848 2023] [core:notice] [pid 16308:tid 632] AH00094: Command line: 'F:\\ScrumOverlords\\UwAmp\\bin\\apache\\bin\\httpd.exe -d F:/ScrumOverlords/UwAmp/bin/apache -f F:\\ScrumOverlords\\UwAmp\\bin\\apache\\conf\\httpd.conf'
+[Fri Apr 14 14:48:31.125848 2023] [mpm_winnt:notice] [pid 16308:tid 632] AH00418: Parent: Created child process 18124
+[Fri Apr 14 14:48:31.854565 2023] [ssl:warn] [pid 18124:tid 616] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:48:31.854565 2023] [ssl:warn] [pid 18124:tid 616] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Apr 14 14:48:31.944770 2023] [ssl:warn] [pid 18124:tid 616] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Apr 14 14:48:31.952813 2023] [ssl:warn] [pid 18124:tid 616] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Apr 14 14:48:31.952813 2023] [ssl:warn] [pid 18124:tid 616] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: F:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (Le module sp\xef\xbf\xbdcifi\xef\xbf\xbd est introuvable.), F:/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (La proc\xef\xbf\xbddure sp\xef\xbf\xbdcifi\xef\xbf\xbde est introuvable.)) in Unknown on line 0
+[Fri Apr 14 14:48:31.964980 2023] [mpm_winnt:notice] [pid 18124:tid 616] AH00354: Child: Starting 64 worker threads.
+[Fri Apr 14 14:50:09.124161 2023] [mpm_winnt:crit] [pid 18124:tid 616] AH02538: Child: Parent process exited abruptly. Child process is ending
