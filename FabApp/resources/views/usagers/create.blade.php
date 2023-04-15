@@ -28,10 +28,6 @@
                         <label for="mdp"> Mot de passe </label>
                         <br>
                         <input type="text" id="mdp" name="motDePasse">
-                        <br>
-                        <label for="role"> role </label>
-                        <br>
-                        <input type="text" id="role" name="role">
                         <br><br>
                         <button type="submit" class="btn bg-btn d-inline-flex align-items-center" id="btnSubmit"> Confirmer <span class="material-symbols-rounded">electric_bolt</span></button>
                     </form>
