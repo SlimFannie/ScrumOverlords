@@ -52,10 +52,10 @@
                             <a class="nav-link d-flex" href="{{ route('usagers.create') }}">Créer un compte<span class="material-symbols-rounded">waving_hand</span></a>
                         </li>
                         @auth    
-                            <from method="POST" action="{{ route('usagers.logout') }}">
+                            <form method="POST" action="{{ route('usagers.logout') }}">
                             @csrf
                                 <li class="nav-item">
-                                <button type="submit" class="btn btn-danger"><a class="nav-link d-flex" href="#">Se déconnecter<span class="material-symbols-rounded">taunt</span></a>
+                                    <button type="submit" class="btn btn-danger">Se déconnecter<span class="material-symbols-rounded">taunt</span></button>
                                 </li>
                             </form>
                         @else

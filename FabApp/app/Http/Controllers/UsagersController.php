@@ -104,34 +104,31 @@ class UsagersController extends Controller
     {   
         try
         {
-            Log::debug('auth');
-
-           
-            $reussi = Auth::attempt(['adresseCourriel' => $request->adresseCourriel, 'motDePasse' => $request->motDePasse]);
+            Log::debug('Fonction lancée');
             
+            $user = Usager::where('adresseCourriel','=',$request->adresseCourriel)->first();
 
-            if($reussi)
+            if($user && Hash::check($request->motDePasse, $user->motDePasse))
             {
-                Log::debug('if');
-                return View('usager.index', compact('usagers'))->with('message', "Bien ouèj mon gars");
-                
+                Auth::login($user);
+                if(Auth::check())
+                {
+                    return View('usagers.index')->with('message', "Bien ouèj mon gars");
+                }
+                else
+                {
+                    return redirect()->route('accueils.index')->withErrors(['message','RIIIP']);
+                } 
             }
             else
             {
-                $password = $request->motDePasse;
-                $username = $request->input('adresseCourriel');
-                Log::debug('else');
-                Log::debug($password);
-                Log::debug($username);
-                return redirect()->route('accueils.index')->withErrors(['message','RIIIP']);
-                
+                return "Naaaaay!";
             }
         }
         catch(\Throwable $e)
         {
             Log::debug($e);
-        }
-        
+        } 
     }
 
     public function logout(Request $request)

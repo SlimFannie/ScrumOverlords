@@ -29,7 +29,7 @@
                         <br>
                         <input type="text" id="mdp" name="motDePasse">
                         <br>
-                        <label for="role"> Mot de passe </label>
+                        <label for="role"> role </label>
                         <br>
                         <input type="text" id="role" name="role">
                         <br><br>
