@@ -50,7 +50,6 @@ class UsagersController extends Controller
             $usager->nom = $request->get('nom');
             $usager->adresseCourriel = $request->get('adresseCourriel');
             $usager->motDePasse = Hash::make($password);
-            $usager->role = 2;
             
             $usager->save();
         }
