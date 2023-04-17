@@ -38,8 +38,8 @@ delimiter ;
 delimiter //
 create procedure creationCampagneProduit(_idProduit integer, _idDetail integer)
 begin
-    if exists(select id from couleur_produits where produit_id = _idProduit and couleur_id = _idDetail) then
-        set campagne_produits.detail_id = (select id as _id from couleur_produits where produit_id = _idProduit and couleur_id = _idDetail)
+    if exists(select id from detail_produits where produit_id = _idProduit and detailp_id = _idDetail) then
+        
         #insert into campagne_produits(detail_id)
         #Values(_id);
     end if;
