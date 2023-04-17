@@ -6,6 +6,7 @@ use App\Http\Controllers\CampagnesController;
 use App\Http\Controllers\PaniersController;
 use App\Http\Controllers\UsagersController;
 use App\Http\Controllers\AccueilsController;
+use App\Http\Controllers\ProfilsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,13 @@ Route::get('accueil', function () {
 });
 
 // Route des produits
+
+Route::get('/produits/creation',
+[ProduitsController::class, 'create'])->name('produits.create');
+
 Route::get('produits',
 [ProduitsController::class, 'index'])->name('produits.index');
+
 
 // Route des campagnes
 Route::get('campagnes',
@@ -56,7 +62,7 @@ Route::post('usagers/deco',
 
 /* Route des profils */
 Route::get('profils',
-[UsagersController::class, 'index'])->name('profils.index');
+[ProfilsController::class, 'index'])->name('profils.index');
 
 // Route page d'accueil (Possiblement la seule route pour la page d'accueil ?...À définir)
 Route::get('/',

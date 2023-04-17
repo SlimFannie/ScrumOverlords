@@ -21,7 +21,7 @@ class ProfilsController extends Controller
      */
     public function create()
     {
-        //
+        return View('produits.create');
     }
 
     /**
