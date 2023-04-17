@@ -38,15 +38,15 @@ delimiter ;
 delimiter //
 create procedure creationCampagneProduit(_idProduit integer, _idDetail integer)
 begin
-    if exists(select id from detail_produits where produit_id = _idProduit and detailp_id = _idDetail) then
-        insert into campagne_produits(detail_id)
-        Values((select id from detail_produits where produit_id = _idProduit and detailp_id = _idDetail));
+    if exists(select id from campagne_detail_produits where campagne_produit_id = _idProduit and detail_id = _idDetail) then
+        insert into campagne_detail_produits(detail_id)
+        Values((select id from campagne_detail_produits where campagne_produit_id = _idProduit and detail_id = _idDetail));
     else
         insert into detail_produits(produit_id, detailp_id)
         Values(_idProduit, _idDetail);
 
-        insert into campagne_produits(detail_id)
-        Values((select id from detail_produits where produit_id = _idProduit and detailp_id = _idDetail));
+        insert into campagne_detail_produits(detail_id)
+        Values((select id from campagne_detail_produits where campagne_produit_id = _idProduit and detail_id = _idDetail));
     end if;
 end //
 delimiter ;
@@ -73,17 +73,18 @@ delimiter ;
 delimiter //
 create procedure selectionCouleurExistantProduit(_idProduit varchar(255))
 begin
-    select detail from detailps where id = any (select detailp_id from detail_produits where produit_id = _idProduit) and titre = 'couleur';
+    select detail from detailps where id = any (select detail_id from campagne_detail_produits where campagne_produit_id = _idProduit) and titre = 'couleur';
 end //
 delimiter ;
-#drop procedure selectionCouleurProduit;
+#drop procedure selectionCouleurExistantProduit;
 
 delimiter //
 create procedure selectionTailleExistantProduit(_idProduit varchar(255))
 begin
-    select detail from detailps where id = any (select detailp_id from detail_produits where produit_id = _idProduit) and titre = 'taille';
+    select detail from detailps where id = any (select detail_id from campagne_detail_produits where campagne_produit_id = _idProduit) and titre = 'taille';
 end //
 delimiter ;
+#drop procedure selectionTailleExistantProduit;
 
 delimiter //
 create procedure selectionCouleurProduit()
