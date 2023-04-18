@@ -5,7 +5,7 @@
 @section('contenu')
 
 <div class="container-fluid h-100 g-0" id="videoFrame">
-    <video id="videoBG" autoplay muted loop src="{{ asset('img/WithoutRobotSynthwave.mp4') }}"></video>
+    <video id="videoBG" autoplay muted loop src="{{ asset('img/WithoutRobotSynthwave1.mp4') }}"></video>
     <div class="container-fluid d-flex align-items-center justify-content-center h-100 g-0 d-col">
         <div class="row g-0 pb-2">
             <div class="card text-white bg-card text-center p-2">
@@ -28,10 +28,6 @@
                         <label for="mdp"> Mot de passe </label>
                         <br>
                         <input type="text" id="mdp" name="motDePasse">
-                        <br>
-                        <label for="role"> role </label>
-                        <br>
-                        <input type="text" id="role" name="role">
                         <br><br>
                         <button type="submit" class="btn bg-btn d-inline-flex align-items-center" id="btnSubmit"> Confirmer <span class="material-symbols-rounded">electric_bolt</span></button>
                     </form>
