@@ -42,7 +42,17 @@ class UsagersController extends Controller
     {
         try
         {
+            $prenom = $request->get('prenom');
+            $nom = $request->get('nom');
+            $adresseCourriel = $request->get('adresseCourriel');
+            $password = Hash::make($request->get('motDePasse'));
+            $role = 2; // a modifier pour la partie finale
 
+
+            DB::select('call creationUsager(:prenom, :nom, :adresseCourriel,
+             :motDePasse)', ['prenom' => $prenom,'nom' => $nom,
+              'adresseCourriel' => $adresseCourriel, 'motDePasse' => $password]);
+            /*
             $password = $request->get('motDePasse');
             $usager = new Usager();
 
@@ -52,6 +62,7 @@ class UsagersController extends Controller
             $usager->motDePasse = Hash::make($password);
             
             $usager->save();
+            */
         }
         catch(\Throwable $e)
         {

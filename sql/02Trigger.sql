@@ -7,3 +7,4 @@ begin
     set new.campagne_id = (select id from campagnes where actif = true);
 end //
 delimiter ;
+

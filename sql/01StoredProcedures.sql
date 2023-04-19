@@ -5,7 +5,7 @@ begin
         VALUES (_prenom, _nom, _adresseCourriel, _motDePasse, _role);
 end //
 delimiter ;
-###drop procedure creationUsager;
+#drop procedure creationUsager;
 
 delimiter //
 create procedure connection(_email varchar(255), _password varchar(1000))
