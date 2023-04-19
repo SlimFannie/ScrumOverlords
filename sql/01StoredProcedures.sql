@@ -42,7 +42,7 @@ begin
         insert into campagne_detail_produits(detail_id)
         Values((select id from campagne_detail_produits where campagne_produit_id = _idProduit and detail_id = _idDetail));
     else
-        insert into detail_produits(produit_id, detailp_id)
+        insert into campagne_detail_produits(campagne_produit_id, detail_id)
         Values(_idProduit, _idDetail);
 
         insert into campagne_detail_produits(detail_id)
@@ -60,20 +60,20 @@ end //
 delimiter ;
 
 delimiter //
-create procedure creationDetailP(_titre varchar(255), _detail varchar(255))
+create procedure creationDetail(_titre varchar(255), _detail varchar(255))
 begin
-    if not exists(select id from detailps where titre = _titre and detail = _detail) then
-        insert into detailps(titre, detail)
+    if not exists(select id from details where titre = _titre and detail = _detail) then
+        insert into details(titre, detail)
         values(_titre, _detail);
     end if;
 end //
 delimiter ;
-#drop procedure creationDetailP;
+#drop procedure creationDetail;
 
 delimiter //
 create procedure selectionCouleurExistantProduit(_idProduit varchar(255))
 begin
-    select detail from detailps where id = any (select detail_id from campagne_detail_produits where campagne_produit_id = _idProduit) and titre = 'couleur';
+    select detail from details where id = any (select detail_id from campagne_detail_produits where campagne_produit_id = _idProduit) and titre = 'couleur';
 end //
 delimiter ;
 #drop procedure selectionCouleurExistantProduit;
@@ -81,7 +81,7 @@ delimiter ;
 delimiter //
 create procedure selectionTailleExistantProduit(_idProduit varchar(255))
 begin
-    select detail from detailps where id = any (select detail_id from campagne_detail_produits where campagne_produit_id = _idProduit) and titre = 'taille';
+    select detail from details where id = any (select detail_id from campagne_detail_produits where campagne_produit_id = _idProduit) and titre = 'taille';
 end //
 delimiter ;
 #drop procedure selectionTailleExistantProduit;
@@ -89,7 +89,7 @@ delimiter ;
 delimiter //
 create procedure selectionCouleurProduit()
 begin
-    select detail from detailps where titre = 'couleur';
+    select detail from details where titre = 'couleur';
 end //
 delimiter ;
 #drop procedure selectionCouleurProduit;
@@ -97,7 +97,7 @@ delimiter ;
 delimiter //
 create procedure selectionTailleProduit()
 begin
-    select detail from detailps where titre = 'taille';
+    select detail from details where titre = 'taille';
 end //
 delimiter ;
 #drop procedure selectionTailleProduit;
