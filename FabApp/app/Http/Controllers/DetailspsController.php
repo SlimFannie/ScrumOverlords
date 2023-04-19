@@ -16,7 +16,8 @@ class DetailspsController extends Controller
      */
     public function index() : View
     {
-        return View('produits.index');
+        $produits = DB::select('SELECT nomProduit FROM produits');
+        return View('produits.index', compact(['produits']));
     }
 
     /**
@@ -35,8 +36,7 @@ class DetailspsController extends Controller
         //Foo::hydrate($topic);
 
         return View('produits.create', compact(['couleurs','tailles']));
-       
-        
+
     
     }
 

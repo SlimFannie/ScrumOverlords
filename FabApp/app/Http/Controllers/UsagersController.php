@@ -21,7 +21,7 @@ class UsagersController extends Controller
     public function index() : View
     {
         $usagers = Usager::all(); 
-        return View('usagers.index', compact('usagers'));
+        return View('accueils.index', compact('usagers'));
     }
 
     /**
@@ -46,8 +46,6 @@ class UsagersController extends Controller
             $nom = $request->get('nom');
             $adresseCourriel = $request->get('adresseCourriel');
             $password = Hash::make($request->get('motDePasse'));
-            $role = 2; // a modifier pour la partie finale
-
 
             DB::select('call creationUsager(:prenom, :nom, :adresseCourriel,
              :motDePasse)', ['prenom' => $prenom,'nom' => $nom,
@@ -68,7 +66,7 @@ class UsagersController extends Controller
         {
             Log::debug($e);
         }
-        return redirect()->route('usagers.index');
+        return redirect()->route('accueils.index');
         // DB::select('call creationUsager(_prenom, _nom, _adresseCourriel, _motDePasse, _role)');
     }
 
@@ -121,16 +119,15 @@ class UsagersController extends Controller
                 Auth::login($user);
                 if(Auth::check())
                 {
-                    return View('usagers.index')->with('message', "Bien ouèj mon gars");
+                    return View('accueils.index')->with('message', "Bien ouèj mon gars");
                 }
                 else
                 {
-                    return redirect()->route('accueils.index')->withErrors(['message','RIIIP']);
+                    return redirect()->route('usagers.login')->withErrors(['message','RIIIP']);
                 } 
             }
-            else
             {
-                return "Naaaaay!";
+                return redirect()->route('usagers.login')->withErrors(['message','RIIIP']);
             }
         }
         catch(\Throwable $e)

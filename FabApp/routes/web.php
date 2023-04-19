@@ -42,22 +42,22 @@ Route::get('paniers',
 
 // Route des usagers
 
-Route::post('usagers/verifCo',
+Route::POST('/usagers/login',
 [UsagersController::class, 'login'])->name('usagers.login');
 
-Route::get('usagers/login',
+Route::get('/usagers/login',
 [UsagersController::class, 'showLoginForm'])->name('usagers.showLoginForm');
 
-Route::get('usagers',
+Route::get('/usagers',
 [UsagersController::class, 'index'])->name('usagers.index');
 
 Route::get('/usagers/creation',
 [UsagersController::class, 'create'])->name('usagers.create');
 
-Route::post('usagers',
+Route::post('/usagers',
 [UsagersController::class, 'store'])->name('usagers.store');
 
-Route::post('usagers/deco',
+Route::post('/usagers/deco',
 [UsagersController::class, 'logout'])->name('usagers.logout');
 
 /* Route des profils */

@@ -28,10 +28,6 @@ h1, h2, h3, h4, h5, p, a, label {
     z-index: -1
 }
 
-#videoFrame {
-    position: relative;
-}
-
 .bg-nav {
     background: rgba(64,38,92);
     background: radial-gradient(circle, rgba(158,34,129,0.5) 0%, rgba(64,38,92,0.5) 100%);
@@ -41,7 +37,7 @@ h1, h2, h3, h4, h5, p, a, label {
 
 .bg-card {
     background: rgba(64,38,92);
-    background: radial-gradient(circle, rgba(158,34,129,0.6) 0%, rgba(64,38,92,0.6) 100%);
+    background: radial-gradient(circle, rgba(158,34,129,0.8) 0%, rgba(64,38,92,0.8) 100%);
     max-width: 50vw;
 
     border-style: solid;
@@ -87,4 +83,22 @@ h1, h2, h3, h4, h5, p, a, label {
 .d-img-wrap {
     max-height: 200vh;
     min-width: 100%;
+}
+
+/* Animation */
+
+@keyframes open {
+    from {transform: scaleX(0);}
+    to {transform: scaleX(1);}
+}
+
+/* Frame */
+
+#videoFrame {
+    position: relative;
+}
+
+#cardFrame {
+    animation-name: open;
+    animation-duration: .35s;
 }
