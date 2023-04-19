@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
+use App\Models\Detailps;
+use DB;
 
-class ProduitsController extends Controller
+class DetailspsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,7 +24,20 @@ class ProduitsController extends Controller
      */
     public function create()
     {
-        return View('produits.create');
+        //$produits = new Detailps;
+
+        $couleurs = DB::select('CALL selectionCouleurProduit()');
+        
+        //$produits->fill($couleurs);
+        
+        $tailles = DB::select('CALL selectionTailleProduit()');
+        
+        //Foo::hydrate($topic);
+
+        return View('produits.create', compact(['couleurs','tailles']));
+       
+        
+    
     }
 
     /**

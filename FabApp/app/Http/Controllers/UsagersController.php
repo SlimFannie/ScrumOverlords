@@ -102,9 +102,7 @@ class UsagersController extends Controller
     public function login(Request $request)
     {   
         try
-        {
-            Log::debug('Fonction lancée');
-            
+        {   
             $user = Usager::where('adresseCourriel','=',$request->adresseCourriel)->first();
 
             if($user && Hash::check($request->motDePasse, $user->motDePasse))
