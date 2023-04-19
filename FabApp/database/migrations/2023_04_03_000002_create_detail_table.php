@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tailles', function (Blueprint $table) {
+        Schema::create('details', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('taille');
+            $table->string('titre');
+            $table->string('detail');
         });
     }
 
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tailles');
+        Schema::dropIfExists('details');
     }
 };

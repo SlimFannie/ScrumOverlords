@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('formulaires', function (Blueprint $table) {
             $table->id()->autoIncrement();
+            $table->foreignId('usager_id')->constrained();
             $table->foreignId('campagne_id')->constrained();
-            $table->string('nomCampagne');
-            $table->boolean('actif');
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('formulaires');
+        Schema::dropIfExists('formulaire_produit_usagers');
     }
 };

@@ -23,34 +23,43 @@ delimiter ;
 delimiter //
 create procedure creationCampagne(_nom varchar(255))
 begin
-    if not exists(select nom from campagnes where nom = _nom) then
-        insert into campagnes(nom, actif)
-            values(_nom, true);
-    elseif exists(select actif from campagnes where actif = true) then
-        select 'Il y as deja une campagne actif' as message;
+    if exists(select id from campagnes where actif = true) then
+        select 'il y a délà une campagne active' as message;
+    elseif exists(select nom from campagnes where nom = _nom) then
+        select 'Il y a déjà une campagne avec ce nom' as message;
     else
-        select 'Une campagne avec ce nom existe déjà' as message;
+        insert into campagnes(nom, actif)
+            Values(_nom, true);
     end if;
 end //
 delimiter ;
 #drop procedure creationCampagne;
 
 delimiter //
-create procedure creationCampagneProduit(_idProduit integer, _idDetail integer)
+create procedure creationCampagneProduit(_nomProduit varchar(255))
 begin
-    if exists(select id from campagne_detail_produits where campagne_produit_id = _idProduit and detail_id = _idDetail) then
-        insert into campagne_detail_produits(detail_id)
-        Values((select id from campagne_detail_produits where campagne_produit_id = _idProduit and detail_id = _idDetail));
+    if exists(select id from campagne_produits where nomProduit = _nomProduit) then
+        select 'Il y a déjà un produit avec ce nom' as message;
     else
-        insert into detail_produits(produit_id, detailp_id)
-        Values(_idProduit, _idDetail);
-
-        insert into campagne_detail_produits(detail_id)
-        Values((select id from campagne_detail_produits where campagne_produit_id = _idProduit and detail_id = _idDetail));
+        insert into campagne_produits(campagne_id, nomProduit)
+        Values((select id from campagnes where actif = true), _nomProduit);
     end if;
 end //
 delimiter ;
 #drop procedure creationCampagneProduit;
+
+delimiter //
+create procedure ajoutDetailCampagneProduit(_idProduit integer, _idDetail integer)
+begin
+    if not exists(select id from campagne_detail_produits where campagne_produit_id = _idProduit and detail_id = _idDetail) then
+        insert into campagne_detail_produits(campagne_produit_id, detail_id)
+        Values(_idProduit, _idDetail);
+    else
+        select 'Il y a déjà ce detail de ce produit dans la campagne' as message;
+    end if;
+end //
+delimiter ;
+#drop procedure ajoutDetailCampagneProduit;
 
 delimiter //
 create procedure creationFormulaire(_email varchar(255), _password varchar(255))
@@ -60,20 +69,20 @@ end //
 delimiter ;
 
 delimiter //
-create procedure creationDetailP(_titre varchar(255), _detail varchar(255))
+create procedure creationDetail(_titre varchar(255), _detail varchar(255))
 begin
-    if not exists(select id from detailps where titre = _titre and detail = _detail) then
-        insert into detailps(titre, detail)
+    if not exists(select id from details where titre = _titre and detail = _detail) then
+        insert into details(titre, detail)
         values(_titre, _detail);
     end if;
 end //
 delimiter ;
-#drop procedure creationDetailP;
+#drop procedure creationDetail;
 
 delimiter //
 create procedure selectionCouleurExistantProduit(_idProduit varchar(255))
 begin
-    select detail from detailps where id = any (select detail_id from campagne_detail_produits where campagne_produit_id = _idProduit) and titre = 'couleur';
+    select detail from details where id = any (select detail_id from campagne_detail_produits where campagne_produit_id = _idProduit) and titre = 'couleur';
 end //
 delimiter ;
 #drop procedure selectionCouleurExistantProduit;
@@ -81,7 +90,7 @@ delimiter ;
 delimiter //
 create procedure selectionTailleExistantProduit(_idProduit varchar(255))
 begin
-    select detail from detailps where id = any (select detail_id from campagne_detail_produits where campagne_produit_id = _idProduit) and titre = 'taille';
+    select detail from details where id = any (select detail_id from campagne_detail_produits where campagne_produit_id = _idProduit) and titre = 'taille';
 end //
 delimiter ;
 #drop procedure selectionTailleExistantProduit;
@@ -89,7 +98,7 @@ delimiter ;
 delimiter //
 create procedure selectionCouleurProduit()
 begin
-    select detail from detailps where titre = 'couleur';
+    select detail from details where titre = 'couleur';
 end //
 delimiter ;
 #drop procedure selectionCouleurProduit;
@@ -97,10 +106,25 @@ delimiter ;
 delimiter //
 create procedure selectionTailleProduit()
 begin
-    select detail from detailps where titre = 'taille';
+    select detail from details where titre = 'taille';
 end //
 delimiter ;
 #drop procedure selectionTailleProduit;
+
+delimiter //
+create procedure selectionProduitCampagne()
+begin
+    Select nomProduit from campagne_produits where campagne_id = (Select id from campagnes where actif = true);
+end //
+delimiter ;
+#drop procedure afficherProduitCampagne;
+
+delimiter //
+create procedure selectionDetailProduitCampagne()
+begin
+    Select nomProduit from campagne_produits where campagne_id = (Select id from campagnes where actif = true);
+end //
+delimiter ;
 
 #delimiter //
 #create procedure creationUsager(_email varchar(25), _password varchar(255))

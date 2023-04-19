@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->float('quantite');
             $table->foreignId('panier_id')->constrained();
-            $table->foreignId('produit_id')->constrained();
+            $table->foreignId('campagne_produit_id')->constrained();
         });
     }
 
