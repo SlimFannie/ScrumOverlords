@@ -27,7 +27,8 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="col-9">
+                <div class="col-10">
+                    @auth
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
                         <li class="nav-item">
                         <a class="nav-link d-flex" href="{{ route('usagers.index') }}"><span class="material-symbols-rounded">manage_accounts</span>Gestion usager</a>
@@ -42,23 +43,24 @@
                         <a class="nav-link d-flex" href="{{ route('paniers.index') }}"><span class="material-symbols-rounded">shopping_cart</span>Panier</a>
                         </li>
                     </ul>
+                    @endauth
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
-                        <li class="nav-item">
-                        <a class="nav-link d-flex" href="{{ route('profils.index') }}">Profil<span class="material-symbols-rounded">cottage</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex" href="{{ route('usagers.create') }}">Créer un compte<span class="material-symbols-rounded">waving_hand</span></a>
-                        </li>
                         @auth    
+                            <li class="nav-item">
+                            <a class="nav-link d-flex" href="{{ route('profils.index') }}">Profil<span class="material-symbols-rounded">cottage</span></a>
+                            </li>
                             <form method="POST" action="{{ route('usagers.logout') }}">
                             @csrf
                                 <li class="nav-item">
-                                    <button type="submit" class="btn btn-danger">Se déconnecter<span class="material-symbols-rounded">taunt</span></button>
+                                    <button type="submit" class="bg-deco nav-link d-flex">Se déconnecter<span class="material-symbols-rounded">waving_hand</span></button>
                                 </li>
                             </form>
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link d-flex" href="{{ route('usagers.create') }}">Créer un compte<span class="material-symbols-rounded">waving_hand</span></a>
+                            </li>
                             <li class="nav-item">
                             <a class="nav-link d-flex" href="{{ route('usagers.showLoginForm') }}">Se connecter<span class="material-symbols-rounded">taunt</span></a>
                             </li>

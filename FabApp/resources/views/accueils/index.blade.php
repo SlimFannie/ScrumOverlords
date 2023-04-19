@@ -4,7 +4,7 @@
 
 @section('contenu')
 <div class="container-fluid h-100 g-0" id="videoFrame">
-    <video id="videoBG" autoplay muted loop src="{{ asset('img/WithoutRobotSynthwave.mp4') }}"></video>
+    <video id="videoBG" autoplay muted loop src="{{ asset('img/WithoutRobotSynthwave1.mp4') }}"></video>
     <div class="container-fluid d-flex align-items-center justify-content-center h-100 g-0 d-col">
         <div class="row g-0 pb-2">
             <div class="card text-white bg-card text-center">
@@ -18,8 +18,8 @@
                 </div>
             </div>
         </div>
-        <div class="row gx-2 pt-2">
-            <div class="col text-center">
+        <div class="row gx-5 pt-5">
+            <div class="col text-center ">
                 <button class="btn bg-btn">Francis</button>
             </div>
             <div class="col text-center">
