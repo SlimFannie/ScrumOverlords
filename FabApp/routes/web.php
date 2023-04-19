@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProduitsController;
+use App\Http\Controllers\DetailspsController;
 use App\Http\Controllers\CampagnesController;
 use App\Http\Controllers\PaniersController;
 use App\Http\Controllers\UsagersController;
@@ -26,10 +26,10 @@ Route::get('accueil', function () {
 // Route des produits
 
 Route::get('/produits/creation',
-[ProduitsController::class, 'create'])->name('produits.create');
+[DetailspsController::class, 'create'])->name('produits.create');
 
 Route::get('produits',
-[ProduitsController::class, 'index'])->name('produits.index');
+[DetailspsController::class, 'index'])->name('produits.index');
 
 
 // Route des campagnes
