@@ -46,8 +46,6 @@ class UsagersController extends Controller
             $nom = $request->get('nom');
             $adresseCourriel = $request->get('adresseCourriel');
             $password = Hash::make($request->get('motDePasse'));
-            $role = 2; // a modifier pour la partie finale
-
 
             DB::select('call creationUsager(:prenom, :nom, :adresseCourriel,
              :motDePasse)', ['prenom' => $prenom,'nom' => $nom,
@@ -69,7 +67,6 @@ class UsagersController extends Controller
             Log::debug($e);
         }
         return redirect()->route('usagers.index');
-        // DB::select('call creationUsager(_prenom, _nom, _adresseCourriel, _motDePasse, _role)');
     }
 
     /**
