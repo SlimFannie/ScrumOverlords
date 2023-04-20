@@ -20,14 +20,14 @@
 <body>
     <!-- Header -->    
     <div class="container-fluid g-0 d-front">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-nav px-3 w-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-nav px-5 w-100">
         
-            <a class="navbar-brand fontLogo" href="{{ route('accueils.index') }}">La Fabuleuse Application</a>
+            <a class="navbar-brand fontLogo" href="{{ route('accueils.index') }}">Département d'informatique</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="col-10">
+                <div class="col-xl-10 col-lg-9">
                     @auth
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
                         <li class="nav-item">
@@ -45,7 +45,7 @@
                     </ul>
                     @endauth
                 </div>
-                <div class="col-2">
+                <div class="col-xl-4 col-lg-5">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
                         @auth    
                             <li class="nav-item">

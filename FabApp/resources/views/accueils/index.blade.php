@@ -10,12 +10,12 @@
             <div class="col-12">
                 <div class="card text-white bg-card text-center" id="cardFrame">
                     <div class="card-body">
-                        <h3>Hé non! Il n'y a aucune campagne de financement en cours.</h3>
+                        <h3 class="typewriter1">Hé non! Il n'y a aucune campagne de financement en cours.</h3>
                         <br>
                         <p>Cette application a été réalisée en 2023 par l'équipe étudiante Scrum Overlords. Trois aventuriers de l'informatique, Francis Chalifour, Alexandre Grondin et Fannie Hamel
                         Thibault se sont donné pour mission de créer la meilleure application de vente du monde du Cégep de Trois-Rivières.</p>
                         <br>
-                        <h5>En attendant la prochaine campagne, accompagnez les développeurs dans une quête de leur choix!</h5>
+                        <h5 class="typewriter3">En attendant la prochaine campagne, accompagnez les développeurs dans une quête de leur choix!</h5>
                     </div>
                 </div>
             </div>
