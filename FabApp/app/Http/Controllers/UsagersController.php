@@ -50,28 +50,12 @@ class UsagersController extends Controller
             DB::select('call creationUsager(:prenom, :nom, :adresseCourriel,
              :motDePasse)', ['prenom' => $prenom,'nom' => $nom,
               'adresseCourriel' => $adresseCourriel, 'motDePasse' => $password]);
-            /*
-            $password = $request->get('motDePasse');
-            $usager = new Usager();
-
-            $usager->prenom = $request->get('prenom');
-            $usager->nom = $request->get('nom');
-            $usager->adresseCourriel = $request->get('adresseCourriel');
-            $usager->motDePasse = Hash::make($password);
-            
-            $usager->save();
-            */
         }
         catch(\Throwable $e)
         {
             Log::debug($e);
         }
-<<<<<<< HEAD
         return redirect()->route('usagers.index');
-=======
-        return redirect()->route('accueils.index');
-        // DB::select('call creationUsager(_prenom, _nom, _adresseCourriel, _motDePasse, _role)');
->>>>>>> db9c61ddce634e0f165341cf24c2d08dd85de1dd
     }
 
     /**

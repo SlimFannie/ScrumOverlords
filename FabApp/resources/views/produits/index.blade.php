@@ -45,6 +45,8 @@
                     <div class="card-body">
                         <h3>Liste des produits</h3>
                         <br>
+                        <form method="post" action="{{ route('produits.supprimer')}}">
+                        @csrf
                         @if (count($produits))
                         <table>
                             @foreach ($produits as $produit)
@@ -63,14 +65,15 @@
             </div>
         </div>
         <div class="row gx-5 pt-5">
-            <div class="col text-center ">
-                <a href="{{route('produits.create')}}"><button class="btn btn-success">Ajouter un produit</button></a>
-            </div>
             <div class="col text-center">
                 <button class="btn btn-danger">Supprimer un produit</button>
             </div>
+            </form>
+            <div class="col text-center ">
+                <a href="{{route('produits.create')}}"><button class="btn btn-success">Créer un nouveau produit</button></a>
+            </div>
             <div class="col text-center">
-                <button class="btn btn-warning">Ajouter un produit</button>
+                <button class="btn btn-warning">Modifier un produit</button>
             </div>
         </div>
     </div>
