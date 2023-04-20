@@ -18,6 +18,27 @@ h1, h2, h3, h4, h5, p, a, label {
     font-family: 'Titillium Web', sans-serif;
 }
 
+.typewriter1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    animation: 
+      typing 1.5s steps(40, end) forwards,
+      blink-caret .75s step-end infinite;
+  }
+
+  .typewriter3 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    animation: 
+      typing 1.5s steps(40, end) forwards,
+      blink-caret .75s step-end infinite;
+    animation-delay: 2s;
+  }
+
 /* Background */
 
 #videoBG {
@@ -26,10 +47,6 @@ h1, h2, h3, h4, h5, p, a, label {
     max-width: 100%;
     min-height: 100%;
     z-index: -1
-}
-
-#videoFrame {
-    position: relative;
 }
 
 .bg-nav {
@@ -41,7 +58,7 @@ h1, h2, h3, h4, h5, p, a, label {
 
 .bg-card {
     background: rgba(64,38,92);
-    background: radial-gradient(circle, rgba(158,34,129,0.6) 0%, rgba(64,38,92,0.6) 100%);
+    background: radial-gradient(circle, rgba(158,34,129,0.8) 0%, rgba(64,38,92,0.8) 100%);
     max-width: 50vw;
 
     border-style: solid;
@@ -87,4 +104,32 @@ h1, h2, h3, h4, h5, p, a, label {
 .d-img-wrap {
     max-height: 200vh;
     min-width: 100%;
+}
+
+/* Animation */
+
+@keyframes open {
+    from {transform: scaleX(0);}
+    to {transform: scaleX(1);}
+}
+  
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+/* Frame */
+
+#videoFrame {
+    position: relative;
+}
+
+#cardFrame {
+    animation-name: open;
+    animation-duration: .35s;
 }

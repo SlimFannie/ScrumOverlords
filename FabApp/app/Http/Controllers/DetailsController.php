@@ -16,8 +16,12 @@ class DetailsController extends Controller
      */
     public function index() : View
     {
+<<<<<<< HEAD:FabApp/app/Http/Controllers/DetailsController.php
         $produits = DB::select('CALL selectionProduitCampagne()');
         
+=======
+        $produits = DB::select('SELECT nomProduit FROM produits');
+>>>>>>> db9c61ddce634e0f165341cf24c2d08dd85de1dd:FabApp/app/Http/Controllers/DetailspsController.php
         return View('produits.index', compact(['produits']));
     }
 
@@ -30,9 +34,14 @@ class DetailsController extends Controller
         
         $tailles = DB::select('CALL selectionTailleProduit()');
 
+<<<<<<< HEAD:FabApp/app/Http/Controllers/DetailsController.php
         $produits = DB::select('CALL selectionProduitCampagne()');
 
         return View('produits.create', compact(['couleurs','tailles','produits']));       
+=======
+        return View('produits.create', compact(['couleurs','tailles']));
+
+>>>>>>> db9c61ddce634e0f165341cf24c2d08dd85de1dd:FabApp/app/Http/Controllers/DetailspsController.php
     
     }
 
