@@ -16,9 +16,12 @@ class DetailsController extends Controller
      */
     public function index() : View
     {
+        $couleurs = DB::select('CALL selectionCouleurProduit()');
+        
+        $tailles = DB::select('CALL selectionTailleProduit()');
 
         $produits = DB::select('CALL selectionProduitCampagne()');
-        return View('produits.index', compact(['produits']));
+        return View('produits.index', compact(['produits','tailles','couleurs']));
     }
 
     /**
