@@ -49,6 +49,18 @@ delimiter ;
 #drop procedure creationCampagneProduit;
 
 delimiter //
+create procedure creationProduit(_nomProduit varchar(255))
+begin
+    if exists(select id from produits where nomProduit = _nomProduit) then
+        select 'Il y a déjà un produit avec ce nom' as message;
+    else
+        insert into produits(nomProduit)
+        Values(_nomProduit);
+    end if;
+end //
+delimiter ;
+
+delimiter //
 create procedure ajoutDetailCampagneProduit(_idProduit integer, _idDetail integer)
 begin
     if not exists(select id from campagne_detail_produits where campagne_produit_id = _idProduit and detail_id = _idDetail) then
@@ -82,7 +94,9 @@ delimiter ;
 delimiter //
 create procedure selectionCouleurExistantProduit(_idProduit varchar(255))
 begin
-    select detail from details where id = any (select detail_id from campagne_detail_produits where campagne_produit_id = _idProduit) and titre = 'couleur';
+    select detail from details where id =
+    any (select detail_id from campagne_detail_produits
+    where campagne_produit_id = _idProduit) and titre = 'couleur';
 end //
 delimiter ;
 #drop procedure selectionCouleurExistantProduit;
@@ -90,7 +104,9 @@ delimiter ;
 delimiter //
 create procedure selectionTailleExistantProduit(_idProduit varchar(255))
 begin
-    select detail from details where id = any (select detail_id from campagne_detail_produits where campagne_produit_id = _idProduit) and titre = 'taille';
+    select detail from details where id = any
+    (select detail_id from campagne_detail_produits
+    where campagne_produit_id = _idProduit) and titre = 'taille';
 end //
 delimiter ;
 #drop procedure selectionTailleExistantProduit;
@@ -114,7 +130,8 @@ delimiter ;
 delimiter //
 create procedure selectionProduitCampagne()
 begin
-    Select nomProduit from campagne_produits where campagne_id = (Select id from campagnes where actif = true);
+    Select nomProduit from campagne_produits
+    where campagne_id = (Select id from campagnes where actif = true);
 end //
 delimiter ;
 #drop procedure afficherProduitCampagne;
@@ -122,7 +139,8 @@ delimiter ;
 delimiter //
 create procedure selectionDetailProduitCampagne()
 begin
-    Select nomProduit from campagne_produits where campagne_id = (Select id from campagnes where actif = true);
+    Select nomProduit from campagne_produits
+    where campagne_id = (Select id from campagnes where actif = true);
 end //
 delimiter ;
 
