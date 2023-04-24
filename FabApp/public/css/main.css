@@ -5,7 +5,7 @@
 
 html, body {
     height: 100%;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 /* Texte */
@@ -17,27 +17,6 @@ html, body {
 h1, h2, h3, h4, h5, p, a, label {
     font-family: 'Titillium Web', sans-serif;
 }
-
-.typewriter1 {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    animation: 
-      typing 1.5s steps(40, end) forwards,
-      blink-caret .75s step-end infinite;
-  }
-
-  .typewriter3 {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    animation: 
-      typing 1.5s steps(40, end) forwards,
-      blink-caret .75s step-end infinite;
-    animation-delay: 2s;
-  }
 
 /* Background */
 
@@ -126,7 +105,13 @@ h1, h2, h3, h4, h5, p, a, label {
 /* Frame */
 
 #videoFrame {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    min-height: 100%;
 }
 
 #cardFrame {
