@@ -114,3 +114,27 @@ AH00112: Warning: DocumentRoot [C:/Users/1046154/Documents/ScrumOverlords/UwAmp/
 [Mon Apr 24 15:55:34.723285 2023] [ssl:warn] [pid 7388:tid 616] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
 PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: C:/Users/1046154/Documents/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (Le module sp\xef\xbf\xbdcifi\xef\xbf\xbd est introuvable.), C:/Users/1046154/Documents/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (La proc\xef\xbf\xbddure sp\xef\xbf\xbdcifi\xef\xbf\xbde est introuvable.)) in Unknown on line 0
 [Mon Apr 24 15:55:34.742309 2023] [mpm_winnt:notice] [pid 7388:tid 616] AH00354: Child: Starting 64 worker threads.
+[Wed Apr 26 08:05:39.246260 2023] [ssl:warn] [pid 10628:tid 640] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Apr 26 08:05:39.248269 2023] [ssl:warn] [pid 10628:tid 640] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [C:/Users/1046154/Documents/ScrumOverlords/UwAmp/www/] does not exist
+AH00112: Warning: DocumentRoot [C:/Users/1046154/Documents/ScrumOverlords/UwAmp/www/] does not exist
+[Wed Apr 26 08:05:39.281503 2023] [core:warn] [pid 10628:tid 640] AH00098: pid file C:/Users/1046154/Documents/ScrumOverlords/UwAmp/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Apr 26 08:05:39.383968 2023] [ssl:warn] [pid 10628:tid 640] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed Apr 26 08:05:39.384967 2023] [ssl:warn] [pid 10628:tid 640] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Apr 26 08:05:39.384967 2023] [ssl:warn] [pid 10628:tid 640] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: C:/Users/1046154/Documents/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (Le module sp\xef\xbf\xbdcifi\xef\xbf\xbd est introuvable.), C:/Users/1046154/Documents/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (La proc\xef\xbf\xbddure sp\xef\xbf\xbdcifi\xef\xbf\xbde est introuvable.)) in Unknown on line 0
+[Wed Apr 26 08:05:39.793497 2023] [mpm_winnt:notice] [pid 10628:tid 640] AH00455: Apache/2.4.18 (Win32) OpenSSL/1.0.2f PHP/7.2.7 configured -- resuming normal operations
+[Wed Apr 26 08:05:39.793497 2023] [mpm_winnt:notice] [pid 10628:tid 640] AH00456: Server built: Jan 28 2016 09:58:25
+[Wed Apr 26 08:05:39.793497 2023] [core:notice] [pid 10628:tid 640] AH00094: Command line: 'C:\\Users\\1046154\\Documents\\ScrumOverlords\\UwAmp\\bin\\apache\\bin\\httpd.exe -d C:/Users/1046154/Documents/ScrumOverlords/UwAmp/bin/apache -f C:\\Users\\1046154\\Documents\\ScrumOverlords\\UwAmp\\bin\\apache\\conf\\httpd.conf'
+[Wed Apr 26 08:05:39.805451 2023] [mpm_winnt:notice] [pid 10628:tid 640] AH00418: Parent: Created child process 16260
+AH00112: Warning: DocumentRoot [C:/Users/1046154/Documents/ScrumOverlords/UwAmp/www/] does not exist
+AH00112: Warning: DocumentRoot [C:/Users/1046154/Documents/ScrumOverlords/UwAmp/www/] does not exist
+[Wed Apr 26 08:05:40.751421 2023] [ssl:warn] [pid 16260:tid 596] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Apr 26 08:05:40.752417 2023] [ssl:warn] [pid 16260:tid 596] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [C:/Users/1046154/Documents/ScrumOverlords/UwAmp/www/] does not exist
+AH00112: Warning: DocumentRoot [C:/Users/1046154/Documents/ScrumOverlords/UwAmp/www/] does not exist
+[Wed Apr 26 08:05:40.936795 2023] [ssl:warn] [pid 16260:tid 596] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed Apr 26 08:05:40.936795 2023] [ssl:warn] [pid 16260:tid 596] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Apr 26 08:05:40.936795 2023] [ssl:warn] [pid 16260:tid 596] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: C:/Users/1046154/Documents/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (Le module sp\xef\xbf\xbdcifi\xef\xbf\xbd est introuvable.), C:/Users/1046154/Documents/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (La proc\xef\xbf\xbddure sp\xef\xbf\xbdcifi\xef\xbf\xbde est introuvable.)) in Unknown on line 0
+[Wed Apr 26 08:05:40.953784 2023] [mpm_winnt:notice] [pid 16260:tid 596] AH00354: Child: Starting 64 worker threads.

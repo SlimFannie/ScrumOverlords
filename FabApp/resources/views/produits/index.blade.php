@@ -24,18 +24,20 @@
                                     <td><select>
                                     @if(count($tailles))
                                         @foreach($tailles as $taille)
-                                            <option value="{{$produit->nomProduit}}">{{$taille->detail}}</option>
+                                            <option value="{{$taille->detail}}">{{$taille->detail}}</option>
                                         @endforeach
                                     @endif
                                     </select></td>
                                     <td><select>
                                     @if(count($couleurs))
                                         @foreach($couleurs as $couleur)
-                                            <option value="{{$produit->nomProduit}}">{{$couleur->detail}}</option>
+                                            <option value="{{$couleur->detail}}">{{$couleur->detail}}</option>
                                         @endforeach
                                     @endif
                                     </select>
-                                    <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="thisProduit" id="thisProduit">
                                     </td>
                                 </tr>
                             
