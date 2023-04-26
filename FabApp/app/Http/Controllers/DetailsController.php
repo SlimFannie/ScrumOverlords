@@ -47,8 +47,10 @@ class DetailsController extends Controller
         {
             //Log::debug('Fonction lancée');
             $nomProduit = $request->get('nomProduit');
+            $couleurs = $request->get('couleur');
             //Log::debug($nomProduit);
             DB::select('call creationCampagneProduit(:nomProduit)',['nomProduit'=>$nomProduit]);
+            DB::select('call creationDetail(:couleur)',['couleur'=>$couleurs]);
         }
         catch(\Throwable $e)
         {
