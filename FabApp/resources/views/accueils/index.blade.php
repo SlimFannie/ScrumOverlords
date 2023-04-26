@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="row gx-5 pt-5">
+        <div class="row gx-5 pt-5 d-sm-none d-none">
             <div class="col text-center ">
                 <button class="btn bg-btn">Francis</button>
             </div>
