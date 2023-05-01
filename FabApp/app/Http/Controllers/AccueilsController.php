@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use DB;
 
 class AccueilsController extends Controller
 {
@@ -13,7 +14,27 @@ class AccueilsController extends Controller
      */
     public function index() : View
     {
-        return View('accueils.index');
+        $campagne = DB::select('CALL SelectionCampagne()');
+        if($campagne) {
+            return View('accueils.firstPart');
+        } else {
+            return View('accueils.index');
+        }
+    }
+
+    public function partOne() : View
+    {
+        return View('accueils.firstPart');
+    }
+
+    public function pause() : View
+    {
+        return View('accueils.pause');
+    }
+
+    public function partTwo() : View
+    {
+        return View('accueils.secondPart');
     }
 
     /**

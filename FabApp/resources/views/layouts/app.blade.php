@@ -30,6 +30,7 @@
                 <div class="col-xxl-10 col-xl-9 col-lg-8">
                     @auth
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
+                        <?php if ($user != 2) { ?>
                         <li class="nav-item">
                         <a class="nav-link d-flex" href="{{ route('usagers.index') }}"><span class="material-symbols-rounded">manage_accounts</span>Gestion usager</a>
                         </li>
@@ -39,6 +40,7 @@
                         <li class="nav-item">
                         <a class="nav-link d-flex" href="{{ route('produits.index') }}"><span class="material-symbols-rounded">laundry</span>Gestion produits</a>
                         </li>
+                        <?php } ?>
                         <li class="nav-item">
                         <a class="nav-link d-flex" href="{{ route('paniers.index') }}"><span class="material-symbols-rounded">shopping_cart</span>Panier</a>
                         </li>

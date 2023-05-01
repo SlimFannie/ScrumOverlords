@@ -20,7 +20,7 @@ class UsagersController extends Controller
      */
     public function index() : View
     {
-        $usagers = Usager::all(); 
+        
         return View('accueils.index', compact('usagers'));
     }
 
@@ -107,7 +107,7 @@ class UsagersController extends Controller
                 Auth::login($user);
                 if(Auth::check())
                 {
-                    return View('accueils.index')->with('message', "Bien ouèj mon gars");
+                    return View('accueils.index', compact('user'));
                 }
                 else
                 {
