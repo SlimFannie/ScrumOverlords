@@ -1,14 +1,15 @@
-delimiter //
-create trigger before_insert_campagne_produits
-    before insert
-    on campagne_produits
-    for each row
-begin
-    set new.campagne_id = (select id from campagnes where actif = true);
-    insert into produits VALUE(new.nomProduit);
-end //
-delimiter ;
-drop trigger before_insert_campagne_produits
+#delimiter //
+#create trigger before_insert_campagne_produits
+#    before insert
+#    on campagne_produits
+#    for each row
+#begin
+#    set new.campagne_id = (select id from campagnes where actif = true);
+#    insert into produits VALUE(new.nomProduit);
+#end //
+#delimiter ;
+#drop trigger before_insert_campagne_produits
+
 
 #select nomProduit from campagne_produits where id = new.campagne_produit_id;
 #delimiter //

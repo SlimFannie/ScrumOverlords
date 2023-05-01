@@ -77,6 +77,13 @@ end //
 delimiter ;
 #drop procedure creationCampagneProduit;
 
+delimiter //
+create procedure SelectionCampagne()
+begin
+    Select * from campagnes where actif = 1;
+end //
+delimiter ;
+
 
 #delimiter //
 #create procedure creationProduit(_nomProduit varchar(255))
@@ -184,6 +191,14 @@ delimiter ;
 #drop procedure selectionDetailProduitCampagne;
 
 
+delimiter //
+create procedure selectionIdProduit(_nomProduit varchar(255))
+begin
+    Select id from campagne_produits where nomProduit = _nomProduit;
+end //
+delimiter ;
+
+
 #--------------------------------------
 #------------- formulaire -------------
 #--------------------------------------
@@ -226,9 +241,33 @@ delimiter ;
 #------------- panier -------------
 #----------------------------------
 
+
 delimiter //
-create procedure ajoutPanier(_idProduit int, _idDetail int)
+create procedure ajoutProduitPanier(_idUsager int, _idProduit int, _quantite int)
 begin
+    insert into panier_produits (panier_id, campagne_produit_id, quantite)
+    VALUES ((select id from paniers where usager_id = _idUsager), _idProduit, _quantite);
+end //
+delimiter ;
+
+delimiter //
+create procedure ajoutDetailProduitPanier(_idUsager int, _idProduit int, _idDetail int)
+begin
+    insert into panier_detail_produits (panier_produit_id, detail_id)
+    VALUES ((select id from panier_produits where panier_produit_id =
+    _idProduit & panier_id = (select id from paniers where usager_id =
+    _idUsager)), _idDetail);
+end //
+delimiter ;
+
+#procedure qui permet d'afficher tous les produits, et leur details,
+# pour l'id de l'usager.
+# Il faut que la campagne soit active et quantité plus grande que 0.
+delimiter //
+create procedure SelectionPanierUsager(_idUsager int)
+begin
+    select nomProduit from campagne_produits;
+    select detail from details;
 
 end //
 delimiter ;

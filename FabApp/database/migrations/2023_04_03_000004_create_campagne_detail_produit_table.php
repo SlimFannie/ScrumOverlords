@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('campagne_detail_produits', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->foreignId('campagne_produit_id')->constrained();
-            $table->foreignId('detail_id');
+            $table->foreignId('detail_id')->constrained();
         });
     }
 

@@ -6,5 +6,5 @@ end //
 delimiter ;
 #drop function fn_retourNombreProduits;
 
-select fn_retourNombreProduits();
-select count(id), campagne_produit_id from formulaire_produits group by campagne_produit_id;
+#select fn_retourNombreProduits();
+#select count(id), campagne_produit_id from formulaire_produits group by campagne_produit_id;
