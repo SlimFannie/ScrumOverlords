@@ -21,10 +21,8 @@ h1, h2, h3, h4, h5, p, a, label {
 /* Background */
 
 #videoBG {
-    position: absolute;
+    position: fixed;
     margin: auto 0px;
-    max-width: 100%;
-    min-height: 100%;
     z-index: -1
 }
 
@@ -85,23 +83,6 @@ h1, h2, h3, h4, h5, p, a, label {
     min-width: 100%;
 }
 
-/* Animation */
-
-@keyframes open {
-    from {transform: scaleX(0);}
-    to {transform: scaleX(1);}
-}
-  
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
-  }
-
 /* Frame */
 
 #videoFrame {
@@ -117,4 +98,20 @@ h1, h2, h3, h4, h5, p, a, label {
 #cardFrame {
     animation-name: open;
     animation-duration: .35s;
+}
+
+/* Media queries */
+
+@media (min-aspect-ratio: 16/9) {
+    #videoBG {
+        width:100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    #videoBG { 
+        width:auto;
+        height: 100%;
+    }
 }

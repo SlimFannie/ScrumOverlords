@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xl-4 offset-xl-4 mt-3">
-            <h1>Page accueil 'campagnes'</h1>
+            <h1>Page gestion</h1>
         </div>
     </div>
     

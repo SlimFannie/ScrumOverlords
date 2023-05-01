@@ -10,21 +10,9 @@
             <div class="col-12">
                 <div class="card text-white bg-card text-center d-none d-lg-block d-xl-block d-xxl-block" id="cardFrame">
                     <div class="card-body">
-                        <h3 id="typeUn"></h3>
-                        <h5 id="typeDeux"></h5>
+                        <h1>Campagne partie 2</h1>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row gx-5 pt-5 d-sm-none d-none">
-            <div class="col text-center ">
-                <button class="btn bg-btn">Francis</button>
-            </div>
-            <div class="col text-center">
-                <button class="btn bg-btn">Alexandre</button>
-            </div>
-            <div class="col text-center">
-                <button class="btn bg-btn">Fannie</button>
             </div>
         </div>
     </div>
