@@ -4,15 +4,7 @@ call creationCampagne('campagneTest2');
 call finCampagne();
 
 call creationCampagneProduit('chandail');
-call ajoutDetailCampagneProduit(2, 1);
-call ajoutDetailCampagneProduit(2, 2);
-call ajoutDetailCampagneProduit(2, 3);
-call ajoutDetailCampagneProduit(2, 4);
-call ajoutDetailCampagneProduit(2, 5);
-call ajoutDetailCampagneProduit(2, 6);
-call ajoutDetailCampagneProduit(2, 7);
-call ajoutDetailCampagneProduit(2, 8);
-call ajoutDetailCampagneProduit(2, 9);
+call creationCampagneProduit('kangorou');
 
 call creationDetail('couleur', 'antiq red cherry');
 call creationDetail('couleur', 'black');
@@ -32,6 +24,27 @@ call creationDetail('taille', 'moyen');
 call creationDetail('taille', 'grand');
 call creationDetail('taille', 'tres grand');
 call creationDetail('taille', 'tres tres grand');
+
+call ajoutDetailCampagneProduit(2, 1);
+call ajoutDetailCampagneProduit(2, 2);
+call ajoutDetailCampagneProduit(2, 3);
+call ajoutDetailCampagneProduit(2, 4);
+call ajoutDetailCampagneProduit(2, 5);
+call ajoutDetailCampagneProduit(2, 6);
+call ajoutDetailCampagneProduit(2, 7);
+call ajoutDetailCampagneProduit(2, 8);
+call ajoutDetailCampagneProduit(2, 9);
+call ajoutDetailCampagneProduit(1, 1);
+call ajoutDetailCampagneProduit(1, 2);
+call ajoutDetailCampagneProduit(1, 3);
+call ajoutDetailCampagneProduit(1, 4);
+call ajoutDetailCampagneProduit(1, 5);
+call ajoutDetailCampagneProduit(1, 6);
+call ajoutDetailCampagneProduit(1, 7);
+call ajoutDetailCampagneProduit(1, 8);
+call ajoutDetailCampagneProduit(1, 9);
+
+
 
 
 call selectionProduitCampagne();
@@ -56,3 +69,24 @@ insert into formulaire_produits (formulaire_id, campagne_produit_id)
 update usagers
 set role = 1
 where id = 3;
+
+insert into usagers (prenom, nom, adresseCourriel, motDePasse) VALUES ('John', 'Doe', 'JohnDoe@courriel.com', 'UnMotDePasse');
+
+call ajoutProduitPanier(4, 1, 3);
+call ajoutDetailProduitPanier(4, 1, 2);
+call ajoutDetailProduitPanier(4, 1, 17);
+
+  select nomProduit, quantite, titre, detail
+    from panier_produits
+    join campagne_produits cp on cp.id = panier_produits.campagne_produit_id
+    Join panier_detail_produits pdp on panier_produits.id = pdp.panier_produit_id
+    Join details d on pdp.detail_id = d.id
+    where panier_id = (select id from paniers where usager_id = 4);
+
+    select nomProduit, quantite, titre, detail
+    from panier_produits
+    join campagne_produits cp on cp.id = panier_produits.campagne_produit_id
+    Join panier_detail_produits pdp on panier_produits.id = pdp.panier_produit_id
+    Join details d on pdp.detail_id = d.id
+    where panier_id = (select id from paniers where usager_id = 4)
+    and panier_produits.campagne_id = (select id from campagnes where actif = 1);

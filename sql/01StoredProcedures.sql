@@ -245,20 +245,23 @@ delimiter ;
 delimiter //
 create procedure ajoutProduitPanier(_idUsager int, _idProduit int, _quantite int)
 begin
-    insert into panier_produits (panier_id, campagne_produit_id, quantite)
-    VALUES ((select id from paniers where usager_id = _idUsager), _idProduit, _quantite);
+    insert into panier_produits (panier_id, campagne_produit_id, quantite, campagne_id)
+    VALUES ((select id from paniers where usager_id = _idUsager), _idProduit, _quantite, (select id from campagnes where actif = 1));
 end //
 delimiter ;
+#drop procedure ajoutProduitPanier;
 
+#camapgne_id probleme
 delimiter //
 create procedure ajoutDetailProduitPanier(_idUsager int, _idProduit int, _idDetail int)
 begin
     insert into panier_detail_produits (panier_produit_id, detail_id)
-    VALUES ((select id from panier_produits where panier_produit_id =
+    VALUES ((select id from panier_produits where campagne_produit_id =
     _idProduit & panier_id = (select id from paniers where usager_id =
     _idUsager)), _idDetail);
 end //
 delimiter ;
+#drop procedure ajoutDetailProduitPanier;
 
 #procedure qui permet d'afficher tous les produits, et leur details,
 # pour l'id de l'usager.
@@ -266,8 +269,18 @@ delimiter ;
 delimiter //
 create procedure SelectionPanierUsager(_idUsager int)
 begin
-    select nomProduit from campagne_produits;
-    select detail from details;
+#    select nomProduit from campagne_produits;
+#    select detail from details;
 
+    select panier_produits.id, nomProduit, quantite, titre, detail
+    from panier_produits
+    join campagne_produits cp on cp.id = panier_produits.campagne_produit_id
+    Join panier_detail_produits pdp on panier_produits.id = pdp.panier_produit_id
+    Join details d on pdp.detail_id = d.id
+    where panier_id = (select id from paniers where usager_id = _idUsager)
+    and panier_produits.campagne_id = (select id from campagnes where actif = 1)
+#    GROUP BY panier_produits.id
+
+;
 end //
 delimiter ;
