@@ -7,8 +7,13 @@
 delimiter //
 create procedure creationUsager(_prenom varchar(255), _nom varchar(255), _adresseCourriel varchar(255), _motDePasse varchar(1000), _role integer)
 begin
-    insert into usagers(prenom, nom, adresseCourriel, motDePasse, role)
+    if exists(select adresseCourriel from usagers where adresseCourriel = _adresseCourriel) then
+        select 'il y a déja un compte avec cette adresse courriel' as message;
+    #vérifie s'il y a un usager avec le courriel
+    else
+        insert into usagers(prenom, nom, adresseCourriel, motDePasse, role)
         VALUES (_prenom, _nom, _adresseCourriel, _motDePasse, _role);
+    end if;
 end //
 delimiter ;
 #drop procedure creationUsager;
@@ -17,15 +22,19 @@ delimiter ;
 delimiter //
 create procedure connection(_email varchar(255), _password varchar(1000))
 begin
-    if not exists(select adresseCourriel from usagers where adresseCourriel = _email) then
-        select 0 as message;
-    elseif exists(select adresseCourriel from usagers where adresseCourriel = _email and motDePasse = _password) then
+    #Vérifie se les informations d'entré sont correct (vérifie si l'adresse courriel ET le mot de passe est correct.
+    if exists(select adresseCourriel from usagers where adresseCourriel = _email and motDePasse = _password) then
         select 1 as message;
+    #vérifie s'il y a un usager avec le courriel
+    elseif not exists(select adresseCourriel from usagers where adresseCourriel = _email) then
+        select 0 as message;
+    # si l'adresse courriel n'existe pas, c'est ceci.
     else
         select 0 as message;
     end if;
 end //
 delimiter ;
+#drop procedure connection;
 
 
 #------------------------------------
@@ -37,8 +46,10 @@ delimiter ;
 delimiter //
 create procedure creationCampagne(_nom varchar(255))
 begin
+    #s'il y as une campagne qui exist et qui est active.
     if exists(select id from campagnes where actif = true) then
         select 'il y a déjà une campagne active' as message;
+    #s'il y
     elseif exists(select nom from campagnes where nom = _nom) then
         select 'Il y a déjà une campagne avec ce nom' as message;
     else
@@ -263,24 +274,16 @@ end //
 delimiter ;
 #drop procedure ajoutDetailProduitPanier;
 
-#procedure qui permet d'afficher tous les produits, et leur details,
-# pour l'id de l'usager.
-# Il faut que la campagne soit active et quantité plus grande que 0.
+# procedure qui permet d'afficher tous les produits, et leur details,
 delimiter //
 create procedure SelectionPanierUsager(_idUsager int)
 begin
-#    select nomProduit from campagne_produits;
-#    select detail from details;
-
     select panier_produits.id, nomProduit, quantite, titre, detail
     from panier_produits
     join campagne_produits cp on cp.id = panier_produits.campagne_produit_id
     Join panier_detail_produits pdp on panier_produits.id = pdp.panier_produit_id
     Join details d on pdp.detail_id = d.id
     where panier_id = (select id from paniers where usager_id = _idUsager)
-    and panier_produits.campagne_id = (select id from campagnes where actif = 1)
-#    GROUP BY panier_produits.id
-
-;
+    and panier_produits.campagne_id = (select id from campagnes where actif = 1);
 end //
 delimiter ;
