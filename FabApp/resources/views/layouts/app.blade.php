@@ -27,10 +27,10 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="col-xxl-10 col-xl-9 col-lg-8">
+                <div class="col-6">
                     @auth
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
-                        <?php if ($user != 2) { ?>
+                        <?php if (Session::get('id') != 2) { ?>
                         <li class="nav-item">
                         <a class="nav-link d-flex" href="{{ route('usagers.index') }}"><span class="material-symbols-rounded">manage_accounts</span>Gestion usager</a>
                         </li>
@@ -41,15 +41,16 @@
                         <a class="nav-link d-flex" href="{{ route('produits.index') }}"><span class="material-symbols-rounded">laundry</span>Gestion produits</a>
                         </li>
                         <?php } ?>
-                        <li class="nav-item">
-                        <a class="nav-link d-flex" href="{{ route('paniers.index') }}"><span class="material-symbols-rounded">shopping_cart</span>Panier</a>
-                        </li>
                     </ul>
                     @endauth
                 </div>
-                <div class="col-xl-4 col-lg-5">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
-                        @auth    
+                <div class="col-6 text-end">
+                    <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+                        @auth
+                            <li class="nav-item fontLogo"><?php echo 'Bonjour ', Session::get('prenom'), ' ', Session::get('nom')?></li>
+                            <li class="nav-item">
+                            <a class="nav-link d-flex" href="{{ route('paniers.index') }}"><span class="material-symbols-rounded">shopping_cart</span>Panier</a>
+                            </li>    
                             <li class="nav-item">
                             <a class="nav-link d-flex" href="{{ route('profils.index') }}">Profil<span class="material-symbols-rounded">cottage</span></a>
                             </li>

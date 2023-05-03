@@ -11,6 +11,7 @@ use Illuminate\Auth\Middleware;
 use Auth;
 use DB;
 use Hash;
+use Session;
 
 class UsagersController extends Controller
 {
@@ -20,7 +21,7 @@ class UsagersController extends Controller
      */
     public function index() : View
     {
-        
+        $usagers = Usager::all(); 
         return View('accueils.index', compact('usagers'));
     }
 
@@ -107,7 +108,11 @@ class UsagersController extends Controller
                 Auth::login($user);
                 if(Auth::check())
                 {
-                    return View('accueils.index', compact('user'));
+                    Session::put('id', $user->role);
+                    Session::put('prenom', $user->prenom);
+                    Session::put('nom', $user->nom);
+                    Session::put('adresseCourriel', $user->adresseCourriel);
+                    return View('accueils.index');
                 }
                 else
                 {
