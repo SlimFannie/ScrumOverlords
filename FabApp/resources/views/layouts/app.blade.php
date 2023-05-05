@@ -22,12 +22,12 @@
     <div class="container-fluid g-0 d-front">
     <nav class="navbar navbar-expand-lg navbar-dark bg-nav px-5 w-100">
         
-            <a class="navbar-brand fontLogo" href="{{ route('accueils.index') }}">Département d'informatique</a>
+            <a class="navbar-brand fontLogo" href="{{ route('accueils.index') }}"><img src="{{ asset('img/logoDept.png') }}" height="50vh"></img> Département d'informatique</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="col-6">
+                <div class="col-12">
                     @auth
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
                         <?php if (Session::get('id') != 2) { ?>
@@ -41,10 +41,8 @@
                         <a class="nav-link d-flex" href="{{ route('produits.index') }}"><span class="material-symbols-rounded">laundry</span>Gestion produits</a>
                         </li>
                         <?php } ?>
+                        @endauth
                     </ul>
-                    @endauth
-                </div>
-                <div class="col-6 text-end">
                     <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
                         @auth
                             <li class="nav-item fontLogo"><?php echo 'Bonjour ', Session::get('prenom'), ' ', Session::get('nom')?></li>
