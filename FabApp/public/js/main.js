@@ -4,6 +4,11 @@ var txt = document.getElementById("ligneUn").innerHTML; /* The text */
 var txtDeux = document.getElementById("ligneDeux").innerHTML;
 var speed = 35; /* The speed/duration of the effect in milliseconds */
 
+function typer() {
+  typeUn();
+  typeDeux();
+}
+
 function typeUn() {
   if (i < txt.length) {
     document.getElementById("typeUn").innerHTML += txt.charAt(i);
@@ -21,6 +26,5 @@ function typeDeux() {
   }
 
 window.onload = function() {
-    typeUn(),
-    typeDeux();
+  typer();
 }

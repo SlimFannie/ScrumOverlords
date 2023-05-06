@@ -6,6 +6,16 @@ rgba(148,187,233) bleu
 
 */
 
+.fa-solid {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.fa-regular {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Général */
+
 html, body {
     height: 100%;
     overflow: hidden;
@@ -118,17 +128,18 @@ h1, h2, h3, h4, h5, p, a, label {
   }
 
   @keyframes shake-animation {
-     0% { transform:translate(0,0) }
+    0% { transform:translate(0,0) }
     25% { transform:translate(5px,0) }
     50% { transform:translate(0,0) }
     75% { transform:translate(5px,0) }
     100% { transform:translate(0,0) }
   }
 
+  /* underline */
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-    color: rgba(84, 97, 200, 0.8);
+    color: rgba(0, 30, 255, 0.35);
   }
   
   .hover-underline-animation:after {
@@ -136,10 +147,10 @@ h1, h2, h3, h4, h5, p, a, label {
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 2px;
+    height: 3px;
     bottom: 0;
     left: 0;
-    background-color: rgba(84, 97, 200, 0.8);
+    background-color: rgba(0, 30, 255, 0.35);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
@@ -149,6 +160,66 @@ h1, h2, h3, h4, h5, p, a, label {
     transform-origin: bottom left;
   }
 
+  /* icon flicker */
+  .icon-flicker {
+    animation: icon-flicker 2s linear infinite;
+  }
+
+  @keyframes icon-flicker {
+    0% {
+      opacity:0.1;
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 1);
+    }
+    
+    2% {
+      opacity:1;
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 1);
+    }
+    8% {
+      opacity:0.1;
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 1);
+    }
+    9% {
+      opacity:1;
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 1);
+    }
+    12% {
+      opacity:0.1;
+      text-shadow: 0px 0px rgba(255, 255, 255, 1);
+    }
+    20% {
+      opacity:1;
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 1)
+    }
+    25% {
+      opacity:0.3;
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 1)
+    }
+    30% {
+      opacity:1;
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 1)
+    }
+    
+    70% {
+      opacity:0.7;
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 1)
+    }
+    
+    72% {
+      opacity:0.2;
+      text-shadow:0px 0px 8px rgba(255, 255, 255, 1)
+    }
+    
+    77% {
+      opacity:.9;
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 1)
+    }
+    100% {
+      opacity:.9;
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 1)
+    }
+  }
+  
 /* Media queries */
 
 @media (min-aspect-ratio: 16/9) {

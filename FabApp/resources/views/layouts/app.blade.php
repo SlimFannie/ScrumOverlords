@@ -31,26 +31,26 @@
                             @auth
                             <?php if (Session::get('id') != 2) { ?>
                             <li class="nav-item">
-                            <a class="nav-link" href="{{ route('usagers.index') }}"><span class="material-symbols-rounded">manage_accounts</span>Gestion usager</a>
+                            <a class="nav-link hover-underline-animation" href="{{ route('usagers.index') }}"><span class="material-symbols-rounded">manage_accounts</span>Gestion usager</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="{{ route('campagnes.index') }}"><span class="material-symbols-rounded">campaign</span>Gestion campagne</a>
+                            <a class="nav-link hover-underline-animation" href="{{ route('campagnes.index') }}"><span class="material-symbols-rounded">campaign</span>Gestion campagne</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="{{ route('produits.index') }}"><span class="material-symbols-rounded">laundry</span>Gestion produits</a>
+                            <a class="nav-link hover-underline-animation" href="{{ route('produits.index') }}"><span class="material-symbols-rounded">laundry</span>Gestion produits</a>
                             </li>
                             <?php } ?>
                             <li class="nav-item">
-                            <a class="nav-link" href="{{ route('paniers.index') }}"><i class="fa-solid fa-cart-shopping fa-lg"></i> &nbspPanier</a>
+                            <i class="fa-solid fa-cart-shopping fa-lg"></i><a class="nav-link hover-underline-animation" href="{{ route('paniers.index') }}">Panier</a>
                             </li> 
                             <li class="nav-item">
-                            <a class="nav-link" href="{{ route('profils.index') }}"><i class="fa-regular fa-id-badge fa-lg"></i> &nbspProfil</a>
+                            <i class="fa-regular fa-id-badge fa-lg"></i><a class="nav-link hover-underline-animation" href="{{ route('profils.index') }}">Profil</a>
                             </li>
                             <li class="nav-item fontLogo"><?php echo 'Bonjour ', Session::get('prenom'), ' ', Session::get('nom')?></li>
                             <form method="POST" action="{{ route('usagers.logout') }}">
                             @csrf
                                 <li class="nav-item">
-                                    <button type="submit" class="bg-deco nav-link">Déconnexion&nbsp <i class="fa-solid fa-hand-peace fa-lg"></i></button>
+                                    <button type="submit" class="bg-deco nav-link hover-underline-animation">Déconnexion</button><i class="fa-solid fa-hand-peace fa-lg"></i>
                                 </li>
                             </form>
                             @else
@@ -58,7 +58,7 @@
                             <i class="fa-solid fa-arrow-right-long fa-lg shake"></i>&nbsp&nbsp<a class="nav-link hover-underline-animation" href="{{ route('usagers.create') }}">Créer un compte</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hover-underline-animation" href="{{ route('usagers.showLoginForm') }}">Connexion &nbsp<i class="fa-solid fa-hand-peace fa-lg"></i></a>
+                                <a class="nav-link hover-underline-animation" href="{{ route('usagers.showLoginForm') }}">Connexion</a><i class="fa-solid fa-hand-peace fa-lg icon-flicker"></i>
                             </li>
                             @endauth
                         </ul>

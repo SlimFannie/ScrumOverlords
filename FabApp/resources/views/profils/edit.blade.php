@@ -13,13 +13,17 @@
                     <div class="col-12">
                         <div class="card text-white bg-card text-center d-none d-lg-block d-xl-block d-xxl-block" id="cardFrame">
                             <div class="card-body">
-                                <h1 id="typeUn"></h1>
-                                <p id="ligneUn" class="d-none">Vous êtes <?php echo Session::get('prenom'), ' ', Session::get('nom') ?></p>
-                                <img src=""></img>
-                                <h3 id="typeDeux"></h3>
-                                <p id="ligneDeux" class="d-none">Votre adresse courriel est <?php echo Session::get('adresseCourriel') ?></p>
-                                <br>
-                                <a type="button" class="btn bg-btn" href="{{ route('profils.edit') }}">Modifier mon profil</a>
+                                <form method="post" id="FormUsager" class="text-center" action="{{route('usagers.store')}}">
+                                    <label for="mdp"> Nouveau mot de passe </label>
+                                    <br>
+                                    <input type="text" id="mdp" name="motDePasse" required>
+                                    <br>
+                                    <label for="mdpCon"> Confirmation du mot de passe </label>
+                                    <br>
+                                    <input type="text" id="mdpCon" name="motDePasseCon" required>
+                                    <br><br>
+                                    <button type="submit" class="btn bg-btn d-inline-flex align-items-center" id="btnSubmit"> Confirmer&nbsp <i class="fa-solid fa-bolt fa-lg icon-flicker"></i></button>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -20,7 +20,7 @@
                             <br>
                             <input type="text" id="mdp" name="motDePasse">
                             <br><br>
-                            <button type="submit" class="btn bg-btn" id="btnSubmit"> Confirmer </button>
+                            <button type="submit" class="btn bg-btn" id="btnSubmit"> Confirmer <i class="fa-solid fa-bolt fa-lg icon-flicker"></i></button>
                     </form>
                 </div>
             </div> 

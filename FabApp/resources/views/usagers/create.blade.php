@@ -15,21 +15,21 @@
                         @csrf
                         <label for="prenom"> Prénom </label>
                         <br>
-                        <input type="text" id="prenom" name="prenom">
+                        <input type="text" id="prenom" name="prenom" required>
                         <br>
                         <label for="nom"> Nom </label>
                         <br>
-                        <input type="text" id="nom" name="nom">
+                        <input type="text" id="nom" name="nom" required>
                         <br>
                         <label for="courriel"> Adresse courriel DU CÉGEP* </label>
                         <br>
-                        <input type="text" id="courriel" name="adresseCourriel">
+                        <input type="text" id="courriel" name="adresseCourriel" required>
                         <br>
                         <label for="mdp"> Mot de passe </label>
                         <br>
-                        <input type="text" id="mdp" name="motDePasse">
+                        <input type="text" id="mdp" name="motDePasse" required>
                         <br><br>
-                        <button type="submit" class="btn bg-btn d-inline-flex align-items-center" id="btnSubmit"> Confirmer <span class="material-symbols-rounded">electric_bolt</span></button>
+                        <button type="submit" class="btn bg-btn d-inline-flex align-items-center" id="btnSubmit"> Confirmer&nbsp<i class="fa-solid fa-bolt fa-lg icon-flicker"></i></button>
                     </form>
                     <br>
                     <p>*Tu dois absolument entrer une adresse courriel du Cégep valide.</p>
