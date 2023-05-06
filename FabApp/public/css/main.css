@@ -1,5 +1,8 @@
 /* Couleurs
-
+rgba(158,34,129) rouge
+rgba(64,38,92) mauve
+rgba(238,174,202) rose
+rgba(148,187,233) bleu
 
 */
 
@@ -8,10 +11,16 @@ html, body {
     overflow: hidden;
 }
 
+.navbar-nav > li{
+    margin-left:20px;
+    margin-right:20px;
+  }
+
 /* Texte */
 
 .fontLogo {
     font-family: 'Sedgwick Ave Display', cursive;
+    color: white;
 }
 
 h1, h2, h3, h4, h5, p, a, label {
@@ -100,6 +109,46 @@ h1, h2, h3, h4, h5, p, a, label {
     animation-duration: .35s;
 }
 
+/* Animation */
+
+    /* http://waitanimate.wstone.io/#!/ */
+.shake {
+    animation: shake-animation 2s infinite;
+    transform-origin: 50% 50%;
+  }
+
+  @keyframes shake-animation {
+     0% { transform:translate(0,0) }
+    25% { transform:translate(5px,0) }
+    50% { transform:translate(0,0) }
+    75% { transform:translate(5px,0) }
+    100% { transform:translate(0,0) }
+  }
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: rgba(84, 97, 200, 0.8);
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(84, 97, 200, 0.8);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
 /* Media queries */
 
 @media (min-aspect-ratio: 16/9) {
@@ -115,3 +164,24 @@ h1, h2, h3, h4, h5, p, a, label {
         height: 100%;
     }
 }
+
+@media (min-aspect-ratio: 16/9) {
+    #videoBG {
+        width:100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 1400px) { 
+    .nav-item{
+        font-size: 1.5em;
+      }
+
+    .material-icons { 
+        font-size: 36px;
+    }
+
+    .fontLogo {
+        font-size: 1.5em;
+    }
+ }

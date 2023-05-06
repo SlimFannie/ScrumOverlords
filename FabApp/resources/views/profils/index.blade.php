@@ -13,11 +13,13 @@
                     <div class="col-12">
                         <div class="card text-white bg-card text-center d-none d-lg-block d-xl-block d-xxl-block" id="cardFrame">
                             <div class="card-body">
-                                <h1 id="typeUn"></h1>
-                                <p id="ligneUn" class="d-none">Vous êtes <?php echo Session::get('prenom'), ' ', Session::get('nom') ?></p>
+                                <h1>Vous êtes</h1>
                                 <img src=""></img>
+                                <h1 id="typeUn"></h1>
+                                <p id="ligneUn" class="d-none"><?php echo Session::get('prenom'), ' ', Session::get('nom') ?></p>
+                                <h3>Votre adresse courriel est</h3>
                                 <h3 id="typeDeux"></h3>
-                                <p id="ligneDeux" class="d-none">Votre adresse courriel est <?php echo Session::get('adresseCourriel') ?></p>
+                                <p id="ligneDeux" class="d-none"><?php echo Session::get('adresseCourriel') ?></p>
                                 <br>
                                 <a type="button" class="btn bg-btn" href="{{ route('profils.edit') }}">Modifier mon profil</a>
                             </div>
