@@ -67,8 +67,11 @@ Route::post('/usagers/deco',
 [UsagersController::class, 'logout'])->name('usagers.logout');
 
 /* Route des profils */
-Route::get('profils',
+Route::get('/usager',
 [ProfilsController::class, 'index'])->name('profils.index');
+
+Route::get('/modifier',
+[ProfilsController::class, 'edit'])->name('profils.edit');
 
 // Route page d'accueil (Possiblement la seule route pour la page d'accueil ?...À définir)
 Route::get('/',

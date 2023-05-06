@@ -112,7 +112,7 @@ class UsagersController extends Controller
                     Session::put('prenom', $user->prenom);
                     Session::put('nom', $user->nom);
                     Session::put('adresseCourriel', $user->adresseCourriel);
-                    return View('accueils.index');
+                    return View('accueils.index', compact('user'));
                 }
                 else
                 {

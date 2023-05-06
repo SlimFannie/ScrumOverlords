@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Session;
 
 class ProfilsController extends Controller
 {
@@ -43,9 +44,9 @@ class ProfilsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit()
     {
-        //
+        return view('profils.edit');
     }
 
     /**

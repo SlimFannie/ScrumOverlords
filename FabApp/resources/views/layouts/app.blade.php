@@ -48,7 +48,7 @@
                             <li class="nav-item fontLogo"><?php echo 'Bonjour ', Session::get('prenom'), ' ', Session::get('nom')?></li>
                             <li class="nav-item">
                             <a class="nav-link d-flex" href="{{ route('paniers.index') }}"><span class="material-symbols-rounded">shopping_cart</span>Panier</a>
-                            </li>    
+                            </li> 
                             <li class="nav-item">
                             <a class="nav-link d-flex" href="{{ route('profils.index') }}">Profil<span class="material-symbols-rounded">cottage</span></a>
                             </li>
