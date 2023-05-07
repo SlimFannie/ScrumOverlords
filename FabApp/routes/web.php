@@ -73,6 +73,9 @@ Route::get('/usager',
 Route::get('/modifier',
 [ProfilsController::class, 'edit'])->name('profils.edit');
 
+Route::get('/update',
+[ProfilsController::class, 'edit'])->name('profils.update');
+
 // Route page d'accueil (Possiblement la seule route pour la page d'accueil ?...À définir)
 Route::get('/',
 [AccueilsController::class, 'index'])->name('accueils.index');

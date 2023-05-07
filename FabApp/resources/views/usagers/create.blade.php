@@ -10,7 +10,6 @@
         <div class="row g-0 pb-2">
             <div class="card text-white bg-card text-center p-2">
                 <div class="card-body">
-                <h3 class="fontLogo">Rejoins la Fabuleuse Application!</h3>
                     <form method="post" id="FormUsager" class="text-center" action="{{route('usagers.store')}}">
                         @csrf
                         <label for="prenom"> Prénom </label>

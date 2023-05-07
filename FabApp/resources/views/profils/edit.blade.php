@@ -13,15 +13,18 @@
                     <div class="col-12">
                         <div class="card text-white bg-card text-center d-none d-lg-block d-xl-block d-xxl-block" id="cardFrame">
                             <div class="card-body">
-                                <form method="post" id="FormUsager" class="text-center" action="{{route('usagers.store')}}">
+                                <form method="post" id="FormUsager" class="text-center" action="{{ route('profils.update') }}">
                                     <label for="mdp"> Nouveau mot de passe </label>
                                     <br>
-                                    <input type="text" id="mdp" name="motDePasse" required>
+                                    <input type="text" id="mdp" name="motDePasse">
                                     <br>
                                     <label for="mdpCon"> Confirmation du mot de passe </label>
                                     <br>
-                                    <input type="text" id="mdpCon" name="motDePasseCon" required>
+                                    <input type="text" id="mdpCon" name="motDePasseCon">
                                     <br><br>
+                                    <label for="imgProfil">Nouvelle image de profil:</label>
+                                    <input type="text" class="form-control" id="imgProfil" placeholder="image.jpg ou .png" name="img">
+                                    <br>
                                     <button type="submit" class="btn bg-btn d-inline-flex align-items-center" id="btnSubmit"> Confirmer&nbsp <i class="fa-solid fa-bolt fa-lg icon-flicker"></i></button>
                                 </form>
                             </div>

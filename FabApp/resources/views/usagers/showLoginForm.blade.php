@@ -9,7 +9,7 @@
         <div class="row g-0 pb-2">
             <div class="card text-white bg-card text-center p-2">
                 <div class="card-body">
-                    <h3 class="fontLogo">Fabuleuse connexion</h3>
+
                     <form method="post" id="FormUsager" action="{{ route('usagers.login') }}" >
                             @csrf
                             <label for="courriel"> Adresse courriel </label>
@@ -20,7 +20,7 @@
                             <br>
                             <input type="text" id="mdp" name="motDePasse">
                             <br><br>
-                            <button type="submit" class="btn bg-btn" id="btnSubmit"> Confirmer <i class="fa-solid fa-bolt fa-lg icon-flicker"></i></button>
+                            <button type="submit" class="btn bg-btn" id="btnSubmit"> Enter dans la boutique <i class="fa-solid fa-door-closed fa-hover-hidden"><i class="fa-solid fa-door-open fa-hover-show"></i></i></button>
                     </form>
                 </div>
             </div> 

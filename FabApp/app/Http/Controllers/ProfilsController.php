@@ -52,9 +52,20 @@ class ProfilsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        try {
+            if ($request->motDePasse == $request->motDePasseCon) {
+                $password = Hash::make($request->get('motDePasse'));
+                /* DB::select('call creationUsager('motDePasse' => $password]); */
+            }
+        }
+        catch(\Throwable $e) {
+            Log::debug($e);
+            return redirect()->route('films.index')->withErrors(['La modification n\'a pas fonctionnée.']);
+        }
+
+        return redirect()->route('films.index');
     }
 
     /**
