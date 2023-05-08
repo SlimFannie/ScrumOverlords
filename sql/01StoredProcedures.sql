@@ -5,18 +5,31 @@
 
 # procedure de création des usagers
 delimiter //
-create procedure creationUsager(_prenom varchar(255), _nom varchar(255), _adresseCourriel varchar(255), _motDePasse varchar(1000), _role integer)
+create procedure creationUsager(_prenom varchar(255), _nom varchar(255), _adresseCourriel varchar(255), _motDePasse varchar(1000))
 begin
     if exists(select adresseCourriel from usagers where adresseCourriel = _adresseCourriel) then
         select 'il y a déja un compte avec cette adresse courriel' as message;
     #vérifie s'il y a un usager avec le courriel
     else
-        insert into usagers(prenom, nom, adresseCourriel, motDePasse, role)
-        VALUES (_prenom, _nom, _adresseCourriel, _motDePasse, _role);
+        insert into usagers(prenom, nom, adresseCourriel, motDePasse)
+        VALUES (_prenom, _nom, _adresseCourriel, _motDePasse);
     end if;
 end //
 delimiter ;
 #drop procedure creationUsager;
+
+#création admin
+delimiter //
+create procedure creationAdmin(_prenom varchar(255), _nom varchar(255), _adresseCourriel varchar(255), _motDePasse varchar(1000))
+begin
+    if exists(select adresseCourriel from usagers where adresseCourriel = _adresseCourriel) then
+        Update usagers set role = 1 where _adresseCourriel = adresseCourriel and prenom = _prenom and nom = _nom and motDePasse = _motDePasse;
+    else
+        insert into usagers(prenom, nom, adresseCourriel, motDePasse, role)
+        VALUES (_prenom, _nom, _adresseCourriel, _motDePasse, 1);
+    end if;
+end //
+delimiter ;
 
 #procédure de connection des usagers, elle retourne 1 si la personne est connecté
 delimiter //
@@ -53,6 +66,7 @@ begin
     elseif exists(select nom from campagnes where nom = _nom) then
         select 'Il y a déjà une campagne avec ce nom' as message;
     else
+        delete from campagne_detail_produits where 1 =1;
         insert into campagnes(nom, actif)
             Values(_nom, true);
     end if;

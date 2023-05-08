@@ -90,3 +90,5 @@ call ajoutDetailProduitPanier(4, 1, 17);
     Join details d on pdp.detail_id = d.id
     where panier_id = (select id from paniers where usager_id = 4)
     and panier_produits.campagne_id = (select id from campagnes where actif = 1);
+
+Alter table campagnes ADD phase int;

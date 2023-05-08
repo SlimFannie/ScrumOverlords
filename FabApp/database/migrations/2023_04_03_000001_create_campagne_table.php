@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->string('nom');
             $table->boolean('actif');
+            $table->int('phase');
         });
     }
 
