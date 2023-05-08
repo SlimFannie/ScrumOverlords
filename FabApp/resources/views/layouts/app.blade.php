@@ -21,13 +21,13 @@
     <div class="container-fluid w-100 g-0 d-front">
         <div class="row text-center g-0">
             <div class="col-12">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-nav ps-5 animate__animated animate__lightSpeedInLeft">
-                    <a class="navbar-brand fontLogo" href="{{ route('accueils.index') }}"><img src="{{ asset('img/logoDept.png') }}" height="50vh"></img> &nbspDépartement d'informatique</a>
+                <nav class="navbar navbar-expand-lg justify-content-center navbar-dark bg-nav animate__animated animate__lightSpeedInLeft">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <img src="{{ asset('img/logoDept.png') }}" height="50vh"></img>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 m-auto mb-2 mb-lg-0 d-flex align-items-center ">
+                    <div class="collapse navbar-collapse justify-content-center pt-3 pt-lg-0" id="navbarSupportedContent">
+                    <a class="navbar-brand d-none d-lg-block d-xl-block d-xxl-block fontLogo" href="{{ route('accueils.index') }}"><img src="{{ asset('img/logoDept.png') }}" height="50vh"></img> &nbspDépartement d'informatique</a>
+                        <ul class="navbar-nav d-flex align-items-center ">
                             @auth
                             <?php if (Session::get('id') != 2) { ?>
                             <li class="nav-item">
@@ -54,6 +54,9 @@
                                 </li>
                             </form>
                             @else
+                            <li class="nav-item d-lg-none">
+                                <a href="{{ route('accueils.index') }}" class="navbar-brand m-0"><h5 class="fontLogo">Département d'informatique</h5></a>
+                            </li>
                             <li class="nav-item">
                             <i class="fa-solid fa-arrow-right-long fa-lg shake"></i>&nbsp&nbsp<a class="nav-link hover-underline-animation" href="{{ route('usagers.create') }}">Créer un compte</a>
                             </li>

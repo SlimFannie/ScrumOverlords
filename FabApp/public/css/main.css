@@ -67,7 +67,6 @@ h1, h2, h3, h4, h5, p, a, label {
     max-width: 50vw;
 
     font-family: 'Sedgwick Ave Display', cursive;
-    font-size: 1.5rem;
     color: white;
 
     border-style: solid;
@@ -88,7 +87,6 @@ h1, h2, h3, h4, h5, p, a, label {
   max-width: 50vw;
 
   font-family: 'Sedgwick Ave Display', cursive;
-  font-size: 1.5rem;
   color: white;
 
   border-style: solid;
@@ -263,6 +261,37 @@ h1, h2, h3, h4, h5, p, a, label {
         width:100%;
         height: auto;
     }
+}
+
+@media (max-width: 991.98px) { 
+
+  .retroBG {
+    background-image: url("../img/retrobg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bg-nav {
+    background: rgba(64,38,92);
+    background: radial-gradient(circle, rgba(158,34,129) 0%, rgba(64,38,92) 100%);
+    border-top: solid rgba(158,34,129) 0.5px;
+    border-bottom: solid rgba(158,34,129) 0.5px;
+  }
+
+  .bg-card {
+    background: rgba(64,38,92);
+    background: radial-gradient(circle, rgba(158,34,129,0.9) 0%, rgba(64,38,92,0.9) 100%);
+    max-width: 75vw;
+
+    border-style: solid;
+    border-color: rgba(158,34,129);
+  }
+
+  h1, h2, h3, h4, h5, p, a, label {
+    font-size: 1.5em;
+}
+
+
 }
 
 @media (min-width: 1400px) { 
