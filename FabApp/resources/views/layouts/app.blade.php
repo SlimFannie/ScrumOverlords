@@ -37,28 +37,32 @@
                             <a class="nav-link hover-underline-animation" href="{{ route('campagnes.index') }}"><span class="material-symbols-rounded">campaign</span>Gestion campagne</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link hover-underline-animation" href="{{ route('produits.index') }}"><span class="material-symbols-rounded">laundry</span>Gestion produits</a>
+                                <a class="nav-link hover-underline-animation" href="{{ route('produits.index') }}"><span class="material-symbols-rounded">laundry</span>Gestion produits</a>
                             </li>
                             <?php } ?>
                             <li class="nav-item">
-                            <i class="fa-solid fa-cart-shopping fa-lg"></i><a class="nav-link hover-underline-animation" href="{{ route('paniers.index') }}">Panier</a>
+                                <i class="fa-solid fa-cart-shopping fa-lg"></i><a class="nav-link hover-underline-animation" href="{{ route('paniers.index') }}">Panier</a>
                             </li> 
                             <li class="nav-item">
-                            <i class="fa-regular fa-id-badge fa-lg"></i><a class="nav-link hover-underline-animation" href="{{ route('profils.index') }}">Profil</a>
+                                <i class="fa-regular fa-id-badge fa-lg"></i><a class="nav-link hover-underline-animation" href="{{ route('profils.index') }}">Profil</a>
                             </li>
-                            <li class="nav-item fontLogo"><?php echo 'Bonjour ', Session::get('prenom')?></li>
-                            <form method="POST" action="{{ route('usagers.logout') }}">
-                            @csrf
-                                <li class="nav-item">
-                                    <button type="submit" class="bg-deco nav-link hover-underline-animation">Déconnexion</button><i class="fa-solid fa-hand-peace fa-lg"></i>
-                                </li>
-                            </form>
+                            <li class="nav-item">
+                                <h3 class="d-inline"><?php echo 'Bonjour ', Session::get('prenom')?></h3>
+                            </li>
+                            <li class="nav-item">
+                                <form method="POST" action="{{ route('usagers.logout') }}">
+                                @csrf
+                                    <li class="nav-item">
+                                        <button type="submit" class="bg-deco nav-link hover-underline-animation">Déconnexion</button><i class="fa-solid fa-hand-peace"></i>
+                                    </li>
+                                </form>
+                            </li>
                             @else
                             <li class="nav-item d-lg-none">
                                 <a href="{{ route('accueils.index') }}" class="navbar-brand m-0"><h5 class="fontLogo">Département d'informatique</h5></a>
                             </li>
                             <li class="nav-item">
-                            <i class="fa-solid fa-arrow-right-long fa-lg shake"></i>&nbsp&nbsp<a class="nav-link hover-underline-animation" href="{{ route('usagers.create') }}">Créer un compte</a>
+                                <i class="fa-solid fa-arrow-right-long fa-lg shake"></i>&nbsp&nbsp<a class="nav-link hover-underline-animation" href="{{ route('usagers.create') }}">Créer un compte</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link hover-underline-animation" href="{{ route('usagers.showLoginForm') }}">Connexion</a><i class="fa-solid fa-hand-peace fa-lg icon-flicker"></i>

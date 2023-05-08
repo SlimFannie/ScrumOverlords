@@ -35,6 +35,7 @@ html, body {
 
 h1, h2, h3, h4, h5, p, a, label {
     font-family: 'Titillium Web', sans-serif;
+    color: white;
 }
 
 /* Background */
@@ -104,6 +105,14 @@ h1, h2, h3, h4, h5, p, a, label {
 .bg-deco {
     background: none;
     border: none;
+
+    font-size: 1.5rem;
+}
+
+.retroBG {
+  background-image: url("../img/retroBGbig.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Display */
@@ -289,8 +298,11 @@ h1, h2, h3, h4, h5, p, a, label {
 
   h1, h2, h3, h4, h5, p, a, label {
     font-size: 1.5em;
-}
+  }
 
+  .navbar-nav > button {
+    font-size: 1.5em;
+  }
 
 }
 

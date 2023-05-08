@@ -4,12 +4,11 @@
 
 @section('contenu')
 <div class="container-fluid h-100 g-0 retroBG" id="videoFrame">
-    <video id="videoBG" autoplay muted loop src="{{ asset('img/WithoutRobotSynthwave1.mp4') }}" class="d-none d-lg-block"></video>
+    <!-- <video id="videoBG" autoplay muted loop src="{{ asset('img/WithoutRobotSynthwave1.mp4') }}" class="d-none d-lg-block"></video> -->
     <div class="container-fluid d-flex align-items-center justify-content-center h-100 g-0 d-col">
         <div class="row g-0 pb-2">
             <div class="card text-white bg-card text-center p-2">
                 <div class="card-body">
-
                     <form method="post" id="FormUsager" action="{{ route('usagers.login') }}" >
                             @csrf
                             <label for="courriel" class="form-label"> Adresse courriel </label>
