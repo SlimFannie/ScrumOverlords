@@ -14,6 +14,7 @@ function typeUn() {
     document.getElementById("typeUn").innerHTML += txt.charAt(i);
     i++;
     setTimeout(typeUn, speed);
+    
   }
 }
 

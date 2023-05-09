@@ -21,7 +21,7 @@
     <div class="container-fluid w-100 g-0 d-front">
         <div class="row text-center g-0">
             <div class="col-12">
-                <nav class="navbar navbar-expand-lg justify-content-center navbar-dark bg-nav animate__animated animate__lightSpeedInLeft">
+                <nav class="navbar navbar-expand-lg justify-content-center navbar-dark bg-nav animate__animated animate__lightSpeedInLeft ">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="{{ asset('img/logoDept.png') }}" height="50vh"></img>
                     </button>
@@ -29,6 +29,9 @@
                     <a class="navbar-brand d-none d-lg-block d-xl-block d-xxl-block fontLogo" href="{{ route('accueils.index') }}"><img src="{{ asset('img/logoDept.png') }}" height="50vh"></img> &nbspDépartement d'informatique</a>
                         <ul class="navbar-nav d-flex align-items-center ">
                             @auth
+                            <li class="nav-item">
+                            <a class="nav-link d-block d-xl-none" href="{{ route('accueils.index') }}">Page d'accueil</a>
+                            </li>
                             <?php if (Session::get('id') != 2) { ?>
                             <li class="nav-item">
                             <a class="nav-link hover-underline-animation" href="{{ route('usagers.index') }}"><span class="material-symbols-rounded">manage_accounts</span>Gestion usager</a>
@@ -41,20 +44,18 @@
                             </li>
                             <?php } ?>
                             <li class="nav-item">
-                                <i class="fa-solid fa-cart-shopping fa-lg"></i><a class="nav-link hover-underline-animation" href="{{ route('paniers.index') }}">Panier</a>
+                                <i class="fa-solid fa-cart-shopping fa-lg"></i><a class="nav-link hover-underline-animation" href="{{ route('paniers.index') }}">&nbspPanier</a>
                             </li> 
                             <li class="nav-item">
-                                <i class="fa-regular fa-id-badge fa-lg"></i><a class="nav-link hover-underline-animation" href="{{ route('profils.index') }}">Profil</a>
+                                <i class="fa-regular fa-id-badge fa-lg"></i><a class="nav-link hover-underline-animation" href="{{ route('profils.index') }}">&nbspProfil</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item py-sm-2">
                                 <h3 class="d-inline"><?php echo 'Bonjour ', Session::get('prenom')?></h3>
                             </li>
                             <li class="nav-item">
                                 <form method="POST" action="{{ route('usagers.logout') }}">
                                 @csrf
-                                    <li class="nav-item">
-                                        <button type="submit" class="bg-deco nav-link hover-underline-animation">Déconnexion</button><i class="fa-solid fa-hand-peace"></i>
-                                    </li>
+                                    <button type="submit" class="bg-deco nav-link hover-underline-animation">Déconnexion</button><i class="fa-solid fa-hand-peace fa-lg"></i>
                                 </form>
                             </li>
                             @else
@@ -65,7 +66,7 @@
                                 <i class="fa-solid fa-arrow-right-long fa-lg shake"></i>&nbsp&nbsp<a class="nav-link hover-underline-animation" href="{{ route('usagers.create') }}">Créer un compte</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hover-underline-animation" href="{{ route('usagers.showLoginForm') }}">Connexion</a><i class="fa-solid fa-hand-peace fa-lg icon-flicker"></i>
+                                <a class="nav-link hover-underline-animation" href="{{ route('usagers.showLoginForm') }}">Connexion&nbsp</a><i class="fa-solid fa-hand-peace fa-lg icon-flicker"></i>
                             </li>
                             @endauth
                         </ul>
