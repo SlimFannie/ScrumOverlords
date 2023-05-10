@@ -34,6 +34,10 @@ class UsagersController extends Controller
         return View('usagers.create');
     }
 
+    public function createAdmin()
+    {
+        return View('usagers.createAdmin');
+    }
     /**
      * Store a newly created resource in storage.
      * 
@@ -48,8 +52,30 @@ class UsagersController extends Controller
             $nom = $request->get('nom');
             $adresseCourriel = $request->get('adresseCourriel');
             $password = Hash::make($request->get('motDePasse'));
-
             DB::select('call creationUsager(:prenom, :nom, :adresseCourriel,
+             :motDePasse)', ['prenom' => $prenom,'nom' => $nom,
+              'adresseCourriel' => $adresseCourriel, 'motDePasse' => $password]);
+        }
+        catch(\Throwable $e)
+        {
+            Log::debug($e);
+        }
+        return redirect()->route('usagers.create');
+    }
+
+    public function storeAdmin(UsagerRequest $request)
+    {
+        Log::Debug('Fonction lancée');
+        try
+        {
+            Log::Debug('Essaie ajout');
+            $prenom = $request->get('prenom');
+            $nom = $request->get('nom');
+            $adresseCourriel = $request->get('adresseCourriel');
+            $password = Hash::make($request->get('motDePasse'));
+            Log::Debug( $adresseCourriel);
+
+            DB::select('call creationAdmin(:prenom, :nom, :adresseCourriel,
              :motDePasse)', ['prenom' => $prenom,'nom' => $nom,
               'adresseCourriel' => $adresseCourriel, 'motDePasse' => $password]);
         }

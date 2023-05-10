@@ -37,6 +37,10 @@
                         @endif
             </div>
         </div>
+
+        <div class="col-4">
+            <a href="{{ route('usagers.createAdmin') }}"><button class="btn btn-success">Créer un usager</button></a>
+        </div>
     </div>
 </div>
 @endsection

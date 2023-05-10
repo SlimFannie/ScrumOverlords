@@ -169,6 +169,30 @@ end //
 delimiter ;
 
 
+#selectionne tous les détails qui à le titre 'couleur' pour un produit
+delimiter //
+create procedure selectionCouleurExistantParNomProduit(_nomProduit varchar(255))
+begin
+    select detail from details
+    join campagne_detail_produits cdp on details.id = cdp.detail_id
+    join campagne_produits cp on cdp.campagne_produit_id = cp.id
+    where titre = 'couleur' and nomProduit = _nomProduit;
+end //
+delimiter ;
+
+
+#selectionne tous les détails qui à le titre 'taille' pour un produit
+delimiter //
+create procedure selectionTailleExistantParNomProduit(_nomProduit varchar(255))
+begin
+    select detail from details
+    join campagne_detail_produits cdp on details.id = cdp.detail_id
+    join campagne_produits cp on cdp.campagne_produit_id = cp.id
+    where titre = 'taille' and nomProduit = _nomProduit;
+end //
+delimiter ;
+
+
 #selectionne tous les détails qui à le titre 'couleur'
 delimiter //
 create procedure selectionCouleurProduit()
@@ -263,13 +287,6 @@ begin
 end //
 delimiter ;
 
-#delimiter //
-#create procedure creationUsager(_email varchar(25), _password varchar(255))
-#begin
-
-#end //
-#delimiter ;
-
 
 #----------------------------------
 #------------- panier -------------
@@ -292,7 +309,7 @@ create procedure ajoutDetailProduitPanier(_idUsager int, _idProduit int, _idDeta
 begin
     insert into panier_detail_produits (panier_produit_id, detail_id)
     VALUES ((select id from panier_produits where campagne_produit_id =
-    _idProduit & panier_id = (select id from paniers where usager_id =
+    _idProduit and panier_id = (select id from paniers where usager_id =
     _idUsager)), _idDetail);
 end //
 delimiter ;
@@ -309,6 +326,39 @@ begin
     Join details d on pdp.detail_id = d.id
     where panier_id = (select id from paniers where usager_id = _idUsager)
     and panier_produits.campagne_id = (select id from campagnes where actif = 1);
+end //
+delimiter ;
+
+
+#----------------------------------
+#----------- suppression ----------
+#----------------------------------
+
+
+delimiter //
+create procedure SuppressionUsager(_idUsager int)
+begin
+
+end //
+delimiter ;
+
+delimiter //
+create procedure SuppressionUsager(_idUsager int)
+begin
+
+    drop trigger if exists after_insert_usager;
+    create trigger after_insert_usager after delete on usagers
+    for each row
+    begin
+
+    delete from panier_detail_produits where panier_produit_id = any (select id from panier_produits where panier_id = (select id from paniers where usager_id = _idUsager));
+
+    delete from panier_produits where panier_id = (select id from paniers where usager_id = _idUsager);
+
+    delete from paniers where usager_id = _idUsager;
+
+    delete from usagers where id = _idUsager;
+    end;
 end //
 delimiter ;
 
