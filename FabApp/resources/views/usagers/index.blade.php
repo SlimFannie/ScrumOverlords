@@ -12,15 +12,15 @@
                 @if (count($usagers))
                         <table class="w-100">
                             <tr>
-                                <td><h5>Nom du produit</h5></td>
-                                <td><h5>Tailles disponibles</h5></td>
+                                <td><h5>Nom de l'usager</h5></td>
+                                <td><h5>Adresse courriel</h5></td>
                                 <td><h5>Couleurs disponibles</h5></td>
                             </tr>
                             @foreach ($usagers as $usager)
                                 <tr>
                                     <td><p class="d-inline">{{ $usager->prenom }} {{$usager->nom}}</p></td>
                                     <td><p>{{$usager->adresseCourriel}}</p></td>
-                                    <td><input type="checkbox" name="user" value="{{$usager->id}}"></td>   
+                                    <td><input type="checkbox" name="user" value="{{$usager->adresseCourriel}}"></td>   
                                 </tr>    
                                 @endforeach                       
                         </table>
@@ -28,13 +28,17 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-4">
                 <button class="btn btn-danger">Supprimer un usager</button>
         </div>
     
             </form>
-        <div class="col">
+        <div class="col-4">
             <a href="{{ route('usagers.edit') }}"><button class="btn btn-warning">Modifier un usager</button></a>
+        </div>
+
+        <div class="col-4">
+            <a href="{{ route('usagers.createAdmin') }}"><button class="btn btn-success">Créer un usager</button></a>
         </div>
     </div>
 </div>

@@ -10,7 +10,7 @@
         <div class="row g-0 pb-2">
             <div class="card text-white bg-card text-center p-2 mt-5">
                 <div class="container-fluid card-body g-0">
-                    <form method="post" id="FormUsager" class="text-center" action="{{route('usagers.store')}}">
+                    <form method="post" id="FormUsager" class="text-center" action="{{route('usagers.storeAdmin')}}">
                         @csrf
                         <div class="row g-0">
                             <div class="col-lg-6 col-xl-12 pe-0 pe-lg-2 pe-xl-0">
@@ -25,7 +25,7 @@
                                     <label for="courriel" class="form-label"> Adresse courriel </label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="felix.antoine.desrochers.boisjoli.02" aria-describedby="courrielCegep" name="adresseCourriel">
-                                        <span class="input-group-text" id="courrielCegep">@edu.cegeptr.qc.ca</span>
+                                        <span class="input-group-text" id="courrielCegep" >@cegeptr.qc.ca</span>
                                     </div>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@
                                     <label for="courriel" class="form-label"> Adresse courriel </label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="felix.antoine.desrochers.boisjoli.02" aria-describedby="courrielCegep" name="adresseCourriel">
-                                        <span class="input-group-text" id="courrielCegep">@edu.cegeptr.qc.ca</span>
+                                        <span class="input-group-text" id="courrielCegep" >@cegeptr.qc.ca</span>
                                     </div>
                                 </div>
                                 <br>
