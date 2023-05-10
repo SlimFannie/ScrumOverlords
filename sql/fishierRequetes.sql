@@ -72,9 +72,11 @@ where id = 3;
 
 insert into usagers (prenom, nom, adresseCourriel, motDePasse) VALUES ('John', 'Doe', 'JohnDoe@courriel.com', 'UnMotDePasse');
 
-call ajoutProduitPanier(4, 1, 3);
-call ajoutDetailProduitPanier(4, 1, 2);
-call ajoutDetailProduitPanier(4, 1, 17);
+call ajoutProduitPanier(8, 1, 3);
+call ajoutDetailProduitPanier(8, 1, 2);
+call ajoutDetailProduitPanier(8, 1, 17);
+
+call SuppressionPanier(8);
 
   select nomProduit, quantite, titre, detail
     from panier_produits
