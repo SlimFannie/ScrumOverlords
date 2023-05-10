@@ -66,7 +66,7 @@ Route::get('/usagers/creation',
 Route::post('/usagers/enregistrer',
 [UsagersController::class, 'store'])->name('usagers.store');
 
-Route::get('/usagers/modifier',
+Route::post('/usagers/modifier',
 [UsagersController::class, 'edit'])->name('usagers.edit');
 
 Route::post('/usagers/supprimer',

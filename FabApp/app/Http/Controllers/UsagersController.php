@@ -71,9 +71,10 @@ class UsagersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        $usager = Usager::findOrFail($id);
+        Log::debug($request);
+        $usager = Usager::findOrFail($request);
         return View('usagers.edit',compact('usager'));
     }
 
