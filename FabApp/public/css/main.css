@@ -33,7 +33,7 @@ html, body {
     color: white;
 }
 
-h1, h2, h3, h4, h5, p, a, label {
+h1, h2, h3, h4, h5, p, a, label, button {
     font-family: 'Titillium Web', sans-serif;
     color: white;
 }
@@ -105,8 +105,6 @@ h1, h2, h3, h4, h5, p, a, label {
 .bg-deco {
     background: none;
     border: none;
-
-    font-size: 1.5rem;
 }
 
 .retroBG {
@@ -248,6 +246,22 @@ h1, h2, h3, h4, h5, p, a, label {
       text-shadow: 0px 0px 8px rgba(255, 255, 255, 1)
     }
   }
+
+/* dotty */
+
+  .loading::after {
+    display: inline-block;
+    animation: dotty steps(1,end) 3s infinite;
+    content: '\00a0\00a0\00a0';
+  }
+
+  @keyframes dotty {
+      0%   { content: '\00a0\00a0\00a0'; }
+      25%  { content: '.\00a0\00a0'; }
+      50%  { content: '..\00a0'; }
+      75%  { content: '...'; }
+      100% { content: '\00a0\00a0\00a0'; }
+  }
   
 /* Media queries */
 
@@ -296,14 +310,6 @@ h1, h2, h3, h4, h5, p, a, label {
     border-color: rgba(158,34,129);
   }
 
-  h1, h2, h3, h4, h5, p, a, label {
-    font-size: 1.5em;
-  }
-
-  .navbar-nav > button {
-    font-size: 1.5em;
-  }
-
 }
 
 @media (min-width: 1400px) { 
@@ -312,7 +318,7 @@ h1, h2, h3, h4, h5, p, a, label {
     font-size: 1.5em;
   }
 
-    .nav-item{
+    .nav-link {
         font-size: 1.5em;
       }
 

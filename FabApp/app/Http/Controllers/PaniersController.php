@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use DB;
+use Session;
 
 class PaniersController extends Controller
 {
@@ -13,7 +15,10 @@ class PaniersController extends Controller
      */
     public function index() : View
     {
-        return View('paniers.index');
+        $id = Session::get('id');
+        $produits = DB::select('call SelectionPanierUsager('.$id.')');
+
+        return View('paniers.index', compact('produits'));
     }
 
     /**

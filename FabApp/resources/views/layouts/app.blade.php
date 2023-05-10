@@ -34,14 +34,16 @@
                             </li>
                             <?php if (Session::get('id') != 2) { ?>
                             <li class="nav-item">
-                            <a class="nav-link hover-underline-animation" href="{{ route('usagers.index') }}"><span class="material-symbols-rounded">manage_accounts</span>Gestion usager</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link hover-underline-animation" href="{{ route('campagnes.index') }}"><span class="material-symbols-rounded">campaign</span>Gestion campagne</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link hover-underline-animation" href="{{ route('produits.index') }}"><span class="material-symbols-rounded">laundry</span>Gestion produits</a>
-                            </li>
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Gestion
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="nav-link hover-underline-animation" href="{{ route('usagers.index') }}">Gestion usager</a></li>
+                                        <li><a class="nav-link hover-underline-animation" href="{{ route('campagnes.index') }}">Gestion campagne</a></li>
+                                        <li><a class="nav-link hover-underline-animation" href="{{ route('produits.index') }}">Gestion produits</a></li>
+                                    </ul>
+                                </div>
                             <?php } ?>
                             <li class="nav-item">
                                 <i class="fa-solid fa-cart-shopping fa-lg"></i><a class="nav-link hover-underline-animation" href="{{ route('paniers.index') }}">&nbspPanier</a>
@@ -55,7 +57,7 @@
                             <li class="nav-item">
                                 <form method="POST" action="{{ route('usagers.logout') }}">
                                 @csrf
-                                    <button type="submit" class="bg-deco nav-link hover-underline-animation">Déconnexion</button><i class="fa-solid fa-hand-peace fa-lg"></i>
+                                    <button type="submit" class="btn bg-deco nav-link fontResponsive hover-underline-animation">Déconnexion</button>&nbsp<i class="fa-solid fa-hand-peace fa-xl"></i>
                                 </form>
                             </li>
                             @else
