@@ -346,19 +346,11 @@ delimiter //
 create procedure SuppressionUsager(_idUsager int)
 begin
 
-    drop trigger if exists after_insert_usager;
-    create trigger after_insert_usager after delete on usagers
-    for each row
-    begin
-
-    delete from panier_detail_produits where panier_produit_id = any (select id from panier_produits where panier_id = (select id from paniers where usager_id = _idUsager));
-
-    delete from panier_produits where panier_id = (select id from paniers where usager_id = _idUsager);
-
-    delete from paniers where usager_id = _idUsager;
+    set foreign_key_checks = 0;
 
     delete from usagers where id = _idUsager;
-    end;
+    set foreign_key_checks =  1;
+
 end //
 delimiter ;
 

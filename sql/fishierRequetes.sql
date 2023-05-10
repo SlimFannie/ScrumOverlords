@@ -94,3 +94,8 @@ call SuppressionPanier(8);
     and panier_produits.campagne_id = (select id from campagnes where actif = 1);
 
 Alter table campagnes ADD phase int;
+
+
+set foreign_key_checks = 0;
+delete from usagers where id = 7;
+set foreign_key_checks = 1;
