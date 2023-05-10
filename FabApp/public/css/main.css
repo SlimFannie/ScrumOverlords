@@ -26,6 +26,23 @@ html, body {
     margin-right:20px;
   }
 
+tr { 
+    border: dotted rgba(64,38,92);
+    border-width: 1px 0;
+}
+
+tr:first-child {
+  border-top: none;
+}
+tr:last-child {
+  border-bottom: none;
+}
+
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 /* Texte */
 
 .fontLogo {
@@ -159,6 +176,8 @@ h1, h2, h3, h4, h5, p, a, label, button {
 .hoverModif:hover {
   color: blue;
 }
+
+
 
     /* http://waitanimate.wstone.io/#!/ */
 .shake {

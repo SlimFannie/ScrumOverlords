@@ -16,12 +16,23 @@ class DetailsController extends Controller
      */
     public function index() : View
     {
-        $couleurs = DB::select('CALL selectionCouleurProduit()');
-        
         $tailles = DB::select('CALL selectionTailleProduit()');
 
         $produits = DB::select('CALL selectionProduitCampagne()');
+        $details = array();
+        $couleurs = array();
+
+        /*
+        foreach ($produits as $produit) {
+            $details[] = DB::select('CALL selectionIdProduit(:nomProduit)',['nomProduit'=>$produit->nomProduit]);
+        }
+
+        foreach ($details as $detail) {
+            $couleurs[] = DB::select('CALL selectionCouleurExistantProduit(:idProduit)',['idProduit'=>$detail['id']]);
+        }
+        */
         return View('produits.index', compact(['produits','tailles','couleurs']));
+        
     }
 
     /**
@@ -73,7 +84,7 @@ class DetailsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**
