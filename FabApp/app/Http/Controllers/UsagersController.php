@@ -97,10 +97,10 @@ class UsagersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request)
+    public function edit($id)
     {
-        Log::debug($request->input('modifUser'));
-        $usager = Usager::findOrFail($request->input('modifUser'));
+        Log::debug($id);
+        $usager = Usager::findOrFail($id);
         return View('usagers.edit',compact('usager'));
     }
 
@@ -109,7 +109,18 @@ class UsagersController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        try
+        {
+            $usager = User::findOrFail($id);
+            $usager = $usager->update($request->all());
+            $usager->save();
+        }
+        catch(\Throwable $e)
+        {
+            Log::debug($e);
+            return redirect()->route('usagers.index');
+        }
+        return redirect()->route('usagers.index');
     }
 
     /**

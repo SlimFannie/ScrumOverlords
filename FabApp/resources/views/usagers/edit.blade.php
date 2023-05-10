@@ -9,16 +9,17 @@
         <div class="row g-0 pb-2">
             <div class="card text-white bg-card text-center p-2 mt-5">
                 <div class="container-fluid card-body g-0">
-                    <form method="post" id="FormUsager" class="text-center" action="">
+                    <form method="post" id="FormUsager" class="text-center" action="{{ route('usagers.update', [$usager->id]) }}">
                         @csrf
+                        @method('PATCH')
                         <div class="row g-0">
                             <div class="col-lg-6 col-xl-12 pe-0 pe-lg-2 pe-xl-0">
                                 <label for="prenom" class="form-label"> Prénom </label>
-                                <input type="text" id="prenom" name="prenom" class="form-control" placeholder="{{ $usager->prenom }}" required>
+                                <input type="text" id="prenom" name="prenom" class="form-control" placeholder="{{ $usager->prenom }}" >
                                 <br>
                                 <div class="d-block d-lg-none d-xl-block">
                                     <label for="nom" class="form-label"> Nom </label>
-                                    <input type="text" id="nom" name="nom" class="form-control" placeholder="{{ $usager->nom }}" required>
+                                    <input type="text" id="nom" name="nom" class="form-control" placeholder="{{ $usager->nom }}" >
                                 </div>
                                 <div class="d-none d-lg-block d-xl-none">
                                     <label for="courriel" class="form-label"> Adresse courriel </label>
@@ -38,7 +39,7 @@
                                 </div>
                                 <br>
                                 <label for="mdp" class="form-label"> Mot de passe </label>
-                                <input type="text" id="mdp" name="motDePasse" class="form-control" required>
+                                <input type="text" id="mdp" name="motDePasse" class="form-control" >
                             </div>
                         </div>
                         <div class="row g-0 pt-4">

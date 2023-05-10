@@ -22,7 +22,7 @@
                                     <td>
                                         <form action="{{ route('usagers.supprimer') }}" method="POST">
                                             @csrf 
-                                            <button type="submit" name="suppUser" value="{{ $usager->adresseCourriel }}" class="bg-deco"><i class="fa-solid fa-xmark hoverSupp"></i></button>
+                                            <button type="submit" name="suppUser" id="suppUser" value="{{$usager->id}}" class="bg-deco"><i class="fa-solid fa-xmark hoverSupp"></i></button>
                                         </form> 
                                     </td>
                                     <td>
@@ -38,8 +38,10 @@
             </div>
         </div>
 
-        <div class="col-4">
-            <a href="{{ route('usagers.createAdmin') }}"><button class="btn btn-success">Créer un usager</button></a>
+        <div class="row g-0 mt-3">
+            <div class="col-12 text-center">
+                <a href="{{ route('usagers.createAdmin') }}"><button class="btn bg-btn">Créer un usager <i class="fa-solid fa-plus"></i></button></a>
+            </div>
         </div>
     </div>
 </div>
