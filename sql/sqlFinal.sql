@@ -1,3 +1,14 @@
+############### Fonction ###############
+
+delimiter //
+create function fn_retourNombreProduits() returns int
+begin
+    return (select count(id) from formulaire_produits group by campagne_produit_id);
+end //
+delimiter ;
+
+############### requetes stockées ###############
+
 #-------------------------------------------------
 #------------- connection et usagers -------------
 #-------------------------------------------------
@@ -15,7 +26,6 @@ begin
     end if;
 end //
 delimiter ;
-#drop procedure creationUsager;
 
 #création admin
 delimiter //
@@ -46,7 +56,6 @@ begin
     end if;
 end //
 delimiter ;
-#drop procedure connection;
 
 
 #------------------------------------
@@ -61,7 +70,8 @@ begin
     #s'il y as une campagne qui exist et qui est active.
     if exists(select id from campagnes where actif = true) then
         select 'il y a déjà une campagne active' as message;
-    #s'il y
+    #s'il y déja une campagne qui existe avec le nom,
+    # il retourne un message d'érreur
     elseif exists(select nom from campagnes where nom = _nom) then
         select 'Il y a déjà une campagne avec ce nom' as message;
     else
@@ -71,7 +81,7 @@ begin
     end if;
 end //
 delimiter ;
-#drop procedure creationCampagne;
+
 
 #procédure de fin de campagne.
 delimiter //
@@ -82,8 +92,9 @@ begin
     Where actif = 1;
 end //
 delimiter ;
-#drop procedure finCampagne;
 
+
+#procédure de création de produit de campagne
 delimiter //
 create procedure creationCampagneProduit(_nomProduit varchar(255))
 begin
@@ -99,8 +110,9 @@ begin
     end if;
 end //
 delimiter ;
-#drop procedure creationCampagneProduit;
 
+
+#selection les informations de la campagne active
 delimiter //
 create procedure SelectionCampagne()
 begin
@@ -109,19 +121,7 @@ end //
 delimiter ;
 
 
-#delimiter //
-#create procedure creationProduit(_nomProduit varchar(255))
-#begin
-#    if exists(select id from produits where nomProduit = _nomProduit) then
-#        select 'Il y a déjà un produit avec ce nom' as message;
-#    else
-#        insert into produits(nomProduit)
-#        Values(_nomProduit);
-#    end if;
-#end //
-#delimiter ;
-#drop procedure creationProduit;
-
+# ajout de l'assosiation entre un produit et un détail
 delimiter //
 create procedure ajoutDetailCampagneProduit(_idProduit integer, _idDetail integer)
 begin
@@ -133,8 +133,9 @@ begin
     end if;
 end //
 delimiter ;
-#drop procedure ajoutDetailCampagneProduit;
 
+
+#création de détails
 delimiter //
 create procedure creationDetail(_titre varchar(255), _detail varchar(255))
 begin
@@ -144,8 +145,9 @@ begin
     end if;
 end //
 delimiter ;
-#drop procedure creationDetail;
 
+
+#selectionne tous les détails qui à le titre 'couleur' pour un produit
 delimiter //
 create procedure selectionCouleurExistantProduit(_idProduit varchar(255))
 begin
@@ -154,8 +156,9 @@ begin
     where campagne_produit_id = _idProduit) and titre = 'couleur';
 end //
 delimiter ;
-#drop procedure selectionCouleurExistantProduit;
 
+
+#selectionne tous les détails qui à le titre 'taille' pour un produit
 delimiter //
 create procedure selectionTailleExistantProduit(_idProduit varchar(255))
 begin
@@ -164,23 +167,25 @@ begin
     where campagne_produit_id = _idProduit) and titre = 'taille';
 end //
 delimiter ;
-#drop procedure selectionTailleExistantProduit;
 
+
+#selectionne tous les détails qui à le titre 'couleur'
 delimiter //
 create procedure selectionCouleurProduit()
 begin
     select detail from details where titre = 'couleur';
 end //
 delimiter ;
-#drop procedure selectionCouleurProduit;
 
+
+#selectionne tous les détails qui à le titre 'taille'
 delimiter //
 create procedure selectionTailleProduit()
 begin
     select detail from details where titre = 'taille';
 end //
 delimiter ;
-#drop procedure selectionTailleProduit;
+
 
 # sert a avoir le nom de tous les produits dans la campagne active.
 delimiter //
@@ -190,7 +195,7 @@ begin
     where campagne_id = (Select id from campagnes where actif = true);
 end //
 delimiter ;
-#drop procedure afficherProduitCampagne;
+
 
 #permet de voir les detail pour un produit
 delimiter //
@@ -202,8 +207,9 @@ begin
     where campagne_produit_id = _idProduit;
 end //
 delimiter ;
-#drop procedure selectionDetailProduitCampagne1;
 
+
+#procédure qui fait la selection de tous les produits de la campagne
 delimiter //
 create procedure selectionDetailProduitCampagne()
 begin
@@ -212,9 +218,9 @@ begin
     join campagne_produits cp on cdp.campagne_produit_id = cp.id;
 end //
 delimiter ;
-#drop procedure selectionDetailProduitCampagne;
 
 
+#sélection de l'id d'un produit avec son nom
 delimiter //
 create procedure selectionIdProduit(_nomProduit varchar(255))
 begin
@@ -228,6 +234,7 @@ delimiter ;
 #--------------------------------------
 
 
+#procédure de création de campagne
 delimiter //
 create procedure creationFormulaire(_idUsager int)
 begin
@@ -236,6 +243,8 @@ begin
 end //
 delimiter ;
 
+
+#ajout d'un produit dans le formulaire d'un usager
 delimiter //
 create procedure ajoutFormulaire(_idUsager int, _idProduit int)
 begin
@@ -245,13 +254,14 @@ begin
 end //
 delimiter ;
 
+
+#Sélection selection du nombre de produit dans le formulaire
 delimiter //
 create procedure selectionNombreProduits()
 begin
     select campagne_produit_id, count(id) as nbr from formulaire_produits group by campagne_produit_id;
 end //
 delimiter ;
-#drop procedure selectionNombreProduits;
 
 #delimiter //
 #create procedure creationUsager(_email varchar(25), _password varchar(255))
@@ -266,6 +276,7 @@ delimiter ;
 #----------------------------------
 
 
+#ajout d'un produit dans le panier d'un usager
 delimiter //
 create procedure ajoutProduitPanier(_idUsager int, _idProduit int, _quantite int)
 begin
@@ -273,9 +284,9 @@ begin
     VALUES ((select id from paniers where usager_id = _idUsager), _idProduit, _quantite, (select id from campagnes where actif = 1));
 end //
 delimiter ;
-#drop procedure ajoutProduitPanier;
 
-#camapgne_id probleme
+
+#ajout d'une liaison entre un produit dans le panier de l'usager et un détail
 delimiter //
 create procedure ajoutDetailProduitPanier(_idUsager int, _idProduit int, _idDetail int)
 begin
@@ -285,7 +296,7 @@ begin
     _idUsager)), _idDetail);
 end //
 delimiter ;
-#drop procedure ajoutDetailProduitPanier;
+
 
 # procedure qui permet d'afficher tous les produits, et leur details,
 delimiter //
@@ -298,5 +309,21 @@ begin
     Join details d on pdp.detail_id = d.id
     where panier_id = (select id from paniers where usager_id = _idUsager)
     and panier_produits.campagne_id = (select id from campagnes where actif = 1);
+end //
+delimiter ;
+
+
+############### Trigger ###############
+
+
+#crée un panier quand un nouveau usager est créer.
+delimiter //
+create trigger after_insert_usager
+    after insert
+    on usagers
+    for each row
+begin
+    insert into paniers (usager_id)
+        values (new.id);
 end //
 delimiter ;
