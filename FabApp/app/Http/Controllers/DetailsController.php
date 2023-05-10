@@ -31,6 +31,7 @@ class DetailsController extends Controller
             $couleurs[] = DB::select('CALL selectionCouleurExistantProduit(:idProduit)',['idProduit'=>$detail['id']]);
         }
         */
+        
         return View('produits.index', compact(['produits','tailles','couleurs']));
         
     }
