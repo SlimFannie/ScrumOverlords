@@ -63,8 +63,14 @@ Route::get('/usagers',
 Route::get('/usagers/creation',
 [UsagersController::class, 'create'])->name('usagers.create');
 
+Route::get('/usagers/creationAdmin',
+[UsagersController::class, 'createAdmin'])->name('usagers.createAdmin');
+
 Route::post('/usagers/enregistrer',
 [UsagersController::class, 'store'])->name('usagers.store');
+
+Route::post('/usagers/enregistrerAdmin',
+[UsagersController::class, 'storeAdmin'])->name('usagers.storeAdmin');
 
 Route::get('/usagers/modifier',
 [UsagersController::class, 'edit'])->name('usagers.edit');
