@@ -96,7 +96,7 @@ class DetailsController extends Controller
     {
         try
         {
-            $nomProduit = $request->input('typeProduit');
+            $nomProduit = $request->get('typeProduit');
             DB::select('call suppressionCampagneProduit(:nomProduit)',['nomProduit'=>$nomProduit]);
             return redirect()->route('produits.index');
         }

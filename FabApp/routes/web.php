@@ -31,6 +31,9 @@ Route::get('/produits/creation',
 Route::post('produits',
 [DetailsController::class, 'store'])->name('produits.store');
 
+Route::GET('/produits/modifier',
+[DetailsController::class, 'edit'])->name('produits.edit');
+
 Route::post('/produits/supprimer/',
 [DetailsController::class, 'supprimer'])->name('produits.supprimer');
 

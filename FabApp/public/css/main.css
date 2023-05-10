@@ -113,6 +113,10 @@ h1, h2, h3, h4, h5, p, a, label, button {
   background-size: cover;
 }
 
+.dropdown-menu-retro {
+  background: radial-gradient(circle, rgba(158,34,129) 0%,rgba(64,38,92) 100%);
+}
+
 /* Display */
 
 .d-col {
@@ -147,6 +151,14 @@ h1, h2, h3, h4, h5, p, a, label, button {
 }
 
 /* Animation */
+
+.hoverSupp:hover {
+  color: red;
+}
+
+.hoverModif:hover {
+  color: blue;
+}
 
     /* http://waitanimate.wstone.io/#!/ */
 .shake {

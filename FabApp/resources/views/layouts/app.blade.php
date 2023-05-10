@@ -37,11 +37,11 @@
                                 <div class="dropdown">
                                     <a class="nav-link dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         Gestion
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="nav-link hover-underline-animation" href="{{ route('usagers.index') }}">Gestion usager</a></li>
-                                        <li><a class="nav-link hover-underline-animation" href="{{ route('campagnes.index') }}">Gestion campagne</a></li>
-                                        <li><a class="nav-link hover-underline-animation" href="{{ route('produits.index') }}">Gestion produits</a></li>
+                            </a>
+                                    <ul class="dropdown-menu dropdown-menu-retro" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="nav-link hover-underline-animation" href="{{ route('usagers.index') }}">Usagers</a></li>
+                                        <li><a class="nav-link hover-underline-animation" href="{{ route('campagnes.index') }}">Campagnes</a></li>
+                                        <li><a class="nav-link hover-underline-animation" href="{{ route('produits.index') }}">Produits</a></li>
                                     </ul>
                                 </div>
                             <?php } ?>
