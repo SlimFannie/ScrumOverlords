@@ -57,6 +57,9 @@ Route::POST('/usagers/login',
 Route::get('/usagers/login',
 [UsagersController::class, 'showLoginForm'])->name('usagers.showLoginForm');
 
+Route::get('/usagers/{id}/modifier',
+[UsagersController::class, 'edit'])->name('usagers.edit');
+
 Route::get('/usagers',
 [UsagersController::class, 'index'])->name('usagers.index');
 
@@ -68,9 +71,6 @@ Route::get('/usagers/creationAdmin',
 
 Route::post('/usagers/enregistrer',
 [UsagersController::class, 'store'])->name('usagers.store');
-
-Route::post('/usagers/modifier',
-[UsagersController::class, 'edit'])->name('usagers.edit');
 
 Route::post('/usagers/supprimer',
 [UsagersController::class, 'supprimer'])->name('usagers.supprimer');

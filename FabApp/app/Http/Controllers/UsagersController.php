@@ -99,8 +99,8 @@ class UsagersController extends Controller
      */
     public function edit(Request $request)
     {
-        Log::debug($request);
-        $usager = Usager::findOrFail($request);
+        Log::debug($request->input('modifUser'));
+        $usager = Usager::findOrFail($request->input('modifUser'));
         return View('usagers.edit',compact('usager'));
     }
 
@@ -174,7 +174,7 @@ class UsagersController extends Controller
    {
        try
        {
-           $adresseCourriel = $request->input('user');
+           $adresseCourriel = $request->input('suppUser');
            Log::debug($adresseCourriel);
            DB::select('call suppressionUser(:adresseCourriel)',['adresseCourriel'=>$adresseCourriel]);
            return redirect()->route('usagers.index');

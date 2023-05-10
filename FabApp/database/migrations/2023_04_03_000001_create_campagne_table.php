@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('campagnes', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->string('nom');
             $table->boolean('actif');
-            $table->int('phase');
+            $table->int('phase')->default(1);
         });
     }
 
