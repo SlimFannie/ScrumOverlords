@@ -39,8 +39,7 @@
                                     <td>
                                         <input type="checkbox" name="thisProduit" id="thisProduit">
                                     </td>
-                                </tr>
-                            
+                                </tr>                           
                         </table>
                         @endforeach
                         @endif
