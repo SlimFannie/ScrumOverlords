@@ -21,8 +21,9 @@ class UsagersController extends Controller
      */
     public function index() : View
     {
-        $usagers = Usager::all(); 
-        return View('accueils.index', compact('usagers'));
+        $usagers = DB::Select('CALL SelectionUsager()'); 
+        //$adresseCourriel = DB::Select('CALL SelectionAdresseCourriel()');
+        return View('usagers.index', compact(['usagers']));
     }
 
     /**
@@ -64,15 +65,16 @@ class UsagersController extends Controller
      */
     public function show(string $id)
     {
-        //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $usager = Usager::findOrFail($id);
+        return View('usagers.edit',compact('usager'));
     }
 
     /**
@@ -139,5 +141,21 @@ class UsagersController extends Controller
         $request->session()->regenerateToken();
     
         return redirect()->route('accueils.index')->with('message', "Déconnexion réussie");
+   }
+
+   public function supprimer(Request $request)
+   {
+       try
+       {
+           $adresseCourriel = $request->input('user');
+           Log::debug($adresseCourriel);
+           DB::select('call suppressionUser(:adresseCourriel)',['adresseCourriel'=>$adresseCourriel]);
+           return redirect()->route('usagers.index');
+       }
+       catch(\Throwable $e)
+       {
+           Log::debug($e);
+           return redirect()->route('usagers.index');
+       }
    }
 }

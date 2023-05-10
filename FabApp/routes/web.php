@@ -63,8 +63,14 @@ Route::get('/usagers',
 Route::get('/usagers/creation',
 [UsagersController::class, 'create'])->name('usagers.create');
 
+Route::get('/usagers/modifier',
+[UsagersController::class, 'edit'])->name('usagers.edit');
+
+Route::post('/usagers/supprimer',
+[UsagersController::class, 'supprimer'])->name('usagers.supprimer');
+
 Route::post('/usagers',
-[UsagersController::class, 'store'])->name('usagers.store');
+[UsagersController::class, 'show'])->name('usagers.show');
 
 Route::post('/usagers/deco',
 [UsagersController::class, 'logout'])->name('usagers.logout');
