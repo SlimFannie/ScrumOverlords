@@ -5,14 +5,14 @@
 @section('contenu')
 <div class="container-fluid h-100 g-0 retroBG" id="videoFrame">
     <div class="container-fluid d-flex align-items-center justify-content-center h-100 g-0 d-col">
-        <div class="row w-50 g-0 pb-2 d-flex justify-content-center">
-            <div class="col-12 w-75">
+        <div class="row w-lg-50 g-0 pb-2 d-flex justify-content-center">
+            <div class="col-12 w-lg-75">
                 <div class="card text-white bg-card" id="cardFrame">
                     <div class="card-body">
                         <h1 class="text-center">Liste des produits</h1>
                         <br>
                         @if (count($produits))
-                        <table class="w-100">
+                        <table class="w-lg-100">
                             <tr>
                                 <td><h5>Nom du produit</h5></td>
                                 <td><h5>Tailles disponibles</h5></td>

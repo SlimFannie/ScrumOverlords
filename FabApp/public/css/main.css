@@ -55,6 +55,10 @@ h1, h2, h3, h4, h5, p, a, label, button {
     color: white;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Background */
 
 #videoBG {
@@ -72,7 +76,7 @@ h1, h2, h3, h4, h5, p, a, label, button {
 
 .bg-card {
     background: rgba(64,38,92);
-    background: radial-gradient(circle, rgba(158,34,129,0.8) 0%, rgba(64,38,92,0.8) 100%);
+    background: radial-gradient(circle, rgba(158,34,129,0.9) 0%, rgba(64,38,92,0.9) 100%);
     max-width: 50vw;
 
     border-style: solid;
@@ -89,6 +93,8 @@ h1, h2, h3, h4, h5, p, a, label, button {
 
     border-style: solid;
     border-color: rgba(158,34,129);
+
+    z-index: 1;
 }
 
 .bg-btn .fa-hover-show {
@@ -101,7 +107,7 @@ h1, h2, h3, h4, h5, p, a, label, button {
 
 .bg-btn:hover {
   background: rgba(64,38,92);
-  background: radial-gradient(circle, rgba(158,34,129,0.7) 0%,rgba(64,38,92,0.7) 100%);
+  background: radial-gradient(circle, rgba(158,34,129,0.8) 0%,rgba(64,38,92,0.8) 100%);
   max-width: 50vw;
 
   font-family: 'Sedgwick Ave Display', cursive;
@@ -384,6 +390,12 @@ box-shadow: 0px 0px 78px 4px rgba(16,134,232,0);
 
     border-style: solid;
     border-color: rgba(158,34,129);
+  }
+
+  .dropdown-menu-retro {
+    background: transparent;
+    border: none;
+    animation: icon-flicker 3s linear infinite;
   }
 
 }

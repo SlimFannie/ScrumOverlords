@@ -139,10 +139,11 @@ class UsagersController extends Controller
 
     public function login(Request $request)
     {   
+        
         try
         {   
+            Log::debug($request->adresseCourriel);
             $user = Usager::where('adresseCourriel','=',$request->adresseCourriel)->first();
-            Log::debug($user->motDePasse);
             if($user && Hash::check($request->motDePasse, $user->motDePasse))
             {
                 

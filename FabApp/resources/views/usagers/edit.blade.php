@@ -37,9 +37,6 @@
                                         <span class="input-group-text" id="courrielCegep" >@cegeptr.qc.ca</span>
                                     </div>
                                 </div>
-                                <br>
-                                <label for="mdp" class="form-label"> Mot de passe </label>
-                                <input type="text" id="mdp" name="motDePasse" class="form-control" >
                             </div>
                         </div>
                         <div class="row g-0 pt-4">

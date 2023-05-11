@@ -51,8 +51,7 @@ Route::get('paniers',
 
 // Route des usagers
 
-Route::POST('/usagers/login',
-[UsagersController::class, 'login'])->name('usagers.login');
+
 
 Route::get('/usagers/login',
 [UsagersController::class, 'showLoginForm'])->name('usagers.showLoginForm');
@@ -86,6 +85,9 @@ Route::post('/usagers',
 
 Route::post('/usagers/deco',
 [UsagersController::class, 'logout'])->name('usagers.logout');
+
+Route::POST('/usagers/login',
+[UsagersController::class, 'login'])->name('usagers.login');
 
 /* Route des profils */
 Route::get('/usager',

@@ -6,8 +6,8 @@
 
 <div class="container-fluid h-100 g-0 retroBG" id="videoFrame">
     <div class="container-fluid d-flex align-items-center justify-content-center h-100 g-0 d-col">
-        <div class="row g-0 pb-2">
-            <div class="card text-white bg-card text-center p-2 mt-5">
+        <div class="row g-0 mb-2 border-flicker m-2 mt-5">
+            <div class="card text-white bg-card text-center">
                 <div class="container-fluid card-body g-0">
                     <form method="post" id="FormUsager" class="text-center" action="{{route('usagers.storeAdmin')}}">
                         @csrf

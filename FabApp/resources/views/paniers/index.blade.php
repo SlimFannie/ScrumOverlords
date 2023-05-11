@@ -6,7 +6,7 @@
 <div class="container-fluid h-100 g-0 retroBG" id="videoFrame">
     <div class="container-fluid d-flex align-items-center justify-content-center h-100 g-0 d-col">
         <div class="row g-0 pb-2">
-            <div class="col-12">
+            <div class="col-12 border-flicker">
                 <div class="card text-white bg-card text-center w-100" id="cardFrame">
                     <div class="card-body">
                         <h1>Panier de <?php echo Session::get('prenom') ?></h1>
