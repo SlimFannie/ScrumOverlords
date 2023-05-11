@@ -51,19 +51,23 @@ Route::get('paniers',
 
 // Route des usagers
 
-
-
 Route::get('/usagers/login',
 [UsagersController::class, 'showLoginForm'])->name('usagers.showLoginForm');
 
 Route::get('/usagers/{id}/modifier',
 [UsagersController::class, 'edit'])->name('usagers.edit');
 
+Route::get('/usagers/modifierProfil',
+[UsagersController::class, 'editProfil'])->name('usagers.editProfil');
+
 Route::patch('/usagers/{id}/modifier',
 [UsagersController::class, 'update'])->name('usagers.update');
 
 Route::get('/usagers',
 [UsagersController::class, 'index'])->name('usagers.index');
+
+Route::get('/usagers/profil',
+[UsagersController::class, 'indexProfil'])->name('usagers.indexProfil');
 
 Route::get('/usagers/creation',
 [UsagersController::class, 'create'])->name('usagers.create');
@@ -88,16 +92,6 @@ Route::post('/usagers/deco',
 
 Route::POST('/usagers/login',
 [UsagersController::class, 'login'])->name('usagers.login');
-
-/* Route des profils */
-Route::get('/usager',
-[ProfilsController::class, 'index'])->name('profils.index');
-
-Route::get('/modifier',
-[ProfilsController::class, 'edit'])->name('profils.edit');
-
-Route::get('/update',
-[ProfilsController::class, 'edit'])->name('profils.update');
 
 // Route page d'accueil (Possiblement la seule route pour la page d'accueil ?...À définir)
 Route::get('/',

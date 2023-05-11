@@ -52,7 +52,7 @@
                                 <i class="fa-solid fa-cart-shopping fa-lg d-inline d-lg-none d-xl-inline"></i><a class="nav-link hover-underline-animation" href="{{ route('paniers.index') }}">&nbspPanier</a>
                             </li> 
                             <li class="nav-item">
-                                <i class="fa-regular fa-id-badge fa-lg d-inline d-lg-none d-xl-inline"></i><a class="nav-link hover-underline-animation" href="{{ route('profils.index') }}">&nbspProfil</a>
+                                <i class="fa-regular fa-id-badge fa-lg d-inline d-lg-none d-xl-inline"></i><a class="nav-link hover-underline-animation" href="{{ route('usagers.indexProfil') }}">&nbspProfil</a>
                             </li>
                             <li class="nav-item py-sm-2 d-none d-lg-inline">
                                 <h3 class="d-inline"><?php echo 'Bonjour ', Session::get('prenom')?></h3>

@@ -24,7 +24,6 @@
                                     <label for="courriel" class="form-label"> Adresse courriel </label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="felix.antoine.desrochers.boisjoli.02" aria-describedby="courrielCegep" name="adresseCourriel">
-                                        <span class="input-group-text" id="courrielCegep" >@cegeptr.qc.ca</span>
                                     </div>
                                 </div>
                             </div>
@@ -33,12 +32,11 @@
                                     <label for="courriel" class="form-label"> Adresse courriel </label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="felix.antoine.desrochers.boisjoli.02" aria-describedby="courrielCegep" name="adresseCourriel">
-                                        <span class="input-group-text" id="courrielCegep" >@cegeptr.qc.ca</span>
                                     </div>
                                 </div>
                                 <br>
                                 <label for="mdp" class="form-label"> Mot de passe </label>
-                                <input type="text" id="mdp" name="motDePasse" class="form-control" >
+                                <input type="password" id="mdp" name="motDePasse" class="form-control" >
                             </div>
                         </div>
                         <div class="row g-0 pt-4">

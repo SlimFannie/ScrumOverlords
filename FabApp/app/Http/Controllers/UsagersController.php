@@ -26,6 +26,12 @@ class UsagersController extends Controller
         return View('usagers.index', compact(['usagers']));
     }
 
+    public function indexProfil() : View
+    {
+        $usagers = DB::Select('CALL SelectionUsager()'); 
+        return View('usagers.indexProfil', compact(['usagers']));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -104,6 +110,13 @@ class UsagersController extends Controller
         return View('usagers.edit',compact('usager'));
     }
 
+    public function editProfil()
+    {
+
+        //$usager = Usager::findOrFail($id);
+        return View('usagers.editProfil');
+    }
+
     /**
      * Update the specified resource in storage.
      */
@@ -111,7 +124,7 @@ class UsagersController extends Controller
     {
         try
         {
-            $usager = User::findOrFail($id);
+            $usager = Usager::findOrFail($id);
             $usager = $usager->update($request->all());
             $usager->save();
         }
@@ -162,7 +175,7 @@ class UsagersController extends Controller
                 } 
             }
             {
-                return redirect()->route('usagers.login')->withErrors(['message','RIIIP']);
+                return redirect()->route('accueils.index')->withErrors(['message','RIIIP']);
             }
         }
         catch(\Throwable $e)
@@ -186,9 +199,9 @@ class UsagersController extends Controller
    {
        try
        {
-           $adresseCourriel = $request->input('suppUser');
-           Log::debug($adresseCourriel);
-           DB::select('call suppressionUser(:adresseCourriel)',['adresseCourriel'=>$adresseCourriel]);
+           $idUsager = $request->input('suppUser');
+           Log::debug($idUsager);
+           DB::select('call suppressionUsager(:id)',['id'=>$idUsager]);
            return redirect()->route('usagers.index');
        }
        catch(\Throwable $e)

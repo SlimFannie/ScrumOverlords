@@ -15,17 +15,16 @@
                         <div class="row g-0">
                             <div class="col-lg-6 col-xl-12 pe-0 pe-lg-2 pe-xl-0">
                                 <label for="prenom" class="form-label"> Prénom </label>
-                                <input type="text" id="prenom" name="prenom" class="form-control" placeholder="{{ $usager->prenom }}" >
+                                <input type="text" id="prenom" name="prenom" class="form-control" value="{{ $usager->prenom }}" >
                                 <br>
                                 <div class="d-block d-lg-none d-xl-block">
                                     <label for="nom" class="form-label"> Nom </label>
-                                    <input type="text" id="nom" name="nom" class="form-control" placeholder="{{ $usager->nom }}" >
+                                    <input type="text" id="nom" name="nom" class="form-control" value="{{ $usager->nom }}" >
                                 </div>
                                 <div class="d-none d-lg-block d-xl-none">
                                     <label for="courriel" class="form-label"> Adresse courriel </label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="{{ $usager->adresseCourriel }}" aria-describedby="courrielCegep" name="adresseCourriel">
-                                        <span class="input-group-text" id="courrielCegep" >@cegeptr.qc.ca</span>
+                                        <input type="text" class="form-control" value="{{ $usager->adresseCourriel }}" aria-describedby="courrielCegep" name="adresseCourriel">
                                     </div>
                                 </div>
                             </div>
@@ -33,8 +32,7 @@
                                 <div class="d-block d-lg-none d-xl-block pt-3">
                                     <label for="courriel" class="form-label"> Adresse courriel </label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="{{ $usager->prenom }}" aria-describedby="courrielCegep" name="adresseCourriel">
-                                        <span class="input-group-text" id="courrielCegep" >@cegeptr.qc.ca</span>
+                                        <input type="text" class="form-control" value="{{ $usager->adresseCourriel }}" aria-describedby="courrielCegep" name="adresseCourriel">
                                     </div>
                                 </div>
                             </div>
