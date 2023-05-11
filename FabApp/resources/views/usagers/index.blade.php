@@ -3,42 +3,44 @@
 @section('titre', 'La Fab App')
 
 @section('contenu')
-<div class="container-fluid h-100 g-0 retroBG" id="videoFrame">
-    <div class="row g-0">
-        <div class="col-12">
-            <h1>Page accueil 'usagers'</h1>
-            <form method="post" action="{{ route('usagers.supprimer')}}">
-            @csrf
-                @if (count($usagers))
-                        <table class="w-100">
+<div class="container-fluid h-100 g-0 retroBG d-flex align-items-center justify-content-center g-0 d-col" id="videoFrame">
+    <div class="row g-0 w-lg-75 d-flex align-items-center justify-content-center">
+        <div class="col-12 w-lg-50">
+        <div class="card text-white bg-card" id="cardFrame">
+            <div class="card-body border-flicker">
+                <h1 class="text-center pb-3 m-0">Gestion des usagers</h1>
+                    @if (count($usagers))
+                        <table class="w-lg-100 d-flex justify-content-center">
                             <tr>
-                                <td><h5>Nom de l'usager</h5></td>
-                                <td><h5>Adresse courriel</h5></td>
-                                <td><h5>Couleurs disponibles</h5></td>
+                                <td class="px-2"><h5 class="d-none d-lg-inline">Nom</h5></td>
+                                <td class="px-2"><h5 class="d-none d-lg-inline">Adresse courriel</h5></td>
                             </tr>
                             @foreach ($usagers as $usager)
                                 <tr>
-                                    <td><p class="d-inline">{{ $usager->prenom }} {{$usager->nom}}</p></td>
-                                    <td><p>{{$usager->adresseCourriel}}</p></td>
-                                    <td><input type="checkbox" name="user" value="{{$usager->adresseCourriel}}"></td>   
+                                    <td class="px-2"><p class="d-none d-lg-inline">{{ $usager->prenom }} {{$usager->nom}}</p><p class="d-inline d-lg-none">{{$usager->prenom}}</p></td>
+                                    <td class="px-2"><p class="d-none d-lg-inline">{{$usager->adresseCourriel}}</p><p class="d-inline d-lg-none">{{$usager->nom}}</p></td>
+                                    <td class="px-2">
+                                        <form action="{{ route('usagers.supprimer') }}" method="POST">
+                                            @csrf 
+                                            <button type="submit" name="suppUser" id="suppUser" value="{{$usager->id}}" class="bg-deco"><i class="fa-solid fa-xmark hoverSupp"></i></button>
+                                        </form> 
+                                    </td>
+                                    <td class="px-2">
+                                        <form action="{{ route('usagers.edit', $usager->id) }}" method="get">
+                                            @csrf 
+                                            <button type="submit" name="modifUser" class="bg-deco"><i class="fa-solid fa-pencil hoverModif"></i></button>
+                                        </form>
+                                    </td>
                                 </tr>    
-                                @endforeach                       
+                                @endforeach        
+                                <tr>
+                                    <td colspan="4" class="text-center pt-3 pb-0">
+                                         <a href="{{ route('usagers.createAdmin') }}" class="hover-underline-animation"><h5 class="text-white-50">Créer un usager</h5></a>&nbsp<i class="fa-solid fa-plus fa-xl"></i>
+                                    </td>
+                                </tr>               
                         </table>
                         @endif
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4">
-                <button class="btn btn-danger">Supprimer un usager</button>
-        </div>
-    
-            </form>
-        <div class="col-4">
-            <a href="{{ route('usagers.edit') }}"><button class="btn btn-warning">Modifier un usager</button></a>
-        </div>
-
-        <div class="col-4">
-            <a href="{{ route('usagers.createAdmin') }}"><button class="btn btn-success">Créer un usager</button></a>
+            </div>
         </div>
     </div>
 </div>

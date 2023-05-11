@@ -58,6 +58,16 @@ end //
 delimiter ;
 
 
+delimiter //
+create procedure ChangerMotDePasse(_idUsager int, _nouveauMotDePasse varchar(1024))
+begin
+
+    update usagers set motDePasse = _nouveauMotDePasse where id = _idUsager;
+
+end //
+delimiter ;
+
+
 #------------------------------------
 #------------- campagne -------------
 #------------------------------------
@@ -253,6 +263,16 @@ end //
 delimiter ;
 
 
+delimiter //
+create procedure enleverProduitDeCampagne(_idProduit int)
+begin
+
+    update campagne_produits set campagne_id = (select id from campagnes where actif = 0 limit 1) where id = _idProduit;
+
+end //
+delimiter ;
+
+
 #--------------------------------------
 #------------- formulaire -------------
 #--------------------------------------
@@ -339,17 +359,46 @@ delimiter //
 create procedure SuppressionUsager(_idUsager int)
 begin
 
+    set foreign_key_checks = 0;
+    delete from usagers where id = _idUsager;
+    set foreign_key_checks =  1;
+
+    delete from panier_detail_produits where panier_produit_id = any (select id from panier_produits where panier_id = (select id from paniers where usager_id = _idUsager));
+
+    delete from panier_produits where panier_id = (select id from paniers where usager_id = _idUsager);
+
+    delete from formulaire_produits where formulaire_id = any (select id from formulaires where usager_id = _idUsager);
+
+    delete from formulaires where usager_id = _idUsager;
+
+    delete from paniers where usager_id = _idUsager;
+
 end //
 delimiter ;
 
+
 delimiter //
-create procedure SuppressionUsager(_idUsager int)
+create procedure SuppressionProduit(_idProduit int)
 begin
 
-    set foreign_key_checks = 0;
+    delete from formulaire_produits where campagne_produit_id = _idProduit;
 
-    delete from usagers where id = _idUsager;
-    set foreign_key_checks =  1;
+    delete from campagne_detail_produits where campagne_produit_id = _idProduit;
+
+    delete from campagne_produits where id = _idProduit;
+
+end //
+delimiter ;
+
+
+#pas vraiment utille, mais ell est là!
+delimiter //
+create procedure SuppressionPanier(_idUsager int)
+begin
+
+    delete from panier_detail_produits where panier_produit_id = any (select id from panier_produits where panier_id = (select id from paniers where usager_id = _idUsager));
+
+    delete from panier_produits where panier_id = (select id from paniers where usager_id = _idUsager);
 
 end //
 delimiter ;

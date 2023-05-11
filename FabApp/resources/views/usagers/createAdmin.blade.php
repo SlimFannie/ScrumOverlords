@@ -5,21 +5,20 @@
 @section('contenu')
 
 <div class="container-fluid h-100 g-0 retroBG" id="videoFrame">
-    <video id="videoBG" autoplay muted loop src="{{ asset('img/WithoutRobotSynthwave1.mp4') }}" class="d-none d-lg-block"></video>
     <div class="container-fluid d-flex align-items-center justify-content-center h-100 g-0 d-col">
-        <div class="row g-0 pb-2">
-            <div class="card text-white bg-card text-center p-2 mt-5">
+        <div class="row g-0 mb-2 border-flicker m-2 mt-5">
+            <div class="card text-white bg-card text-center">
                 <div class="container-fluid card-body g-0">
                     <form method="post" id="FormUsager" class="text-center" action="{{route('usagers.storeAdmin')}}">
                         @csrf
                         <div class="row g-0">
                             <div class="col-lg-6 col-xl-12 pe-0 pe-lg-2 pe-xl-0">
                                 <label for="prenom" class="form-label"> Prénom </label>
-                                <input type="text" id="prenom" name="prenom" class="form-control" required>
+                                <input type="text" id="prenom" name="prenom" class="form-control">
                                 <br>
                                 <div class="d-block d-lg-none d-xl-block">
                                     <label for="nom" class="form-label"> Nom </label>
-                                    <input type="text" id="nom" name="nom" class="form-control" required>
+                                    <input type="text" id="nom" name="nom" class="form-control">
                                 </div>
                                 <div class="d-none d-lg-block d-xl-none">
                                     <label for="courriel" class="form-label"> Adresse courriel </label>
@@ -39,12 +38,12 @@
                                 </div>
                                 <br>
                                 <label for="mdp" class="form-label"> Mot de passe </label>
-                                <input type="text" id="mdp" name="motDePasse" class="form-control" required>
+                                <input type="text" id="mdp" name="motDePasse" class="form-control" >
                             </div>
                         </div>
                         <div class="row g-0 pt-4">
                             <div class="col-12">
-                                <button type="submit" class="btn bg-btn align-items-center" id="btnSubmit"><h5 class="fontLogo d-inline">Rejoindre&nbsp<i class="fa-solid fa-bolt icon-flicker"></i></h5></button>
+                                <button type="submit" class="btn bg-btn align-items-center" id="btnSubmit"><h5 class="fontLogo d-inline">Ajouter&nbsp<i class="fa-solid fa-bolt icon-flicker"></i></h5></button>
                             </div>
                         </div>
                     </form>

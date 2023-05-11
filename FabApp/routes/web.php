@@ -51,11 +51,16 @@ Route::get('paniers',
 
 // Route des usagers
 
-Route::POST('/usagers/login',
-[UsagersController::class, 'login'])->name('usagers.login');
+
 
 Route::get('/usagers/login',
 [UsagersController::class, 'showLoginForm'])->name('usagers.showLoginForm');
+
+Route::get('/usagers/{id}/modifier',
+[UsagersController::class, 'edit'])->name('usagers.edit');
+
+Route::patch('/usagers/{id}/modifier',
+[UsagersController::class, 'update'])->name('usagers.update');
 
 Route::get('/usagers',
 [UsagersController::class, 'index'])->name('usagers.index');
@@ -66,14 +71,11 @@ Route::get('/usagers/creation',
 Route::get('/usagers/creationAdmin',
 [UsagersController::class, 'createAdmin'])->name('usagers.createAdmin');
 
-Route::post('/usagers/enregistrer',
-[UsagersController::class, 'store'])->name('usagers.store');
-
 Route::post('/usagers/enregistrerAdmin',
 [UsagersController::class, 'storeAdmin'])->name('usagers.storeAdmin');
 
-Route::get('/usagers/modifier',
-[UsagersController::class, 'edit'])->name('usagers.edit');
+Route::post('/usagers/enregistrer',
+[UsagersController::class, 'store'])->name('usagers.store');
 
 Route::post('/usagers/supprimer',
 [UsagersController::class, 'supprimer'])->name('usagers.supprimer');
@@ -83,6 +85,9 @@ Route::post('/usagers',
 
 Route::post('/usagers/deco',
 [UsagersController::class, 'logout'])->name('usagers.logout');
+
+Route::POST('/usagers/login',
+[UsagersController::class, 'login'])->name('usagers.login');
 
 /* Route des profils */
 Route::get('/usager',

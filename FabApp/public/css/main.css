@@ -55,6 +55,10 @@ h1, h2, h3, h4, h5, p, a, label, button {
     color: white;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Background */
 
 #videoBG {
@@ -72,7 +76,7 @@ h1, h2, h3, h4, h5, p, a, label, button {
 
 .bg-card {
     background: rgba(64,38,92);
-    background: radial-gradient(circle, rgba(158,34,129,0.8) 0%, rgba(64,38,92,0.8) 100%);
+    background: radial-gradient(circle, rgba(158,34,129,0.9) 0%, rgba(64,38,92,0.9) 100%);
     max-width: 50vw;
 
     border-style: solid;
@@ -89,34 +93,8 @@ h1, h2, h3, h4, h5, p, a, label, button {
 
     border-style: solid;
     border-color: rgba(158,34,129);
-}
 
-.bg-btn .fa-hover-show {
-  display: none;
-}
-
-.bg-btn .fa-hover-hidden {
-  display: inline;
-}
-
-.bg-btn:hover {
-  background: rgba(64,38,92);
-  background: radial-gradient(circle, rgba(158,34,129,0.7) 0%,rgba(64,38,92,0.7) 100%);
-  max-width: 50vw;
-
-  font-family: 'Sedgwick Ave Display', cursive;
-  color: white;
-
-  border-style: solid;
-  border-color: rgba(158,34,129);
-}
-
-.bg-btn:hover .fa-hover-hidden {
-  display: none;
-}
-
-.bg-btn:hover .fa-hover-show {
-  display: inline;
+    z-index: 1;
 }
 
 .bg-deco {
@@ -178,6 +156,21 @@ h1, h2, h3, h4, h5, p, a, label, button {
 }
 
 
+.hoverShow {
+  display: none !important;
+}
+
+.hoverHide{
+  display: inline;
+}
+
+.hover:hover .hoverHide {
+    display: none;
+  }
+
+.hover:hover .hoverShow {
+  display: inline !important;
+}
 
     /* http://waitanimate.wstone.io/#!/ */
 .shake {
@@ -278,6 +271,56 @@ h1, h2, h3, h4, h5, p, a, label, button {
     }
   }
 
+/*border-flicker*/
+
+.border-flicker {
+  border: 0.5px;
+  border-style: solid;
+  border-color: rgba(158,34,129);
+  animation: border-flicker 4s linear infinite;
+}
+
+@keyframes border-flicker {
+  0% {
+    border: 0.5px;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.75);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.75);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.75);
+  }
+  2% {
+    border: 0px;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0);
+  }
+  4% {
+    border: 0.5px;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+  
+  8% {
+    border: 0.5px;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232);
+  }
+  70% {
+    border: 0.5px;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.75);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.75);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.75);
+  }
+  100% {
+    border: 0.5px;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0);
+  }
+}
+
+
 /* dotty */
 
   .loading::after {
@@ -339,6 +382,12 @@ h1, h2, h3, h4, h5, p, a, label, button {
 
     border-style: solid;
     border-color: rgba(158,34,129);
+  }
+
+  .dropdown-menu-retro {
+    background: transparent;
+    border: none;
+    animation: icon-flicker 3s linear infinite;
   }
 
 }

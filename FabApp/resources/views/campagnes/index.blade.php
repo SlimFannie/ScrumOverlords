@@ -3,7 +3,7 @@
 @section('titre', 'La Fab App')
 
 @section('contenu')
-<div class="container-fluid">
+<div class="container-fluid h-100 g-0 retroBG">
     <div class="row">
         <div class="col-xl-4 offset-xl-4 mt-3">
             <h1>Page gestion</h1>

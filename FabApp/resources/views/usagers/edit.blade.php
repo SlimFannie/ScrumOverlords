@@ -4,33 +4,50 @@
 
 @section('contenu')
 
-
-
-@if(isset($usager))
-<div class="container-fluid h-100 g-0 retroBG">
-    <div class="row">
-        <div class="col-3">
-            <form method="post"  id="formUsager">
-                @csrf
-                @method('PATCH')
-
-                <div class="form-group">
-                    <label for="nomUser"></label>
-                    <input type="text" class="form-control" id="nomUser" value="{{ old('nom', $usager->nom) }}" name="nomUtilisateur">
+<div class="container-fluid h-100 g-0 retroBG" id="videoFrame">
+    <div class="container-fluid d-flex align-items-center justify-content-center h-100 g-0 d-col">
+        <div class="row g-0 pb-2">
+            <div class="card text-white bg-card text-center p-2 mt-5">
+                <div class="container-fluid card-body g-0">
+                    <form method="post" id="FormUsager" class="text-center" action="{{ route('usagers.update', [$usager->id]) }}">
+                        @csrf
+                        @method('PATCH')
+                        <div class="row g-0">
+                            <div class="col-lg-6 col-xl-12 pe-0 pe-lg-2 pe-xl-0">
+                                <label for="prenom" class="form-label"> Prénom </label>
+                                <input type="text" id="prenom" name="prenom" class="form-control" placeholder="{{ $usager->prenom }}" >
+                                <br>
+                                <div class="d-block d-lg-none d-xl-block">
+                                    <label for="nom" class="form-label"> Nom </label>
+                                    <input type="text" id="nom" name="nom" class="form-control" placeholder="{{ $usager->nom }}" >
+                                </div>
+                                <div class="d-none d-lg-block d-xl-none">
+                                    <label for="courriel" class="form-label"> Adresse courriel </label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="{{ $usager->adresseCourriel }}" aria-describedby="courrielCegep" name="adresseCourriel">
+                                        <span class="input-group-text" id="courrielCegep" >@cegeptr.qc.ca</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-12 ps-0 ps-lg-2 ps-xl-0">
+                                <div class="d-block d-lg-none d-xl-block pt-3">
+                                    <label for="courriel" class="form-label"> Adresse courriel </label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="{{ $usager->prenom }}" aria-describedby="courrielCegep" name="adresseCourriel">
+                                        <span class="input-group-text" id="courrielCegep" >@cegeptr.qc.ca</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-0 pt-4">
+                            <div class="col-12">
+                                <button type="submit" class="btn bg-btn align-items-center" id="btnSubmit"><h5 class="fontLogo d-inline">Rejoindre&nbsp<i class="fa-solid fa-bolt icon-flicker"></i></h5></button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-
-                <div class="form-group">
-                    <label for="email"></label>
-                    <input type="text" class="form-control" id="email" value="{{ old('email', $usager->adresseCourriel) }}" name="email">
-                </div>
-
-                <div class="col" id="btnModifU">
-                    <button type="submit" class="btn btn-danger offset-5 my-3" >Modifier</button>
-                </div>
-
-            </form>
+            </div>
         </div>
     </div>
 </div>
-@endif
 @endsection

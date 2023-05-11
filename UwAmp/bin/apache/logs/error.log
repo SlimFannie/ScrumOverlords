@@ -138,3 +138,78 @@ AH00112: Warning: DocumentRoot [C:/Users/1046154/Documents/ScrumOverlords/UwAmp/
 [Wed Apr 26 08:05:40.936795 2023] [ssl:warn] [pid 16260:tid 596] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
 PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: C:/Users/1046154/Documents/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (Le module sp\xef\xbf\xbdcifi\xef\xbf\xbd est introuvable.), C:/Users/1046154/Documents/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (La proc\xef\xbf\xbddure sp\xef\xbf\xbdcifi\xef\xbf\xbde est introuvable.)) in Unknown on line 0
 [Wed Apr 26 08:05:40.953784 2023] [mpm_winnt:notice] [pid 16260:tid 596] AH00354: Child: Starting 64 worker threads.
+[Wed May 10 16:22:27.145439 2023] [ssl:warn] [pid 5924:tid 712] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 10 16:22:27.146437 2023] [ssl:warn] [pid 5924:tid 712] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+[Wed May 10 16:22:27.183900 2023] [core:warn] [pid 5924:tid 712] AH00098: pid file C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed May 10 16:22:27.253115 2023] [ssl:warn] [pid 5924:tid 712] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed May 10 16:22:27.254578 2023] [ssl:warn] [pid 5924:tid 712] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 10 16:22:27.254578 2023] [ssl:warn] [pid 5924:tid 712] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (The specified module could not be found.), C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (The specified procedure could not be found.)) in Unknown on line 0
+[Wed May 10 16:22:27.451837 2023] [mpm_winnt:notice] [pid 5924:tid 712] AH00455: Apache/2.4.18 (Win32) OpenSSL/1.0.2f PHP/7.2.7 configured -- resuming normal operations
+[Wed May 10 16:22:27.451837 2023] [mpm_winnt:notice] [pid 5924:tid 712] AH00456: Server built: Jan 28 2016 09:58:25
+[Wed May 10 16:22:27.451837 2023] [core:notice] [pid 5924:tid 712] AH00094: Command line: 'C:\\Users\\Fhame\\OneDrive\\Bureau\\New folder\\ScrumOverlords\\ScrumOverlords\\UwAmp\\bin\\apache\\bin\\httpd.exe -d C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/bin/apache -f C:\\Users\\Fhame\\OneDrive\\Bureau\\New folder\\ScrumOverlords\\ScrumOverlords\\UwAmp\\bin\\apache\\conf\\httpd.conf'
+[Wed May 10 16:22:27.461787 2023] [mpm_winnt:notice] [pid 5924:tid 712] AH00418: Parent: Created child process 6692
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+[Wed May 10 16:22:27.987509 2023] [ssl:warn] [pid 6692:tid 632] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 10 16:22:27.987509 2023] [ssl:warn] [pid 6692:tid 632] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+[Wed May 10 16:22:28.079668 2023] [ssl:warn] [pid 6692:tid 632] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed May 10 16:22:28.079668 2023] [ssl:warn] [pid 6692:tid 632] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 10 16:22:28.079668 2023] [ssl:warn] [pid 6692:tid 632] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\curl (The specified module could not be found.), C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/bin/php/php-7.2.7/ext\\php_curl.dll (The specified procedure could not be found.)) in Unknown on line 0
+[Wed May 10 16:22:28.094835 2023] [mpm_winnt:notice] [pid 6692:tid 632] AH00354: Child: Starting 64 worker threads.
+[Wed May 10 16:22:49.019139 2023] [php7:notice] [pid 6692:tid 1320] [client ::1:56978] PHP Warning:  Unknown: failed to open stream: No such file or directory in Unknown on line 0
+[Wed May 10 16:22:49.019139 2023] [php7:notice] [pid 6692:tid 1320] [client ::1:56978] PHP Fatal error:  Unknown: Failed opening required 'C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/phpapps/phpmyadmin/index.php' (include_path='.;C:\\php\\pear') in Unknown on line 0
+[Wed May 10 16:22:50.034431 2023] [php7:notice] [pid 6692:tid 1320] [client ::1:56997] PHP Warning:  Unknown: failed to open stream: No such file or directory in Unknown on line 0
+[Wed May 10 16:22:50.034431 2023] [php7:notice] [pid 6692:tid 1320] [client ::1:56997] PHP Fatal error:  Unknown: Failed opening required 'C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/phpapps/phpmyadmin/index.php' (include_path='.;C:\\php\\pear') in Unknown on line 0
+[Wed May 10 16:22:58.758338 2023] [mpm_winnt:crit] [pid 6692:tid 632] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Wed May 10 16:23:01.118902 2023] [ssl:warn] [pid 10636:tid 664] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 10 16:23:01.119993 2023] [ssl:warn] [pid 10636:tid 664] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+[Wed May 10 16:23:01.149293 2023] [core:warn] [pid 10636:tid 664] AH00098: pid file C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed May 10 16:23:01.206069 2023] [ssl:warn] [pid 10636:tid 664] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed May 10 16:23:01.206069 2023] [ssl:warn] [pid 10636:tid 664] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 10 16:23:01.206069 2023] [ssl:warn] [pid 10636:tid 664] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 10 16:23:01.647982 2023] [mpm_winnt:notice] [pid 10636:tid 664] AH00455: Apache/2.4.18 (Win32) OpenSSL/1.0.2f PHP/7.0.3 configured -- resuming normal operations
+[Wed May 10 16:23:01.647982 2023] [mpm_winnt:notice] [pid 10636:tid 664] AH00456: Server built: Jan 28 2016 09:58:25
+[Wed May 10 16:23:01.647982 2023] [core:notice] [pid 10636:tid 664] AH00094: Command line: 'C:\\Users\\Fhame\\OneDrive\\Bureau\\New folder\\ScrumOverlords\\ScrumOverlords\\UwAmp\\bin\\apache\\bin\\httpd.exe -d C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/bin/apache -f C:\\Users\\Fhame\\OneDrive\\Bureau\\New folder\\ScrumOverlords\\ScrumOverlords\\UwAmp\\bin\\apache\\conf\\httpd.conf'
+[Wed May 10 16:23:01.652869 2023] [mpm_winnt:notice] [pid 10636:tid 664] AH00418: Parent: Created child process 2184
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+[Wed May 10 16:23:02.109431 2023] [ssl:warn] [pid 2184:tid 648] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 10 16:23:02.109935 2023] [ssl:warn] [pid 2184:tid 648] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+[Wed May 10 16:23:02.195645 2023] [ssl:warn] [pid 2184:tid 648] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed May 10 16:23:02.195645 2023] [ssl:warn] [pid 2184:tid 648] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 10 16:23:02.195645 2023] [ssl:warn] [pid 2184:tid 648] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 10 16:23:02.214971 2023] [mpm_winnt:notice] [pid 2184:tid 648] AH00354: Child: Starting 64 worker threads.
+[Wed May 10 16:23:05.614311 2023] [mpm_winnt:crit] [pid 2184:tid 648] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Wed May 10 16:23:08.616768 2023] [ssl:warn] [pid 2364:tid 664] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 10 16:23:08.616768 2023] [ssl:warn] [pid 2364:tid 664] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+[Wed May 10 16:23:08.648624 2023] [core:warn] [pid 2364:tid 664] AH00098: pid file C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed May 10 16:23:08.703287 2023] [ssl:warn] [pid 2364:tid 664] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed May 10 16:23:08.704323 2023] [ssl:warn] [pid 2364:tid 664] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 10 16:23:08.704323 2023] [ssl:warn] [pid 2364:tid 664] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 10 16:23:09.194674 2023] [mpm_winnt:notice] [pid 2364:tid 664] AH00455: Apache/2.4.18 (Win32) OpenSSL/1.0.2f PHP/5.6.18 configured -- resuming normal operations
+[Wed May 10 16:23:09.194674 2023] [mpm_winnt:notice] [pid 2364:tid 664] AH00456: Server built: Jan 28 2016 09:58:25
+[Wed May 10 16:23:09.194674 2023] [core:notice] [pid 2364:tid 664] AH00094: Command line: 'C:\\Users\\Fhame\\OneDrive\\Bureau\\New folder\\ScrumOverlords\\ScrumOverlords\\UwAmp\\bin\\apache\\bin\\httpd.exe -d C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/bin/apache -f C:\\Users\\Fhame\\OneDrive\\Bureau\\New folder\\ScrumOverlords\\ScrumOverlords\\UwAmp\\bin\\apache\\conf\\httpd.conf'
+[Wed May 10 16:23:09.199338 2023] [mpm_winnt:notice] [pid 2364:tid 664] AH00418: Parent: Created child process 16336
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+[Wed May 10 16:23:09.642807 2023] [ssl:warn] [pid 16336:tid 664] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 10 16:23:09.642807 2023] [ssl:warn] [pid 16336:tid 664] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+AH00112: Warning: DocumentRoot [C:/Users/Fhame/OneDrive/Bureau/New folder/ScrumOverlords/ScrumOverlords/UwAmp/www/] does not exist
+[Wed May 10 16:23:09.728644 2023] [ssl:warn] [pid 16336:tid 664] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed May 10 16:23:09.729642 2023] [ssl:warn] [pid 16336:tid 664] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 10 16:23:09.729642 2023] [ssl:warn] [pid 16336:tid 664] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 10 16:23:09.747957 2023] [mpm_winnt:notice] [pid 16336:tid 664] AH00354: Child: Starting 64 worker threads.
+[Wed May 10 16:23:17.124635 2023] [mpm_winnt:crit] [pid 16336:tid 664] AH02538: Child: Parent process exited abruptly. Child process is ending

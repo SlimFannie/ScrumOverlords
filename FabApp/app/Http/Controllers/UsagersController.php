@@ -99,6 +99,7 @@ class UsagersController extends Controller
      */
     public function edit($id)
     {
+        Log::debug($id);
         $usager = Usager::findOrFail($id);
         return View('usagers.edit',compact('usager'));
     }
@@ -108,7 +109,18 @@ class UsagersController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        try
+        {
+            $usager = User::findOrFail($id);
+            $usager = $usager->update($request->all());
+            $usager->save();
+        }
+        catch(\Throwable $e)
+        {
+            Log::debug($e);
+            return redirect()->route('usagers.index');
+        }
+        return redirect()->route('usagers.index');
     }
 
     /**
@@ -127,10 +139,11 @@ class UsagersController extends Controller
 
     public function login(Request $request)
     {   
+        
         try
         {   
+            Log::debug($request->adresseCourriel);
             $user = Usager::where('adresseCourriel','=',$request->adresseCourriel)->first();
-            Log::debug($user->motDePasse);
             if($user && Hash::check($request->motDePasse, $user->motDePasse))
             {
                 
@@ -173,7 +186,7 @@ class UsagersController extends Controller
    {
        try
        {
-           $adresseCourriel = $request->input('user');
+           $adresseCourriel = $request->input('suppUser');
            Log::debug($adresseCourriel);
            DB::select('call suppressionUser(:adresseCourriel)',['adresseCourriel'=>$adresseCourriel]);
            return redirect()->route('usagers.index');
