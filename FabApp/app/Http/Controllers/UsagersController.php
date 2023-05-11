@@ -58,15 +58,15 @@ class UsagersController extends Controller
             $nom = $request->get('nom');
             $adresseCourriel = $request->get('adresseCourriel');
             $password = Hash::make($request->get('motDePasse'));
-            DB::select('call creationUsager(:prenom, :nom, :adresseCourriel,
+            Log::Debug(DB::select('call creationUsager(:prenom, :nom, :adresseCourriel,
              :motDePasse)', ['prenom' => $prenom,'nom' => $nom,
-              'adresseCourriel' => $adresseCourriel, 'motDePasse' => $password]);
+              'adresseCourriel' => $adresseCourriel, 'motDePasse' => $password]));
         }
         catch(\Throwable $e)
         {
             Log::debug($e);
         }
-        return redirect()->route('usagers.create');
+        return redirect()->route('accueils.index');
     }
 
     public function storeAdmin(UsagerRequest $request)
