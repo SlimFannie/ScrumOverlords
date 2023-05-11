@@ -18,7 +18,7 @@
                             <br>
                             <input type="text" class="form-control" id="mdp" name="motDePasse">
                             <br>
-                            <button type="submit" class="btn bg-btn" id="btnSubmit"><h5 class="fontLogo m-0">Enter dans la boutique <i class="fa-solid fa-door-closed fa-hover-hidden"></i><i class="fa-solid fa-door-open fa-hover-show"></i></h5></button>
+                            <button type="submit" class="btn bg-deco hover hover-underline-animation" id="btnSubmit"><h5 class="fontLogo text-white-50 m-0">Enter dans la boutique <i class="fa-solid fa-door-closed hoverHide"></i><i class="fa-solid fa-door-open hoverShow"></i></h5></button>
                     </form>
                 </div>
             </div> 

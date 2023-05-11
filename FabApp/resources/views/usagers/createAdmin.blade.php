@@ -43,7 +43,7 @@
                         </div>
                         <div class="row g-0 pt-4">
                             <div class="col-12">
-                                <button type="submit" class="btn bg-btn align-items-center" id="btnSubmit"><h5 class="fontLogo d-inline">Rejoindre&nbsp<i class="fa-solid fa-bolt icon-flicker"></i></h5></button>
+                                <button type="submit" class="btn bg-btn align-items-center" id="btnSubmit"><h5 class="fontLogo d-inline">Ajouter&nbsp<i class="fa-solid fa-bolt icon-flicker"></i></h5></button>
                             </div>
                         </div>
                     </form>

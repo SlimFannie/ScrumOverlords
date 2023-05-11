@@ -97,31 +97,6 @@ a {
     z-index: 1;
 }
 
-.bg-btn .fa-hover-show {
-  display: none;
-}
-
-.bg-btn .fa-hover-hidden {
-  display: inline;
-}
-
-.bg-btn:hover {
-  background: rgba(64,38,92);
-  background: radial-gradient(circle, rgba(158,34,129,0.8) 0%,rgba(64,38,92,0.8) 100%);
-  max-width: 50vw;
-
-  font-family: 'Sedgwick Ave Display', cursive;
-  color: white;
-}
-
-.bg-btn:hover .fa-hover-hidden {
-  display: none;
-}
-
-.bg-btn:hover .fa-hover-show {
-  display: inline;
-}
-
 .bg-deco {
     background: none;
     border: none;
@@ -178,6 +153,23 @@ a {
 
 .hoverModif:hover {
   color: blue;
+}
+
+
+.hoverShow {
+  display: none !important;
+}
+
+.hoverHide{
+  display: inline;
+}
+
+.hover:hover .hoverHide {
+    display: none;
+  }
+
+.hover:hover .hoverShow {
+  display: inline !important;
 }
 
     /* http://waitanimate.wstone.io/#!/ */
