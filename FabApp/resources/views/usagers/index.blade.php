@@ -12,8 +12,9 @@
                     @if (count($usagers))
                         <table class="w-lg-100 d-flex justify-content-center">
                             <tr>
-                                <td class="px-2"><h5 class="d-none d-lg-inline">Nom</h5></td>
-                                <td class="px-2"><h5 class="d-none d-lg-inline">Adresse courriel</h5></td>
+                                <td><h5>Nom de l'usager</h5></td>
+                                <td><h5>Adresse courriel</h5></td>
+                                <td><h5></h5></td>
                             </tr>
                             @foreach ($usagers as $usager)
                                 <tr>
